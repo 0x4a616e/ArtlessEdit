@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6A1A4721D200971982 /* AppDelegate.swift */; };
+		3DDFFA6D1A4721D200971982 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6C1A4721D200971982 /* Document.swift */; };
+		3DDFFA701A4721D200971982 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6E1A4721D200971982 /* Document.xib */; };
+		3DDFFA721A4721D200971982 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFFA711A4721D200971982 /* Images.xcassets */; };
+		3DDFFA751A4721D300971982 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFFA731A4721D300971982 /* MainMenu.xib */; };
+		3DDFFA811A4721D300971982 /* ArtlessEditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA801A4721D300971982 /* ArtlessEditTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DDFFA7B1A4721D300971982 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DDFFA5D1A4721D200971982 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DDFFA641A4721D200971982;
+			remoteInfo = ArtlessEdit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3DDFFA651A4721D200971982 /* ArtlessEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtlessEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DDFFA691A4721D200971982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DDFFA6A1A4721D200971982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DDFFA6C1A4721D200971982 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		3DDFFA6F1A4721D200971982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		3DDFFA711A4721D200971982 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3DDFFA741A4721D300971982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3DDFFA7A1A4721D300971982 /* ArtlessEditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtlessEditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DDFFA7F1A4721D300971982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DDFFA801A4721D300971982 /* ArtlessEditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtlessEditTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DDFFA621A4721D200971982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DDFFA771A4721D300971982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DDFFA5C1A4721D200971982 = {
+			isa = PBXGroup;
+			children = (
+				3DDFFA671A4721D200971982 /* ArtlessEdit */,
+				3DDFFA7D1A4721D300971982 /* ArtlessEditTests */,
+				3DDFFA661A4721D200971982 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DDFFA661A4721D200971982 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DDFFA651A4721D200971982 /* ArtlessEdit.app */,
+				3DDFFA7A1A4721D300971982 /* ArtlessEditTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DDFFA671A4721D200971982 /* ArtlessEdit */ = {
+			isa = PBXGroup;
+			children = (
+				3DDFFA6A1A4721D200971982 /* AppDelegate.swift */,
+				3DDFFA6C1A4721D200971982 /* Document.swift */,
+				3DDFFA6E1A4721D200971982 /* Document.xib */,
+				3DDFFA711A4721D200971982 /* Images.xcassets */,
+				3DDFFA731A4721D300971982 /* MainMenu.xib */,
+				3DDFFA681A4721D200971982 /* Supporting Files */,
+			);
+			path = ArtlessEdit;
+			sourceTree = "<group>";
+		};
+		3DDFFA681A4721D200971982 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DDFFA691A4721D200971982 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DDFFA7D1A4721D300971982 /* ArtlessEditTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DDFFA801A4721D300971982 /* ArtlessEditTests.swift */,
+				3DDFFA7E1A4721D300971982 /* Supporting Files */,
+			);
+			path = ArtlessEditTests;
+			sourceTree = "<group>";
+		};
+		3DDFFA7E1A4721D300971982 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DDFFA7F1A4721D300971982 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DDFFA641A4721D200971982 /* ArtlessEdit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DDFFA841A4721D300971982 /* Build configuration list for PBXNativeTarget "ArtlessEdit" */;
+			buildPhases = (
+				3DDFFA611A4721D200971982 /* Sources */,
+				3DDFFA621A4721D200971982 /* Frameworks */,
+				3DDFFA631A4721D200971982 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArtlessEdit;
+			productName = ArtlessEdit;
+			productReference = 3DDFFA651A4721D200971982 /* ArtlessEdit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DDFFA791A4721D300971982 /* ArtlessEditTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DDFFA871A4721D300971982 /* Build configuration list for PBXNativeTarget "ArtlessEditTests" */;
+			buildPhases = (
+				3DDFFA761A4721D300971982 /* Sources */,
+				3DDFFA771A4721D300971982 /* Frameworks */,
+				3DDFFA781A4721D300971982 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DDFFA7C1A4721D300971982 /* PBXTargetDependency */,
+			);
+			name = ArtlessEditTests;
+			productName = ArtlessEditTests;
+			productReference = 3DDFFA7A1A4721D300971982 /* ArtlessEditTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DDFFA5D1A4721D200971982 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Jan Gassen";
+				TargetAttributes = {
+					3DDFFA641A4721D200971982 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					3DDFFA791A4721D300971982 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 3DDFFA641A4721D200971982;
+					};
+				};
+			};
+			buildConfigurationList = 3DDFFA601A4721D200971982 /* Build configuration list for PBXProject "ArtlessEdit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DDFFA5C1A4721D200971982;
+			productRefGroup = 3DDFFA661A4721D200971982 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DDFFA641A4721D200971982 /* ArtlessEdit */,
+				3DDFFA791A4721D300971982 /* ArtlessEditTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DDFFA631A4721D200971982 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DDFFA701A4721D200971982 /* Document.xib in Resources */,
+				3DDFFA721A4721D200971982 /* Images.xcassets in Resources */,
+				3DDFFA751A4721D300971982 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DDFFA781A4721D300971982 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DDFFA611A4721D200971982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DDFFA6D1A4721D200971982 /* Document.swift in Sources */,
+				3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DDFFA761A4721D300971982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DDFFA811A4721D300971982 /* ArtlessEditTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DDFFA7C1A4721D300971982 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DDFFA641A4721D200971982 /* ArtlessEdit */;
+			targetProxy = 3DDFFA7B1A4721D300971982 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3DDFFA6E1A4721D200971982 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DDFFA6F1A4721D200971982 /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		3DDFFA731A4721D300971982 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DDFFA741A4721D300971982 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DDFFA821A4721D300971982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DDFFA831A4721D300971982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3DDFFA851A4721D300971982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ArtlessEdit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3DDFFA861A4721D300971982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ArtlessEdit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3DDFFA881A4721D300971982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArtlessEditTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArtlessEdit.app/Contents/MacOS/ArtlessEdit";
+			};
+			name = Debug;
+		};
+		3DDFFA891A4721D300971982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArtlessEditTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArtlessEdit.app/Contents/MacOS/ArtlessEdit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DDFFA601A4721D200971982 /* Build configuration list for PBXProject "ArtlessEdit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DDFFA821A4721D300971982 /* Debug */,
+				3DDFFA831A4721D300971982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DDFFA841A4721D300971982 /* Build configuration list for PBXNativeTarget "ArtlessEdit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DDFFA851A4721D300971982 /* Debug */,
+				3DDFFA861A4721D300971982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3DDFFA871A4721D300971982 /* Build configuration list for PBXNativeTarget "ArtlessEditTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DDFFA881A4721D300971982 /* Debug */,
+				3DDFFA891A4721D300971982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DDFFA5D1A4721D200971982 /* Project object */;
+}
