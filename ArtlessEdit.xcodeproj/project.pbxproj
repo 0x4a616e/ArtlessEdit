@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D6646331A4722C000D8908E /* OpenFileSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6646311A4722C000D8908E /* OpenFileSearch.swift */; };
+		3D6646341A4722C000D8908E /* PasteHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6646321A4722C000D8908E /* PasteHistory.swift */; };
+		3D6646351A4722EA00D8908E /* ACEView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDFFA911A47221600971982 /* ACEView.framework */; };
 		3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6A1A4721D200971982 /* AppDelegate.swift */; };
 		3DDFFA6D1A4721D200971982 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6C1A4721D200971982 /* Document.swift */; };
 		3DDFFA701A4721D200971982 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6E1A4721D200971982 /* Document.xib */; };
@@ -23,9 +26,32 @@
 			remoteGlobalIDString = 3DDFFA641A4721D200971982;
 			remoteInfo = ArtlessEdit;
 		};
+		3DDFFA901A47221600971982 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7C8A728C15EA0769007E5EB8;
+			remoteInfo = ACEView;
+		};
+		3DDFFA921A47221600971982 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7C8A72E015EA0F0E007E5EB8;
+			remoteInfo = ACEVIewExample;
+		};
+		3DDFFA941A47221600971982 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36F169E216B9346C00E8965C;
+			remoteInfo = ACEViewTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D6646311A4722C000D8908E /* OpenFileSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFileSearch.swift; sourceTree = "<group>"; };
+		3D6646321A4722C000D8908E /* PasteHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteHistory.swift; sourceTree = "<group>"; };
 		3DDFFA651A4721D200971982 /* ArtlessEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtlessEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDFFA691A4721D200971982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DDFFA6A1A4721D200971982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +62,8 @@
 		3DDFFA7A1A4721D300971982 /* ArtlessEditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtlessEditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDFFA7F1A4721D300971982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DDFFA801A4721D300971982 /* ArtlessEditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtlessEditTests.swift; sourceTree = "<group>"; };
+		3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ACEView.xcodeproj; path = ../ACEView/ACEView.xcodeproj; sourceTree = "<group>"; };
+		3DDFFA961A47223700971982 /* ACEViewBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEViewBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6646351A4722EA00D8908E /* ACEView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,9 +85,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DD0AEC71A4728190091BD16 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				3D6646311A4722C000D8908E /* OpenFileSearch.swift */,
+				3D6646321A4722C000D8908E /* PasteHistory.swift */,
+			);
+			name = controls;
+			sourceTree = "<group>";
+		};
 		3DDFFA5C1A4721D200971982 = {
 			isa = PBXGroup;
 			children = (
+				3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */,
 				3DDFFA671A4721D200971982 /* ArtlessEdit */,
 				3DDFFA7D1A4721D300971982 /* ArtlessEditTests */,
 				3DDFFA661A4721D200971982 /* Products */,
@@ -77,10 +116,10 @@
 		3DDFFA671A4721D200971982 /* ArtlessEdit */ = {
 			isa = PBXGroup;
 			children = (
+				3DD0AEC71A4728190091BD16 /* controls */,
 				3DDFFA6A1A4721D200971982 /* AppDelegate.swift */,
 				3DDFFA6C1A4721D200971982 /* Document.swift */,
 				3DDFFA6E1A4721D200971982 /* Document.xib */,
-				3DDFFA711A4721D200971982 /* Images.xcassets */,
 				3DDFFA731A4721D300971982 /* MainMenu.xib */,
 				3DDFFA681A4721D200971982 /* Supporting Files */,
 			);
@@ -90,6 +129,8 @@
 		3DDFFA681A4721D200971982 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3DDFFA711A4721D200971982 /* Images.xcassets */,
+				3DDFFA961A47223700971982 /* ACEViewBridge.h */,
 				3DDFFA691A4721D200971982 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +151,16 @@
 				3DDFFA7F1A4721D300971982 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DDFFA8B1A47221600971982 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DDFFA911A47221600971982 /* ACEView.framework */,
+				3DDFFA931A47221600971982 /* ACEVIewExample.app */,
+				3DDFFA951A47221600971982 /* ACEViewTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +230,12 @@
 			mainGroup = 3DDFFA5C1A4721D200971982;
 			productRefGroup = 3DDFFA661A4721D200971982 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3DDFFA8B1A47221600971982 /* Products */;
+					ProjectRef = 3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3DDFFA641A4721D200971982 /* ArtlessEdit */,
@@ -186,6 +243,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3DDFFA911A47221600971982 /* ACEView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ACEView.framework;
+			remoteRef = 3DDFFA901A47221600971982 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DDFFA931A47221600971982 /* ACEVIewExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ACEVIewExample.app;
+			remoteRef = 3DDFFA921A47221600971982 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DDFFA951A47221600971982 /* ACEViewTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ACEViewTests.octest;
+			remoteRef = 3DDFFA941A47221600971982 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3DDFFA631A4721D200971982 /* Resources */ = {
@@ -212,8 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6646341A4722C000D8908E /* PasteHistory.swift in Sources */,
 				3DDFFA6D1A4721D200971982 /* Document.swift in Sources */,
 				3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */,
+				3D6646331A4722C000D8908E /* OpenFileSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +423,7 @@
 				INFOPLIST_FILE = ArtlessEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ArtlessEdit/ACEViewBridge.h;
 			};
 			name = Debug;
 		};
@@ -351,6 +435,7 @@
 				INFOPLIST_FILE = ArtlessEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ArtlessEdit/ACEViewBridge.h;
 			};
 			name = Release;
 		};
@@ -409,6 +494,7 @@
 				3DDFFA861A4721D300971982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DDFFA871A4721D300971982 /* Build configuration list for PBXNativeTarget "ArtlessEditTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +503,7 @@
 				3DDFFA891A4721D300971982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
