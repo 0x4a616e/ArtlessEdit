@@ -6,7 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Document" customModule="ArtlessEdit" customModuleProvider="target">
             <connections>
-                <outlet property="aceView" destination="zL3-82-rjd" id="y4a-CE-z4g"/>
+                <outlet property="aceView" destination="zL3-82-rjd" id="rhI-Y6-xDL"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>

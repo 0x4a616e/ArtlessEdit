@@ -96,7 +96,11 @@ class Document: NSDocument {
     }
     
     override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
-        fileContent = NSString(data: data, encoding: encoding)!
+        if let content = NSString(data: data, encoding: encoding) {
+            fileContent = content
+        } else {
+            println("Invalid encoding")
+        }
         
         return true
     }
