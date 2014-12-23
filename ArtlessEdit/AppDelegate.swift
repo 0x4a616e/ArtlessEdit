@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var mode: NSMenuItem!
     @IBOutlet weak var theme: NSMenuItem!
     
-    lazy var quickOpenController: SearchPopupController = SearchPopupController(windowNibName: "SearchPopup");
+    lazy var quickOpenController: SearchPopupController = SearchPopupController(windowNibName: "SearchPopup")
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         createSubMenu(ACEModeNames.humanModeNames(), targetMenu: mode, selector: Selector("setModeName:"))
@@ -26,11 +26,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func showQuickOpen(sender: AnyObject) {
-        quickOpenController.showWindow(sender, data: OpenFileData())
+        quickOpenController.showWindow(sender, data: OpenFileData(), title: "Quick Open")
     }
     
     @IBAction func recentFileOpen(sender: AnyObject) {
-        quickOpenController.showWindow(sender, data: OpenFileData())
+        quickOpenController.showWindow(sender, data: RecentFileData(), title: "Open Recent")
     }
     
     func createSubMenu(items: NSArray, targetMenu: NSMenuItem, selector: Selector) {

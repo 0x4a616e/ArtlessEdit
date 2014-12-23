@@ -8,20 +8,13 @@
 
 import Foundation
 
-class OpenFileData: SearchPopupData {
+class OpenFileData: FileData {
 
-    lazy var fileManager = NSFileManager()
-    lazy var workspace = NSWorkspace.sharedWorkspace()
-    
-    var currentDirectory = ""
-    var currentFiles: [String] = []
-    var suggestions: [String] = []
-    
-    func count() -> Int {
-        return suggestions.count
+    override func load() {
+        suggestions = []
     }
     
-    func update(value: String) {
+    override func update(value: String) {
         let path = value.stringByStandardizingPath
         
         var isDir: ObjCBool = false
@@ -37,39 +30,4 @@ class OpenFileData: SearchPopupData {
         }
     }
     
-    func select(data: String) -> Bool {
-        var success = false
-        
-        var isDir: ObjCBool = false
-        if !fileManager.fileExistsAtPath(data, isDirectory: &isDir) || isDir {
-            return false
-        }
-        
-        if let url = NSURL(fileURLWithPath: data) {
-            NSDocumentController.sharedDocumentController().openDocumentWithContentsOfURL(url, display: true, completionHandler: {(document, display, error) -> Void in
-                success = true
-            })
-        }
-        
-        return success
-    }
-    
-    func labelValue(row: Int) -> String? {
-        if (row >= 0) {
-            return suggestions[row]
-        }
-        return nil
-    }
-    
-    func stringValue(row: Int) -> String? {
-        if row >= 0 {
-            return currentDirectory.stringByAppendingPathComponent(suggestions[row])
-        }
-        
-        return nil
-    }
-    
-    func image(row: Int) -> NSImage? {
-        return workspace.iconForFile(stringValue(row)!)
-    }
 }

@@ -9,10 +9,11 @@
 import Foundation
 
 protocol SearchPopupData {
+    func load()
     func count() -> Int
     func update(value: String)
     func labelValue(row: Int) -> String?
     func stringValue(row: Int) -> String?
     func image(row: Int) -> NSImage?
-    func select(data: String) -> Bool
+    func select(data: String, panel: NSWindowController)
 }

@@ -15,9 +15,25 @@ class SearchPopupController: NSWindowController, NSTableViewDataSource, NSTableV
     
     var data: SearchPopupData?
     
-    func showWindow(sender: AnyObject?, data: SearchPopupData) {
+    func showWindow(sender: AnyObject?, data: SearchPopupData, title: String) {
+        if (self.data != nil) {
+            searchField.stringValue = ""
+        }
+        
         self.data = data
-        super.showWindow(sender)
+        self.data?.load()
+        window?.title = title
+        
+        if window?.visible == true {
+            tableView.reloadData()
+        } else {
+            super.showWindow(sender)
+        }
+    }
+    
+    @IBAction func clickRow(sender: AnyObject) {
+        upadteSearchField(tableView.selectedRow)
+        data?.select(searchField.stringValue, panel: self)
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -33,7 +49,6 @@ class SearchPopupController: NSWindowController, NSTableViewDataSource, NSTableV
     }
     
     func control(control: NSControl, textView: NSTextView, doCommandBySelector commandSelector: Selector) -> Bool {
-        
         if (commandSelector == Selector("moveUp:") ) {
             selectPrevRow()
             upadteSearchField(tableView.selectedRow)
@@ -51,11 +66,10 @@ class SearchPopupController: NSWindowController, NSTableViewDataSource, NSTableV
             return true;
         }
         if (commandSelector == Selector("insertNewline:")) {
-            if let result = data?.select(searchField.stringValue) {
-                if (result) {
-                    close()
-                }
+            if data?.count() == 1 && tableView.selectedRow == -1 {
+                upadteSearchField(0)
             }
+            data?.select(searchField.stringValue, panel: self)
             return true;
         }
         

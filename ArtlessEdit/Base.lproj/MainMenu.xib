@@ -96,8 +96,8 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Quick Open Recent" id="Wcz-U0-U8q">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Quick Open Recent" keyEquivalent="o" id="Wcz-U0-U8q">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="recentFileOpen:" target="Voe-Tx-rLC" id="tYG-Hz-6bQ"/>
                                 </connections>
