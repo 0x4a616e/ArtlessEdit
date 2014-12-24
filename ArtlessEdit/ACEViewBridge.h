@@ -10,6 +10,7 @@
 #define MyDoc_ACEViewBridge_h
 
 #import "ACEView/ACEView.h"
+#import "ACEView/ACEToken.h"
 #import "ACEView/ACEModeNames.h"
 #import "ACEView/ACEThemeNames.h"
 #import "ACEView/ACEKeyboardHandlerNames.h"

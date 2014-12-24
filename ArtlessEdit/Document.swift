@@ -12,6 +12,9 @@ class Document: NSDocument {
     
     @IBOutlet weak var aceView: ACEView!
     
+    lazy var outlineController = OutlineController(windowNibName: "Outline")
+    var mode: ACEMode = ACEModeASCIIDoc
+    
     let encoding = NSUTF8StringEncoding
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
     let THEME_KEY = "THEME"
@@ -19,6 +22,12 @@ class Document: NSDocument {
     
     override init() {
         super.init()
+    }
+    
+    func outline(sender: AnyObject) {
+        if (fileURL != nil) {
+            outlineController.showWindow(sender, aceView: aceView, mode: mode, file: fileURL!)
+        }
     }
     
     func setModeName(menuItem: NSMenuItem) {
@@ -49,10 +58,16 @@ class Document: NSDocument {
     }
     
     func getModeIndex() -> UInt? {
-        if (fileURL?.path != nil) {
-            let fileType = NSWorkspace.sharedWorkspace().typeOfFile(fileURL!.path!, error: nil)
+        if let path = fileURL?.path {
+            //TODO Allow user to map files by extension
+
+            switch(path.pathExtension.lowercaseString) {
+            case "java": return UInt(ACEModeJava);
+            default: println(path.pathExtension)
+            }
             
-            if let components = fileType?.componentsSeparatedByString(".") {
+            if let fileType = NSWorkspace.sharedWorkspace().typeOfFile(path, error: nil) {
+                let components = fileType.componentsSeparatedByString(".")
                 if (components.count > 1) {
                     return getModeIndexForType(components[1])
                 }
@@ -65,9 +80,10 @@ class Document: NSDocument {
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         
-        let modeIndex = getModeIndex()
-        if (modeIndex != nil) {
-            aceView.setMode(modeIndex!)
+        
+        if let modeIndex = getModeIndex() {
+            mode = ACEMode(modeIndex)
+            aceView.setMode(modeIndex)
         }
         
         aceView.borderType = NSBorderType.NoBorder
