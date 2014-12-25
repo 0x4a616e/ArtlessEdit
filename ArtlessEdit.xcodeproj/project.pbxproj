@@ -17,6 +17,10 @@
 		3D6A3EE51A4ACC82002507B9 /* Outliner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE41A4ACC82002507B9 /* Outliner.swift */; };
 		3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE61A4ACD0D002507B9 /* OutlinerFactory.swift */; };
 		3D6A3EE91A4ACE5C002507B9 /* CtagsOutliner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE81A4ACE5C002507B9 /* CtagsOutliner.swift */; };
+		3D96A2FD1A4C29AB00AA2762 /* icon_class.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A2FC1A4C29AB00AA2762 /* icon_class.png */; };
+		3D96A3011A4C2ABC00AA2762 /* icon_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */; };
+		3D96A3031A4C2C4100AA2762 /* icon_method.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A3021A4C2C4100AA2762 /* icon_method.png */; };
+		3D96A3051A4C2CFF00AA2762 /* SearchPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D96A3041A4C2CFF00AA2762 /* SearchPopup.swift */; };
 		3DBD49931A4ABB6C00C2B1C9 /* Outline.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DBD49921A4ABB6C00C2B1C9 /* Outline.xib */; };
 		3DBD49971A4ABB7800C2B1C9 /* OutlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD49961A4ABB7800C2B1C9 /* OutlineController.swift */; };
 		3DD0AECD1A472B720091BD16 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD0AECC1A472B720091BD16 /* Credits.rtf */; };
@@ -90,6 +94,10 @@
 		3D6A3EE41A4ACC82002507B9 /* Outliner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outliner.swift; sourceTree = "<group>"; };
 		3D6A3EE61A4ACD0D002507B9 /* OutlinerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinerFactory.swift; sourceTree = "<group>"; };
 		3D6A3EE81A4ACE5C002507B9 /* CtagsOutliner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CtagsOutliner.swift; sourceTree = "<group>"; };
+		3D96A2FC1A4C29AB00AA2762 /* icon_class.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_class.png; sourceTree = "<group>"; };
+		3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_unknown.png; sourceTree = "<group>"; };
+		3D96A3021A4C2C4100AA2762 /* icon_method.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_method.png; sourceTree = "<group>"; };
+		3D96A3041A4C2CFF00AA2762 /* SearchPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopup.swift; sourceTree = "<group>"; };
 		3DBD49921A4ABB6C00C2B1C9 /* Outline.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Outline.xib; sourceTree = "<group>"; };
 		3DBD49961A4ABB7800C2B1C9 /* OutlineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineController.swift; sourceTree = "<group>"; };
 		3DD0AECA1A472A830091BD16 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -136,6 +144,7 @@
 				3DFCC1C21A49711400D41481 /* SearchPopup.xib */,
 				3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */,
 				3DFCC1C41A49718700D41481 /* SearchPopupController.swift */,
+				3D96A3041A4C2CFF00AA2762 /* SearchPopup.swift */,
 			);
 			name = SearchPopup;
 			sourceTree = "<group>";
@@ -208,6 +217,9 @@
 		3DDFFA681A4721D200971982 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D96A3021A4C2C4100AA2762 /* icon_method.png */,
+				3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */,
+				3D96A2FC1A4C29AB00AA2762 /* icon_class.png */,
 				3DD0AECA1A472A830091BD16 /* LICENSE */,
 				3DD0AECB1A472A830091BD16 /* README.md */,
 				3DDFFA711A4721D200971982 /* Images.xcassets */,
@@ -357,8 +369,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D96A3031A4C2C4100AA2762 /* icon_method.png in Resources */,
 				3DBD49931A4ABB6C00C2B1C9 /* Outline.xib in Resources */,
 				3DDFFA701A4721D200971982 /* Document.xib in Resources */,
+				3D96A2FD1A4C29AB00AA2762 /* icon_class.png in Resources */,
+				3D96A3011A4C2ABC00AA2762 /* icon_unknown.png in Resources */,
 				3DFCC1C31A49711400D41481 /* SearchPopup.xib in Resources */,
 				3DDFFA721A4721D200971982 /* Images.xcassets in Resources */,
 				3DDFFA751A4721D300971982 /* MainMenu.xib in Resources */,
@@ -390,6 +405,7 @@
 				3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */,
 				3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */,
 				3DFCC1C51A49718700D41481 /* SearchPopupController.swift in Sources */,
+				3D96A3051A4C2CFF00AA2762 /* SearchPopup.swift in Sources */,
 				3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */,
 				3D6A3EE51A4ACC82002507B9 /* Outliner.swift in Sources */,
 			);

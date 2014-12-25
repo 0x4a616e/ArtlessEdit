@@ -403,6 +403,11 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Go to line" keyEquivalent="l" id="bxX-KT-hKm">
+                                <connections>
+                                    <action selector="showGotoSheet:" target="-1" id="XYo-mq-qfV"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
@@ -587,7 +592,21 @@
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="381" y="324"/>
+            <toolbar key="toolbar" implicitIdentifier="8740F395-4E5B-41B3-90F6-3EAD7AC2C0CF" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="7mm-1u-8lw">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="DwX-6t-k4J"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="hFZ-dj-FSc"/>
+                    <toolbarItem implicitItemIdentifier="F3E0CF99-14B6-4EB9-B2BB-2A7D29FBA072" label="General" paletteLabel="General" tag="-1" image="NSPreferencesGeneral" id="zdC-Cr-jeb"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="zdC-Cr-jeb"/>
+                    <toolbarItem reference="hFZ-dj-FSc"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="381" y="310"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
+    </resources>
 </document>

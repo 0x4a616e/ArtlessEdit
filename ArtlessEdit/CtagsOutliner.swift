@@ -11,30 +11,65 @@ import Foundation
 class CtagsOutliner: Outliner {
     let EMPTY_DETAILS: [OutlineInfo] = []
     
-    func getOutline(tokens: ACEView, file: NSURL) -> [OutlineInfo] {
+    let view: ACEView
+    let file: NSURL
+    
+    required init(view: ACEView, file: NSURL, mode: ACEMode) {
+        self.view = view
+        self.file = file
+    }
+    
+    func getOutline(fn: ([OutlineInfo]) -> Void) {
         if let path = file.path {
             let ctagsPath = "/usr/local/bin/ctags"
             
             if !NSFileManager.defaultManager().isExecutableFileAtPath(ctagsPath) {
                 println("Cannot find ctags at " + ctagsPath)
-                return EMPTY_DETAILS
+                return
             }
             
             let pipe = NSPipe()
-            if runCtags(ctagsPath, filePath: path, pipe: pipe) > 0 {
-                return EMPTY_DETAILS
-            }
-            
-            let data = pipe.fileHandleForReading.readDataToEndOfFile()
-            let output: String = NSString(data: data, encoding: NSUTF8StringEncoding)!
-            
-            return parseOutput(output)
-        }
+            let task = startCtags(ctagsPath, filePath: path, pipe: pipe)
         
-        return EMPTY_DETAILS
+            let handle = pipe.fileHandleForReading
+            let bufferSize = 4096
+            
+            if let delimiter = "\n".dataUsingEncoding(NSUTF8StringEncoding) {
+                if let buffer = NSMutableData(capacity: bufferSize) {
+                    var newData = handle.availableData
+                    
+                    while newData.length > 0 {
+                        buffer.appendData(newData.subdataWithRange(NSMakeRange(0, min(newData.length, bufferSize))))
+                        
+                        var outlines: [OutlineInfo] = []
+                        var lastLocation = 0
+                        var range = buffer.rangeOfData(delimiter, options: nil, range: NSMakeRange(0, buffer.length))
+                        
+                        while range.location != NSNotFound {
+                            if let line = NSString(data: buffer.subdataWithRange(NSMakeRange(lastLocation, range.location - lastLocation)), encoding: NSUTF8StringEncoding) {
+                                
+                                if let info = parseLine(line) {
+                                    outlines.append(info)
+                                }
+                            }
+                            
+                            lastLocation = range.location + 1
+                            range = buffer.rangeOfData(delimiter, options: nil, range: NSMakeRange(lastLocation, buffer.length - lastLocation))
+                        }
+                        
+                        if (outlines.count > 0) {
+                            fn(outlines)
+                        }
+                        
+                        buffer.replaceBytesInRange(NSMakeRange(0, lastLocation), withBytes: nil, length: 0)
+                        newData = handle.availableData
+                    }
+                }
+            }
+        }
     }
     
-    func runCtags(ctagsPath: String, filePath: String, pipe: NSPipe) -> Int32 {
+    func startCtags(ctagsPath: String, filePath: String, pipe: NSPipe) -> NSTask {
         let task = NSTask()
         task.launchPath = ctagsPath
         task.arguments = ["-x", filePath]
@@ -42,9 +77,8 @@ class CtagsOutliner: Outliner {
         
         task.standardOutput = pipe
         task.launch()
-        task.waitUntilExit()
         
-        return task.terminationStatus
+        return task
     }
     
     func parseOutput(output: String) -> [OutlineInfo] {
@@ -61,5 +95,17 @@ class CtagsOutliner: Outliner {
         }
         
         return result.filter{$0.type == "method" || $0.type == "class"}
+    }
+    
+    func parseLine(line: String) -> OutlineInfo? {
+        let components = line.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).filter{!$0.isEmpty}
+        
+        if components.count > 2 {
+            if let number = components[2].toInt() {
+                return OutlineInfo(name: components[0], type: components[1], line: number)
+            }
+        }
+        
+        return nil
     }
 }

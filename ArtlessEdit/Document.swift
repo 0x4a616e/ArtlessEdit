@@ -11,10 +11,11 @@ import Cocoa
 class Document: NSDocument {
     
     @IBOutlet weak var aceView: ACEView!
+    @IBOutlet var goToPanel: NSWindow!
     
     lazy var outlineController = OutlineController(windowNibName: "Outline")
-    var mode: ACEMode = ACEModeASCIIDoc
     
+    var mode: ACEMode = ACEModeASCIIDoc
     let encoding = NSUTF8StringEncoding
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
     let THEME_KEY = "THEME"
@@ -28,6 +29,22 @@ class Document: NSDocument {
         if (fileURL != nil) {
             outlineController.showWindow(sender, aceView: aceView, mode: mode, file: fileURL!)
         }
+    }
+    
+    func showGotoSheet(sender: AnyObject) {
+        windowForSheet?.beginSheet(goToPanel, completionHandler: nil)
+    }
+
+    @IBAction func goToLine(sender: AnyObject) {
+        if let textField = sender as? NSTextField {
+            aceView.gotoLine(textField.integerValue, column: 0, animated: false)
+        }
+        
+        closeSheet(sender)
+    }
+    
+    @IBAction func closeSheet(sender: AnyObject) {
+        windowForSheet?.endSheet(goToPanel)
     }
     
     func setModeName(menuItem: NSMenuItem) {
