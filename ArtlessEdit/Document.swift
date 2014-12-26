@@ -12,13 +12,14 @@ class Document: NSDocument {
     
     @IBOutlet weak var aceView: ACEView!
     @IBOutlet var goToPanel: NSWindow!
+    @IBOutlet weak var editorSettings: NSScrollView!
     
     lazy var outlineController = OutlineController(windowNibName: "Outline")
     
+    var editorSettingsController: EditorSettingsViewController? = nil
     var mode: ACEMode = ACEModeASCIIDoc
     let encoding = NSUTF8StringEncoding
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
-    let THEME_KEY = "THEME"
     var fileContent: String = ""
     
     override init() {
@@ -51,14 +52,6 @@ class Document: NSDocument {
         var modeNames:NSArray = ACEModeNames.humanModeNames()
         var index = modeNames.indexOfObject(menuItem.title)
         aceView.setMode(UInt(index))
-    }
-    
-    func setThemeName(menuItem: NSMenuItem) {
-        var themeNames:NSArray = ACEThemeNames.humanThemeNames()
-        var index = themeNames.indexOfObject(menuItem.title)
-        
-        userDefaults.setInteger(index, forKey: THEME_KEY)
-        aceView.setTheme(UInt(index))
     }
     
     func getModeIndexForType(type: String) -> UInt? {
@@ -104,9 +97,13 @@ class Document: NSDocument {
         }
         
         aceView.borderType = NSBorderType.NoBorder
-        aceView.setTheme(UInt(userDefaults.integerForKey(THEME_KEY)))
         aceView.setString(fileContent)
         fileContent = ""
+        
+        let settings = EditorSessionSettings(aceView: aceView)
+        settings.loadDefaults(EditorDefaultSettings())
+        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", bundle: nil, handler: settings)
+        editorSettings.documentView = editorSettingsController?.view
     }
     
     override class func autosavesInPlace() -> Bool {
@@ -136,6 +133,10 @@ class Document: NSDocument {
         }
         
         return true
+    }
+    
+    override func printOperationWithSettings(printSettings: [NSObject : AnyObject], error outError: NSErrorPointer) -> NSPrintOperation? {
+        return nil
     }
     
     

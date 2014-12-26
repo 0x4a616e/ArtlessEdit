@@ -13,6 +13,7 @@
 #import "ACEView/ACEToken.h"
 #import "ACEView/ACEModeNames.h"
 #import "ACEView/ACEThemeNames.h"
+#import "ACEView/ACEKeyboardHandlers.h"
 #import "ACEView/ACEKeyboardHandlerNames.h"
 
 #endif

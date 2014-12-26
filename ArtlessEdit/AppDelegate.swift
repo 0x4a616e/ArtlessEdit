@@ -12,13 +12,16 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var mode: NSMenuItem!
-    @IBOutlet weak var theme: NSMenuItem!
+    @IBOutlet weak var editorSettings: NSScrollView!
     
+    var editorSettingsController: EditorSettingsViewController? = nil
     lazy var quickOpenController: SearchPopupController = SearchPopupController(windowNibName: "SearchPopup")
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         createSubMenu(ACEModeNames.humanModeNames(), targetMenu: mode, selector: Selector("setModeName:"))
-        createSubMenu(ACEThemeNames.humanThemeNames(), targetMenu: theme, selector: Selector("setThemeName:"))
+        
+        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", bundle: nil, handler: EditorDefaultSettings())
+        editorSettings.documentView = editorSettingsController?.view
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {

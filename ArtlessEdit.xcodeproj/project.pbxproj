@@ -30,6 +30,15 @@
 		3DDFFA721A4721D200971982 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFFA711A4721D200971982 /* Images.xcassets */; };
 		3DDFFA751A4721D300971982 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFFA731A4721D300971982 /* MainMenu.xib */; };
 		3DDFFA811A4721D300971982 /* ArtlessEditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA801A4721D300971982 /* ArtlessEditTests.swift */; };
+		3DE8B44F1A4D6D0E00C537C1 /* SplitViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B44E1A4D6D0E00C537C1 /* SplitViewDelegate.swift */; };
+		3DE8B4531A4D702800C537C1 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4521A4D702800C537C1 /* SideBar.swift */; };
+		3DE8B4551A4D70D100C537C1 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4541A4D70D100C537C1 /* SplitViewController.swift */; };
+		3DE8B4571A4D7F8500C537C1 /* EditorSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE8B4561A4D7F8500C537C1 /* EditorSettingsView.xib */; };
+		3DE8B45B1A4D83BF00C537C1 /* EditorSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B45A1A4D83BF00C537C1 /* EditorSettingsViewController.swift */; };
+		3DE8B4601A4D8CED00C537C1 /* EditorSessionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */; };
+		3DE8B4621A4D90AC00C537C1 /* EditorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */; };
+		3DE8B4641A4DA4A800C537C1 /* EditorSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4631A4DA4A800C537C1 /* EditorSettingsView.swift */; };
+		3DE8B4661A4DA9D900C537C1 /* EditorDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */; };
 		3DFCC1C31A49711400D41481 /* SearchPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFCC1C21A49711400D41481 /* SearchPopup.xib */; };
 		3DFCC1C51A49718700D41481 /* SearchPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFCC1C41A49718700D41481 /* SearchPopupController.swift */; };
 /* End PBXBuildFile section */
@@ -115,6 +124,15 @@
 		3DDFFA801A4721D300971982 /* ArtlessEditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtlessEditTests.swift; sourceTree = "<group>"; };
 		3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ACEView.xcodeproj; path = ../ACEView/ACEView.xcodeproj; sourceTree = "<group>"; };
 		3DDFFA961A47223700971982 /* ACEViewBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEViewBridge.h; sourceTree = "<group>"; };
+		3DE8B44E1A4D6D0E00C537C1 /* SplitViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewDelegate.swift; sourceTree = "<group>"; };
+		3DE8B4521A4D702800C537C1 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		3DE8B4541A4D70D100C537C1 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		3DE8B4561A4D7F8500C537C1 /* EditorSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditorSettingsView.xib; sourceTree = "<group>"; };
+		3DE8B45A1A4D83BF00C537C1 /* EditorSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsViewController.swift; sourceTree = "<group>"; };
+		3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSessionSettings.swift; sourceTree = "<group>"; };
+		3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettings.swift; sourceTree = "<group>"; };
+		3DE8B4631A4DA4A800C537C1 /* EditorSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsView.swift; sourceTree = "<group>"; };
+		3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorDefaultSettings.swift; sourceTree = "<group>"; };
 		3DFCC1C21A49711400D41481 /* SearchPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPopup.xib; sourceTree = "<group>"; };
 		3DFCC1C41A49718700D41481 /* SearchPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,8 +223,12 @@
 				3DD0AEC71A4728190091BD16 /* controls */,
 				3DDFFA6A1A4721D200971982 /* AppDelegate.swift */,
 				3DDFFA6C1A4721D200971982 /* Document.swift */,
+				3DE8B44E1A4D6D0E00C537C1 /* SplitViewDelegate.swift */,
+				3DE8B4541A4D70D100C537C1 /* SplitViewController.swift */,
+				3DE8B4521A4D702800C537C1 /* SideBar.swift */,
 				3D458A3C1A4982BA00FB72A7 /* SearchPopup */,
 				3DDFFA6E1A4721D200971982 /* Document.xib */,
+				3DE8B45C1A4D8BFD00C537C1 /* Settings */,
 				3DDFFA731A4721D300971982 /* MainMenu.xib */,
 				3DDFFA681A4721D200971982 /* Supporting Files */,
 				3D6A3EDF1A4ACC11002507B9 /* Outline */,
@@ -255,6 +277,19 @@
 				3DDFFA951A47221600971982 /* ACEViewTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3DE8B45C1A4D8BFD00C537C1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */,
+				3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */,
+				3DE8B4561A4D7F8500C537C1 /* EditorSettingsView.xib */,
+				3DE8B4631A4DA4A800C537C1 /* EditorSettingsView.swift */,
+				3DE8B45A1A4D83BF00C537C1 /* EditorSettingsViewController.swift */,
+				3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +412,7 @@
 				3DFCC1C31A49711400D41481 /* SearchPopup.xib in Resources */,
 				3DDFFA721A4721D200971982 /* Images.xcassets in Resources */,
 				3DDFFA751A4721D300971982 /* MainMenu.xib in Resources */,
+				3DE8B4571A4D7F8500C537C1 /* EditorSettingsView.xib in Resources */,
 				3DD0AECD1A472B720091BD16 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D458A371A4977EB00FB72A7 /* SearchPopupData.swift in Sources */,
+				3DE8B44F1A4D6D0E00C537C1 /* SplitViewDelegate.swift in Sources */,
 				3D6646341A4722C000D8908E /* PasteHistory.swift in Sources */,
 				3DBD49971A4ABB7800C2B1C9 /* OutlineController.swift in Sources */,
 				3D458A3E1A4995A100FB72A7 /* RecentFileData.swift in Sources */,
@@ -403,11 +440,18 @@
 				3DDFFA6D1A4721D200971982 /* Document.swift in Sources */,
 				3D6A3EE91A4ACE5C002507B9 /* CtagsOutliner.swift in Sources */,
 				3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */,
+				3DE8B4661A4DA9D900C537C1 /* EditorDefaultSettings.swift in Sources */,
 				3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */,
+				3DE8B4531A4D702800C537C1 /* SideBar.swift in Sources */,
+				3DE8B4641A4DA4A800C537C1 /* EditorSettingsView.swift in Sources */,
 				3DFCC1C51A49718700D41481 /* SearchPopupController.swift in Sources */,
+				3DE8B4621A4D90AC00C537C1 /* EditorSettings.swift in Sources */,
 				3D96A3051A4C2CFF00AA2762 /* SearchPopup.swift in Sources */,
 				3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */,
 				3D6A3EE51A4ACC82002507B9 /* Outliner.swift in Sources */,
+				3DE8B4601A4D8CED00C537C1 /* EditorSessionSettings.swift in Sources */,
+				3DE8B45B1A4D83BF00C537C1 /* EditorSettingsViewController.swift in Sources */,
+				3DE8B4551A4D70D100C537C1 /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
