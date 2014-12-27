@@ -136,7 +136,7 @@ class Document: NSDocument {
     }
     
     override func printOperationWithSettings(printSettings: [NSObject : AnyObject], error outError: NSErrorPointer) -> NSPrintOperation? {
-        return nil
+        return NSPrintOperation(view: aceView.webView.mainFrame.frameView)
     }
     
     

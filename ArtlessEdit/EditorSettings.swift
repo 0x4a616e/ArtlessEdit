@@ -24,9 +24,6 @@ protocol EditorSettings {
     func setShowInvisibles(enabled: Bool)
     func getShowInvisibles() -> Bool
     
-    func setShowGutter(enabled: Bool)
-    func getShowGutter() -> Bool
-    
     func setShowPrintMargin(enabled: Bool)
     func getShowPrintMargin() -> Bool
     
@@ -35,6 +32,9 @@ protocol EditorSettings {
     
     func setUseSoftTabs(enabled: Bool)
     func getUseSoftTabs() -> Bool
+    
+    func setTabSize(enabled: Int)
+    func getTabSize() -> Int
     
     func setDisplayIndentGuides(enabled: Bool)
     func getDisplayIndentGuides() -> Bool

@@ -15,11 +15,11 @@ class EditorDefaultSettings: EditorSettings {
     let CODE_FOLDING = "CodeFolding"
     let SOFT_WRAP = "SoftWrap"
     let SHOW_INVISIBLES = "ShowInvisibles"
-    let SHOW_GUTTER = "ShowGutter"
     let PRINT_MARGIN = "PrintMargin"
     let ACTIVE_LINE = "ActiveLine"
     let SOFT_TABS = "SoftTabs"
     let INDENT_GUIDES = "IndentGuides"
+    let TAB_SIZE = "TabSize"
     
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
 
@@ -67,14 +67,6 @@ class EditorDefaultSettings: EditorSettings {
         return userDefaults.boolForKey(SHOW_INVISIBLES)
     }
 
-    func setShowGutter(enabled: Bool){
-        userDefaults.setBool(enabled, forKey: SHOW_GUTTER)
-    }
-    
-    func getShowGutter() -> Bool {
-        return userDefaults.boolForKey(SHOW_GUTTER)
-    }
-
     func setShowPrintMargin(enabled: Bool){
         userDefaults.setBool(enabled, forKey: PRINT_MARGIN)
     }
@@ -97,6 +89,14 @@ class EditorDefaultSettings: EditorSettings {
     
     func getUseSoftTabs() -> Bool {
         return userDefaults.boolForKey(SOFT_TABS)
+    }
+    
+    func setTabSize(enabled: Int){
+        userDefaults.setInteger(enabled, forKey: TAB_SIZE)
+    }
+    
+    func getTabSize() -> Int {
+        return userDefaults.integerForKey(TAB_SIZE)
     }
 
     func setDisplayIndentGuides(enabled: Bool){

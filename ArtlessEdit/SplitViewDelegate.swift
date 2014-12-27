@@ -10,6 +10,8 @@ import Foundation
 
 class SplitViewDelegate: NSObject, NSSplitViewDelegate {
     
+    let sidebarSize:CGFloat = 150
+    
     func splitView(splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
         return subview.identifier == "Sidebar"
     }

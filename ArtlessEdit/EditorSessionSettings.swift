@@ -18,11 +18,11 @@ class EditorSessionSettings: EditorSettings {
     var codeFolding = false
     var softWraps = false
     var showInvisibles = false
-    var showGutter = false
     var showPrintMargin = false
     var highlightActiveLine = false
     var useSoftTabs = false
     var displayIndentGuides = false
+    var tabSize = 0
     
     init(aceView: ACEView) {
         self.aceView = aceView
@@ -44,9 +44,6 @@ class EditorSessionSettings: EditorSettings {
         showInvisibles = defaults.getShowInvisibles()
         setShowInvisibles(showInvisibles)
         
-        showGutter = defaults.getShowGutter()
-        setShowGutter(showGutter)
-        
         showPrintMargin = defaults.getShowPrintMargin()
         setShowPrintMargin(showPrintMargin)
         
@@ -55,6 +52,11 @@ class EditorSessionSettings: EditorSettings {
         
         useSoftTabs = defaults.getUseSoftTabs()
         setUseSoftTabs(useSoftTabs)
+        
+        tabSize = defaults.getTabSize()
+        if (useSoftTabs) {
+            setTabSize(tabSize)
+        }
         
         displayIndentGuides = defaults.getDisplayIndentGuides()
         setDisplayIndentGuides(displayIndentGuides)
@@ -89,13 +91,13 @@ class EditorSessionSettings: EditorSettings {
     
     func setSoftWrap(enabled: Bool) {
         softWraps = enabled
+        aceView.setUseSoftWrap(softWraps)
     }
     
     func getSoftWrap() -> Bool {
         return softWraps
     }
 
-    
     func setShowInvisibles(enabled: Bool) {
         showInvisibles = enabled
         aceView.setShowInvisibles(enabled)
@@ -104,25 +106,15 @@ class EditorSessionSettings: EditorSettings {
     func getShowInvisibles() -> Bool {
         return showInvisibles
     }
-
-    
-    func setShowGutter(enabled: Bool) {
-        showGutter = enabled
-    }
-    
-    func getShowGutter() -> Bool {
-        return showGutter
-    }
-
     
     func setShowPrintMargin(enabled: Bool) {
         showPrintMargin = enabled
+        aceView.setShowPrintMargin(showPrintMargin)
     }
     
     func getShowPrintMargin() -> Bool {
         return showPrintMargin
     }
-
     
     func setHighlightActiveLine(enabled: Bool) {
         highlightActiveLine = enabled
@@ -132,19 +124,28 @@ class EditorSessionSettings: EditorSettings {
     func getHighlightActiveLine() -> Bool {
         return highlightActiveLine
     }
-
     
     func setUseSoftTabs(enabled: Bool) {
         useSoftTabs = enabled
+        aceView.setUseSoftTabs(useSoftTabs)
     }
     
     func getUseSoftTabs() -> Bool {
         return useSoftTabs
     }
-
     
+    func setTabSize(enabled: Int){
+        tabSize = enabled
+        aceView.setTabSize(enabled)
+    }
+    
+    func getTabSize() -> Int {
+        return tabSize
+    }
+
     func setDisplayIndentGuides(enabled: Bool) {
         displayIndentGuides = enabled
+        aceView.setDisplayIndentGuides(displayIndentGuides)
     }
     
     func getDisplayIndentGuides() -> Bool {

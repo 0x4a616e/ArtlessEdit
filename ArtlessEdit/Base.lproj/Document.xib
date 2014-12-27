@@ -16,7 +16,6 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="133" y="235" width="556" height="455"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="94" height="86"/>
@@ -28,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="556" height="455"/>
                         <subviews>
                             <customView identifier="Sidebar" id="j1q-Ka-wTf" customClass="NSVisualEffectView">
-                                <rect key="frame" x="0.0" y="0.0" width="161" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="455"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="idk-XH-0fw">
@@ -39,15 +38,13 @@
                                             <subviews>
                                                 <view misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4C-8s-udo">
                                                     <rect key="frame" x="0.0" y="361" width="161" height="431"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="431" id="mX0-HY-jKP"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="j4C-8s-udo" firstAttribute="top" secondItem="kd3-ON-fIq" secondAttribute="top" constant="24" id="YAC-zK-lgh"/>
-                                                <constraint firstItem="j4C-8s-udo" firstAttribute="leading" secondItem="kd3-ON-fIq" secondAttribute="leading" id="uxc-BX-eQE"/>
-                                                <constraint firstAttribute="trailing" secondItem="j4C-8s-udo" secondAttribute="trailing" id="y6w-Zd-Zdr"/>
+                                                <constraint firstAttribute="trailing" secondItem="j4C-8s-udo" secondAttribute="trailing" id="9TG-Ua-tWa"/>
+                                                <constraint firstItem="j4C-8s-udo" firstAttribute="top" secondItem="kd3-ON-fIq" secondAttribute="top" constant="24" id="VOR-QA-VXY"/>
+                                                <constraint firstAttribute="bottom" secondItem="j4C-8s-udo" secondAttribute="bottom" id="ZpT-N3-x0i"/>
+                                                <constraint firstItem="j4C-8s-udo" firstAttribute="leading" secondItem="kd3-ON-fIq" secondAttribute="leading" id="u5C-Za-Lbg"/>
                                             </constraints>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="FOl-Lr-O9B">
@@ -61,20 +58,20 @@
                                     </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="idk-XH-0fw" firstAttribute="leading" secondItem="j1q-Ka-wTf" secondAttribute="leading" id="0Hi-Qy-LQz"/>
-                                    <constraint firstAttribute="bottom" secondItem="idk-XH-0fw" secondAttribute="bottom" id="1DM-gS-k8m"/>
-                                    <constraint firstAttribute="trailing" secondItem="idk-XH-0fw" secondAttribute="trailing" id="7X9-5j-h1B"/>
-                                    <constraint firstItem="idk-XH-0fw" firstAttribute="top" secondItem="j1q-Ka-wTf" secondAttribute="top" id="8Gp-g5-nGo"/>
+                                    <constraint firstAttribute="bottom" secondItem="idk-XH-0fw" secondAttribute="bottom" id="5wa-F7-mW5"/>
+                                    <constraint firstItem="idk-XH-0fw" firstAttribute="top" secondItem="j1q-Ka-wTf" secondAttribute="top" id="LXG-bh-MbS"/>
+                                    <constraint firstItem="idk-XH-0fw" firstAttribute="leading" secondItem="j1q-Ka-wTf" secondAttribute="leading" id="cqq-nM-P4v"/>
+                                    <constraint firstAttribute="trailing" secondItem="idk-XH-0fw" secondAttribute="trailing" constant="5" id="trO-fn-nEV"/>
                                 </constraints>
                             </customView>
                             <customView fixedFrame="YES" id="CZA-ix-feA" customClass="ACEView">
-                                <rect key="frame" x="162" y="0.0" width="394" height="455"/>
+                                <rect key="frame" x="167" y="0.0" width="389" height="455"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </customView>
                         </subviews>
                         <holdingPriorities>
-                            <real value="250"/>
-                            <real value="250"/>
+                            <real value="301"/>
+                            <real value="140"/>
                         </holdingPriorities>
                         <connections>
                             <outlet property="delegate" destination="KxQ-p1-ZqK" id="JnZ-lz-mmn"/>
@@ -82,10 +79,10 @@
                     </splitView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="uf6-OK-s5L" secondAttribute="bottom" id="BVa-Dw-OyX"/>
-                    <constraint firstItem="uf6-OK-s5L" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="KSW-gB-Bvg"/>
-                    <constraint firstAttribute="trailing" secondItem="uf6-OK-s5L" secondAttribute="trailing" id="fY2-tK-948"/>
-                    <constraint firstItem="uf6-OK-s5L" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="t4J-5S-621"/>
+                    <constraint firstAttribute="trailing" secondItem="uf6-OK-s5L" secondAttribute="trailing" id="OQm-28-mtY"/>
+                    <constraint firstItem="uf6-OK-s5L" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="ZKY-9M-vCi"/>
+                    <constraint firstItem="uf6-OK-s5L" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="bdQ-ae-n7U"/>
+                    <constraint firstAttribute="bottom" secondItem="uf6-OK-s5L" secondAttribute="bottom" id="zww-sn-7R8"/>
                 </constraints>
             </view>
             <connections>

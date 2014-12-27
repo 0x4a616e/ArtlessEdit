@@ -15,11 +15,11 @@ class EditorSettingsViewController: NSViewController {
     @IBOutlet weak var softWrapsButton: NSButton!
     @IBOutlet weak var codeFoldingButton: NSButton!
     @IBOutlet weak var invisibleCharactersButton: NSButton!
-    @IBOutlet weak var lineNumbersButton: NSButton!
     @IBOutlet weak var printMarginButton: NSButton!
     @IBOutlet weak var highlightActiveLineButton: NSButton!
     @IBOutlet weak var softTabsButton: NSButton!
     @IBOutlet weak var indentationGuidesButton: NSButton!
+    @IBOutlet weak var tabSizeField: NSTextField!
     
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
     
@@ -40,10 +40,10 @@ class EditorSettingsViewController: NSViewController {
         bindingsBox.addItemsWithObjectValues(ACEKeyboardHandlerNames.humanKeyboardHandlerNames())
         bindingsBox.selectItemAtIndex(Int(handler.getKeyBindings().rawValue))
         
+        tabSizeField.integerValue = handler.getTabSize()
         softWrapsButton.state = toState(handler.getSoftWrap())
         codeFoldingButton.state = toState(handler.getCodeFolding())
         invisibleCharactersButton.state = toState(handler.getShowInvisibles())
-        lineNumbersButton.state = toState(handler.getShowGutter())
         printMarginButton.state = toState(handler.getShowPrintMargin())
         highlightActiveLineButton.state = toState(handler.getHighlightActiveLine())
         softTabsButton.state = toState(handler.getUseSoftTabs())
@@ -66,6 +66,13 @@ class EditorSettingsViewController: NSViewController {
         }
     }
     
+    @IBAction func setTabSize(sender: NSTextField) {
+        let size = sender.integerValue
+        if size > 0 {
+            handler.setTabSize(size)
+        }
+    }
+    
     @IBAction func setCodeFolding(sender: NSButton) {
         handler.setCodeFolding(sender.state != NSOffState)
     }
@@ -78,10 +85,6 @@ class EditorSettingsViewController: NSViewController {
         handler.setShowInvisibles(sender.state != NSOffState)
     }
     
-    @IBAction func setShowGutter(sender: NSButton) {
-        handler.setShowGutter(sender.state != NSOffState)
-    }
-    
     @IBAction func setShowPrintMargin(sender: NSButton) {
         handler.setShowPrintMargin(sender.state != NSOffState)
     }
@@ -91,7 +94,12 @@ class EditorSettingsViewController: NSViewController {
     }
     
     @IBAction func setUseSoftTabs(sender: NSButton) {
-        handler.setUseSoftTabs(sender.state != NSOffState)
+        let state = sender.state != NSOffState
+        handler.setUseSoftTabs(state)
+        tabSizeField.enabled = state
+        if (state) {
+            tabSizeField.integerValue = handler.getTabSize()
+        }
     }
     
     @IBAction func setDisplayIndentGuides(sender: NSButton) {
