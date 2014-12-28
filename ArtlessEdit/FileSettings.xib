@@ -71,8 +71,6 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <objectValues>
                             <string>Mac</string>
-                            <string>Windows</string>
-                            <string>Linux</string>
                         </objectValues>
                     </comboBoxCell>
                 </comboBox>
