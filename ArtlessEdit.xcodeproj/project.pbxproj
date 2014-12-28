@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D29A4A81A4EBC7F00D1EB55 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3D29A4A71A4EBC7F00D1EB55 /* icon.icns */; };
 		3D29A4B01A4EBE7C00D1EB55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D29A4AF1A4EBE7C00D1EB55 /* Images.xcassets */; };
+		3D29A4B61A4F12A400D1EB55 /* DefaultSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29A4B51A4F12A400D1EB55 /* DefaultSettingsViewController.swift */; };
+		3D29A4B81A4F212D00D1EB55 /* DefaultSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D29A4B71A4F212D00D1EB55 /* DefaultSettingsView.xib */; };
 		3D31008F1A48344E0073ED36 /* ACEView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DDFFA911A47221600971982 /* ACEView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D458A371A4977EB00FB72A7 /* SearchPopupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */; };
 		3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D458A3A1A497D1B00FB72A7 /* OpenFileData.swift */; };
@@ -96,8 +97,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3D29A4A71A4EBC7F00D1EB55 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		3D29A4AF1A4EBE7C00D1EB55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3D29A4B51A4F12A400D1EB55 /* DefaultSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSettingsViewController.swift; sourceTree = "<group>"; };
+		3D29A4B71A4F212D00D1EB55 /* DefaultSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultSettingsView.xib; sourceTree = "<group>"; };
 		3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopupData.swift; sourceTree = "<group>"; };
 		3D458A3A1A497D1B00FB72A7 /* OpenFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFileData.swift; sourceTree = "<group>"; };
 		3D458A3D1A4995A100FB72A7 /* RecentFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentFileData.swift; sourceTree = "<group>"; };
@@ -232,6 +234,8 @@
 				3DDFFA6E1A4721D200971982 /* Document.xib */,
 				3DE8B45C1A4D8BFD00C537C1 /* Settings */,
 				3DDFFA731A4721D300971982 /* MainMenu.xib */,
+				3D29A4B51A4F12A400D1EB55 /* DefaultSettingsViewController.swift */,
+				3D29A4B71A4F212D00D1EB55 /* DefaultSettingsView.xib */,
 				3DDFFA681A4721D200971982 /* Supporting Files */,
 				3D6A3EDF1A4ACC11002507B9 /* Outline */,
 			);
@@ -242,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				3D29A4AF1A4EBE7C00D1EB55 /* Images.xcassets */,
-				3D29A4A71A4EBC7F00D1EB55 /* icon.icns */,
 				3D96A3021A4C2C4100AA2762 /* icon_method.png */,
 				3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */,
 				3D96A2FC1A4C29AB00AA2762 /* icon_class.png */,
@@ -409,8 +412,8 @@
 			files = (
 				3D96A3031A4C2C4100AA2762 /* icon_method.png in Resources */,
 				3DBD49931A4ABB6C00C2B1C9 /* Outline.xib in Resources */,
-				3D29A4A81A4EBC7F00D1EB55 /* icon.icns in Resources */,
 				3DDFFA701A4721D200971982 /* Document.xib in Resources */,
+				3D29A4B81A4F212D00D1EB55 /* DefaultSettingsView.xib in Resources */,
 				3D29A4B01A4EBE7C00D1EB55 /* Images.xcassets in Resources */,
 				3D96A2FD1A4C29AB00AA2762 /* icon_class.png in Resources */,
 				3D96A3011A4C2ABC00AA2762 /* icon_unknown.png in Resources */,
@@ -440,6 +443,7 @@
 				3D6646341A4722C000D8908E /* PasteHistory.swift in Sources */,
 				3DBD49971A4ABB7800C2B1C9 /* OutlineController.swift in Sources */,
 				3D458A3E1A4995A100FB72A7 /* RecentFileData.swift in Sources */,
+				3D29A4B61A4F12A400D1EB55 /* DefaultSettingsViewController.swift in Sources */,
 				3D458A401A4995D000FB72A7 /* FileData.swift in Sources */,
 				3DDFFA6D1A4721D200971982 /* Document.swift in Sources */,
 				3D6A3EE91A4ACE5C002507B9 /* CtagsOutliner.swift in Sources */,

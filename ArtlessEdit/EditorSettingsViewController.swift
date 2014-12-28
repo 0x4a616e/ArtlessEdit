@@ -33,23 +33,28 @@ class EditorSettingsViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        themeBox.addItemsWithObjectValues(ACEThemeNames.humanThemeNames())
-        themeBox.selectItemAtIndex(handler.getTheme())
-        
-        bindingsBox.addItemsWithObjectValues(ACEKeyboardHandlerNames.humanKeyboardHandlerNames())
-        bindingsBox.selectItemAtIndex(Int(handler.getKeyBindings().rawValue))
-        
-        tabSizeField.integerValue = handler.getTabSize()
-        softWrapsButton.state = toState(handler.getSoftWrap())
-        codeFoldingButton.state = toState(handler.getCodeFolding())
-        invisibleCharactersButton.state = toState(handler.getShowInvisibles())
-        printMarginButton.state = toState(handler.getShowPrintMargin())
-        highlightActiveLineButton.state = toState(handler.getHighlightActiveLine())
-        softTabsButton.state = toState(handler.getUseSoftTabs())
-        indentationGuidesButton.state = toState(handler.getDisplayIndentGuides())
+     
+        loadSettings(handler)
     }
 
+    func loadSettings(settings: EditorSettings) {
+        themeBox.addItemsWithObjectValues(ACEThemeNames.humanThemeNames())
+        themeBox.selectItemAtIndex(settings.getTheme())
+        
+        bindingsBox.addItemsWithObjectValues(ACEKeyboardHandlerNames.humanKeyboardHandlerNames())
+        bindingsBox.selectItemAtIndex(Int(settings.getKeyBindings().rawValue))
+        
+        tabSizeField.integerValue = settings.getTabSize()
+        softWrapsButton.state = toState(settings.getSoftWrap())
+        codeFoldingButton.state = toState(settings.getCodeFolding())
+        invisibleCharactersButton.state = toState(settings.getShowInvisibles())
+        printMarginButton.state = toState(settings.getShowPrintMargin())
+        highlightActiveLineButton.state = toState(settings.getHighlightActiveLine())
+        softTabsButton.state = toState(settings.getUseSoftTabs())
+        indentationGuidesButton.state = toState(settings.getDisplayIndentGuides())
+
+    }
+    
     func toState(val: Bool) -> Int {
         return (val) ? NSOnState : NSOffState
     }

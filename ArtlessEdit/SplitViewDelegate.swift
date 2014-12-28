@@ -27,4 +27,5 @@ class SplitViewDelegate: NSObject, NSSplitViewDelegate {
             
         return subview.identifier == "Sidebar"
     }
+
 }

@@ -90,10 +90,11 @@ class Document: NSDocument {
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         
-        
+        let defaultSettings = EditorDefaultSettings()
         if let modeIndex = getModeIndex() {
             mode = ACEMode(modeIndex)
             aceView.setMode(modeIndex)
+            defaultSettings.setMode(mode)
         }
         
         aceView.borderType = NSBorderType.NoBorder
@@ -101,7 +102,7 @@ class Document: NSDocument {
         fileContent = ""
         
         let settings = EditorSessionSettings(aceView: aceView)
-        settings.loadDefaults(EditorDefaultSettings())
+        settings.loadDefaults(defaultSettings)
         editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", bundle: nil, handler: settings)
         editorSettings.documentView = editorSettingsController?.view
     }

@@ -16,38 +16,38 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
-            <rect key="contentRect" x="133" y="235" width="556" height="455"/>
+            <rect key="contentRect" x="133" y="235" width="600" height="400"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <value key="minSize" type="size" width="94" height="86"/>
+            <value key="minSize" type="size" width="600" height="400"/>
             <view key="contentView" id="gIp-Ho-8D9">
-                <rect key="frame" x="0.0" y="0.0" width="556" height="455"/>
+                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uf6-OK-s5L">
-                        <rect key="frame" x="0.0" y="0.0" width="556" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <subviews>
                             <customView identifier="Sidebar" id="j1q-Ka-wTf" customClass="NSVisualEffectView">
-                                <rect key="frame" x="0.0" y="0.0" width="166" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="idk-XH-0fw">
-                                        <rect key="frame" x="0.0" y="0.0" width="161" height="455"/>
+                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="idk-XH-0fw">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="400"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="kd3-ON-fIq">
                                             <rect key="frame" x="1" y="1" width="181" height="94"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <view misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4C-8s-udo">
-                                                    <rect key="frame" x="0.0" y="361" width="161" height="431"/>
+                                                <view translatesAutoresizingMaskIntoConstraints="NO" id="j4C-8s-udo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="166" height="376"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="j4C-8s-udo" secondAttribute="trailing" id="9TG-Ua-tWa"/>
-                                                <constraint firstItem="j4C-8s-udo" firstAttribute="top" secondItem="kd3-ON-fIq" secondAttribute="top" constant="24" id="VOR-QA-VXY"/>
-                                                <constraint firstAttribute="bottom" secondItem="j4C-8s-udo" secondAttribute="bottom" id="ZpT-N3-x0i"/>
-                                                <constraint firstItem="j4C-8s-udo" firstAttribute="leading" secondItem="kd3-ON-fIq" secondAttribute="leading" id="u5C-Za-Lbg"/>
+                                                <constraint firstAttribute="bottom" secondItem="j4C-8s-udo" secondAttribute="bottom" id="7Cf-ga-Pms"/>
+                                                <constraint firstAttribute="trailing" secondItem="j4C-8s-udo" secondAttribute="trailing" id="LHW-FE-pvY"/>
+                                                <constraint firstItem="j4C-8s-udo" firstAttribute="leading" secondItem="kd3-ON-fIq" secondAttribute="leading" id="Tzq-9Y-Awx"/>
+                                                <constraint firstItem="j4C-8s-udo" firstAttribute="top" secondItem="kd3-ON-fIq" secondAttribute="top" constant="24" id="YfG-a5-K2V"/>
                                             </constraints>
                                         </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="FOl-Lr-O9B">
+                                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="FOl-Lr-O9B">
                                             <rect key="frame" x="1" y="79" width="181" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -58,14 +58,14 @@
                                     </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="idk-XH-0fw" secondAttribute="bottom" id="5wa-F7-mW5"/>
-                                    <constraint firstItem="idk-XH-0fw" firstAttribute="top" secondItem="j1q-Ka-wTf" secondAttribute="top" id="LXG-bh-MbS"/>
-                                    <constraint firstItem="idk-XH-0fw" firstAttribute="leading" secondItem="j1q-Ka-wTf" secondAttribute="leading" id="cqq-nM-P4v"/>
-                                    <constraint firstAttribute="trailing" secondItem="idk-XH-0fw" secondAttribute="trailing" constant="5" id="trO-fn-nEV"/>
+                                    <constraint firstAttribute="trailing" secondItem="idk-XH-0fw" secondAttribute="trailing" id="1aF-pt-fdG"/>
+                                    <constraint firstItem="idk-XH-0fw" firstAttribute="top" secondItem="j1q-Ka-wTf" secondAttribute="top" id="OHe-3y-Rfv"/>
+                                    <constraint firstItem="idk-XH-0fw" firstAttribute="leading" secondItem="j1q-Ka-wTf" secondAttribute="leading" id="jxT-r6-ZDT"/>
+                                    <constraint firstAttribute="bottom" secondItem="idk-XH-0fw" secondAttribute="bottom" id="mlW-WW-sTt"/>
                                 </constraints>
                             </customView>
                             <customView fixedFrame="YES" id="CZA-ix-feA" customClass="ACEView">
-                                <rect key="frame" x="167" y="0.0" width="389" height="455"/>
+                                <rect key="frame" x="167" y="0.0" width="433" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </customView>
                         </subviews>
@@ -79,17 +79,17 @@
                     </splitView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="uf6-OK-s5L" secondAttribute="trailing" id="OQm-28-mtY"/>
-                    <constraint firstItem="uf6-OK-s5L" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="ZKY-9M-vCi"/>
-                    <constraint firstItem="uf6-OK-s5L" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="bdQ-ae-n7U"/>
-                    <constraint firstAttribute="bottom" secondItem="uf6-OK-s5L" secondAttribute="bottom" id="zww-sn-7R8"/>
+                    <constraint firstAttribute="bottom" secondItem="uf6-OK-s5L" secondAttribute="bottom" id="9rM-6M-I6J"/>
+                    <constraint firstItem="uf6-OK-s5L" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="HDy-zW-hdP"/>
+                    <constraint firstItem="uf6-OK-s5L" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="Jlb-hq-rcw"/>
+                    <constraint firstAttribute="trailing" secondItem="uf6-OK-s5L" secondAttribute="trailing" id="bgu-6c-oM3"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
                 <outlet property="initialFirstResponder" destination="CZA-ix-feA" id="Ja4-84-dWr"/>
             </connections>
-            <point key="canvasLocation" x="105" y="307.5"/>
+            <point key="canvasLocation" x="127" y="280"/>
         </window>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="o05-gc-GiI">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
