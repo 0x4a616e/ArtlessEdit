@@ -16,10 +16,10 @@ class FileSettingsViewController: NSViewController {
     
     let settings: EditorFileSettings
     
-    init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, settings: EditorFileSettings) {
+    init?(nibName nibNameOrNil: String?, settings: EditorFileSettings) {
         self.settings = settings
         
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(nibName: nibNameOrNil, bundle: nil)
     }
 
     required init?(coder: NSCoder) {

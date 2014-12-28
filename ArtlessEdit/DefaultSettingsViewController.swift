@@ -18,7 +18,7 @@ class DefaultSettingsViewController: NSViewController {
         let stackView = SideBarStackView()
         
         let settings = EditorDefaultSettings()
-        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", bundle: nil, handler: settings)
+        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", handler: settings)
         if let settingsView = editorSettingsController?.view {
             stackView.addView(settingsView, inGravity: NSStackViewGravity.Center)
         }

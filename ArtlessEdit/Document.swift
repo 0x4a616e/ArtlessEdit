@@ -57,12 +57,12 @@ class Document: NSDocument {
         aceView.setMode(UInt(index))
     }
     
-    func getModeIndexForType(type: String) -> UInt? {
+    func getModeForType(type: String) -> ACEMode? {
         var index: UInt = 0
         
         for modeName in ACEModeNames.modeNames() as [String] {
             if modeName.lowercaseString == type.lowercaseString {
-                return index
+                return ACEMode(index)
             }
             index += 1
         }
@@ -70,17 +70,17 @@ class Document: NSDocument {
         return nil
     }
     
-    func getModeIndex() -> UInt? {
+    func getMode() -> ACEMode? {
         if let path = fileURL?.path {
             
             if let mapping = FileMapping().getMode(path.pathExtension.lowercaseString) {
-                return UInt(mapping)
+                return mapping
             }
             
             if let fileType = NSWorkspace.sharedWorkspace().typeOfFile(path, error: nil) {
                 let components = fileType.componentsSeparatedByString(".")
                 if (components.count > 1) {
-                    return getModeIndexForType(components[1])
+                    return getModeForType(components[1])
                 }
             }
         }
@@ -91,24 +91,32 @@ class Document: NSDocument {
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         
-        
         aceView.borderType = NSBorderType.NoBorder
         
         let defaultSettings = EditorDefaultSettings()
         let sessionSettings = EditorSessionSettings(aceView: aceView)
-        let fileSettings = EditorFileSettings(aceView: aceView)
         
-        if let modeIndex = getModeIndex() {
-            mode = ACEMode(modeIndex)
-            fileSettings.setMode(mode)
-            defaultSettings.setMode(mode)
+        let fileSettings = EditorFileSettings(aceView: aceView, defaultSettings: defaultSettings, sessionSettings: sessionSettings)
+        fileSettings.setMode(getMode())
+        
+        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", handler: sessionSettings)
+        fileSettingsController = FileSettingsViewController(nibName: "FileSettings", settings: fileSettings)
+        
+        loadSettingsSideBar(fileSettings, sessionSettings: sessionSettings)
+        
+        // TODO: Move to view controller
+        if (ACEThemeNames.isDarkTheme(UInt(defaultSettings.getTheme()))) {
+            visualEffectView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
         }
         
-        sessionSettings.loadDefaults(defaultSettings)
-        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", bundle: nil, handler: sessionSettings)
+        // TODO: Find something more elegant...
+        fileSettings.setUpdateMethod(editorSettingsController?.loadSettings)
         
-        fileSettingsController = FileSettingsViewController(nibName: "FileSettings", bundle: nil, settings: fileSettings)
-        
+        aceView.setString(fileContent)
+        fileContent = ""
+    }
+    
+    func loadSettingsSideBar(fileSettings: EditorFileSettings, sessionSettings: EditorSessionSettings) {
         let stackView = SideBarStackView()
         if let view = fileSettingsController?.view {
             stackView.addView(view, inGravity: NSStackViewGravity.Top)
@@ -119,13 +127,6 @@ class Document: NSDocument {
         }
         
         editorSettings.documentView = stackView
-        
-        if (ACEThemeNames.isDarkTheme(UInt(defaultSettings.getTheme()))) {
-            visualEffectView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
-        }
-        
-        aceView.setString(fileContent)
-        fileContent = ""
     }
     
     override class func autosavesInPlace() -> Bool {

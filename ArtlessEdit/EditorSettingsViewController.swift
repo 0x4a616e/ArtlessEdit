@@ -25,10 +25,10 @@ class EditorSettingsViewController: NSViewController {
     
     let handler: EditorSettings
     
-    init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, handler: EditorSettings) {
+    init?(nibName nibNameOrNil: String?, handler: EditorSettings) {
         self.handler = handler
         
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(nibName: nibNameOrNil, bundle: nil)
     }
     
     override func viewDidLoad() {

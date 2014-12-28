@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="167" height="122"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CyC-Qd-2cx">
-                    <rect key="frame" x="18" y="104" width="40" height="14"/>
+                    <rect key="frame" x="19" y="104" width="40" height="14"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mode" id="sTk-1W-Nua">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -37,7 +37,7 @@
                     </connections>
                 </comboBox>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okf-BQ-fFd">
-                    <rect key="frame" x="18" y="63" width="54" height="14"/>
+                    <rect key="frame" x="19" y="63" width="54" height="14"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Encoding" id="exJ-M4-4k1">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -56,7 +56,7 @@
                     </comboBoxCell>
                 </comboBox>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dsI-UQ-T3C">
-                    <rect key="frame" x="18" y="22" width="73" height="14"/>
+                    <rect key="frame" x="19" y="23" width="73" height="14"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Endings" id="snX-Dc-ZCZ">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -64,7 +64,7 @@
                     </textFieldCell>
                 </textField>
                 <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8s-F9-usS">
-                    <rect key="frame" x="20" y="-1" width="129" height="22"/>
+                    <rect key="frame" x="20" y="0.0" width="129" height="22"/>
                     <comboBoxCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="1DW-t3-FPg">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -78,8 +78,8 @@
                 </comboBox>
             </subviews>
             <constraints>
-                <constraint firstAttribute="height" constant="122" id="sqJ-1h-7Lh"/>
-                <constraint firstAttribute="width" constant="167" id="wgG-V0-qeY"/>
+                <constraint firstAttribute="width" constant="167" id="lTf-0B-uI4"/>
+                <constraint firstAttribute="height" constant="122" id="rC1-h1-YXg"/>
             </constraints>
             <point key="canvasLocation" x="235.5" y="331"/>
         </customView>
