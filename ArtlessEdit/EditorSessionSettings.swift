@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EditorSessionSettings: EditorSettings {
+class EditorSessionSettings: EditorSettingsObservable, EditorSettings, EditorSettingsObserver {
     
     let aceView: ACEView
     
@@ -24,42 +24,56 @@ class EditorSessionSettings: EditorSettings {
     var displayIndentGuides = false
     var tabSize = 0
     
-    init(aceView: ACEView) {
+    let defaults: EditorDefaultSettings
+    
+    init(aceView: ACEView, defaults: EditorDefaultSettings) {
         self.aceView = aceView
+        self.defaults = defaults
+        
+        super.init()
+        
+        updateSettings(defaults)
+        defaults.addSubscriber(self)
     }
     
-    func loadDefaults(defaults: EditorDefaultSettings) {
-        theme = defaults.getTheme()
+    deinit {
+        defaults.removeSubscriber(self)
+    }
+    
+    func updateSettings(settings: EditorSettings) {
+        theme = settings.getTheme()
         setTheme(theme)
         
-        bindings = defaults.getKeyBindings()
+        bindings = settings.getKeyBindings()
         setKeyBindings(bindings)
         
-        codeFolding = defaults.getCodeFolding()
+        codeFolding = settings.getCodeFolding()
         setCodeFolding(codeFolding)
         
-        softWraps = defaults.getSoftWrap()
+        softWraps = settings.getSoftWrap()
         setSoftWrap(softWraps)
         
-        showInvisibles = defaults.getShowInvisibles()
+        showInvisibles = settings.getShowInvisibles()
         setShowInvisibles(showInvisibles)
         
-        showPrintMargin = defaults.getShowPrintMargin()
+        showPrintMargin = settings.getShowPrintMargin()
         setShowPrintMargin(showPrintMargin)
         
-        highlightActiveLine = defaults.getHighlightActiveLine()
+        highlightActiveLine = settings.getHighlightActiveLine()
         setHighlightActiveLine(highlightActiveLine)
         
-        useSoftTabs = defaults.getUseSoftTabs()
+        useSoftTabs = settings.getUseSoftTabs()
         setUseSoftTabs(useSoftTabs)
         
-        tabSize = defaults.getTabSize()
+        tabSize = settings.getTabSize()
         if (useSoftTabs) {
             setTabSize(tabSize)
         }
         
-        displayIndentGuides = defaults.getDisplayIndentGuides()
+        displayIndentGuides = settings.getDisplayIndentGuides()
         setDisplayIndentGuides(displayIndentGuides)
+        
+        notifySubscribers(self)
     }
     
     func setTheme(index: Int) {

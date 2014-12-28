@@ -12,15 +12,11 @@ class EditorFileSettings {
     private var mode: Int? = nil;
     
     private let defaultSettings: EditorDefaultSettings
-    private let sessionSettings: EditorSessionSettings
 
     private let aceView: ACEView
-    
-    private var update: ((EditorSettings) -> Void)? = nil
-    
-    init(aceView: ACEView, defaultSettings: EditorDefaultSettings, sessionSettings: EditorSessionSettings) {
+        
+    init(aceView: ACEView, defaultSettings: EditorDefaultSettings) {
         self.defaultSettings = defaultSettings
-        self.sessionSettings = sessionSettings
         self.aceView = aceView
     }
     
@@ -32,13 +28,6 @@ class EditorFileSettings {
         }
         
         defaultSettings.setMode(mode)
-        sessionSettings.loadDefaults(defaultSettings)
-
-        update?(sessionSettings)
-    }
-    
-    func setUpdateMethod(update: ((EditorSettings) -> Void)?) {
-        self.update = update
     }
     
     func getMode() -> Int {

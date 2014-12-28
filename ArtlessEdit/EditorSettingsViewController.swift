@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EditorSettingsViewController: NSViewController {
+class EditorSettingsViewController: NSViewController, EditorSettingsObserver {
     
     @IBOutlet weak var themeBox: NSComboBox!
     @IBOutlet weak var bindingsBox: NSComboBox!
@@ -23,21 +23,27 @@ class EditorSettingsViewController: NSViewController {
     
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
     
-    let handler: EditorSettings
+    let handler: protocol<ObservableSettings, EditorSettings>
     
-    init?(nibName nibNameOrNil: String?, handler: EditorSettings) {
+    init?(nibName nibNameOrNil: String?, handler: protocol<ObservableSettings, EditorSettings>) {
         self.handler = handler
         
         super.init(nibName: nibNameOrNil, bundle: nil)
+        
+        handler.addSubscriber(self)
+    }
+    
+    deinit {
+        handler.removeSubscriber(self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        loadSettings(handler)
+        updateSettings(handler)
     }
-
-    func loadSettings(settings: EditorSettings) {
+    
+    func updateSettings(settings: EditorSettings) {
         themeBox.addItemsWithObjectValues(ACEThemeNames.humanThemeNames())
         themeBox.selectItemAtIndex(settings.getTheme())
         
@@ -52,7 +58,6 @@ class EditorSettingsViewController: NSViewController {
         highlightActiveLineButton.state = toState(settings.getHighlightActiveLine())
         softTabsButton.state = toState(settings.getUseSoftTabs())
         indentationGuidesButton.state = toState(settings.getDisplayIndentGuides())
-
     }
     
     func toState(val: Bool) -> Int {

@@ -28,6 +28,8 @@
 		3DBD49931A4ABB6C00C2B1C9 /* Outline.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DBD49921A4ABB6C00C2B1C9 /* Outline.xib */; };
 		3DBD49971A4ABB7800C2B1C9 /* OutlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD49961A4ABB7800C2B1C9 /* OutlineController.swift */; };
 		3DD0AECD1A472B720091BD16 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD0AECC1A472B720091BD16 /* Credits.rtf */; };
+		3DD959FE1A50959C0068B31A /* EditorSettingsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */; };
+		3DD95A021A509B290068B31A /* EditorSettingsObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */; };
 		3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6A1A4721D200971982 /* AppDelegate.swift */; };
 		3DDFFA6D1A4721D200971982 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6C1A4721D200971982 /* Document.swift */; };
 		3DDFFA701A4721D200971982 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6E1A4721D200971982 /* Document.xib */; };
@@ -50,6 +52,7 @@
 		3DE8B4621A4D90AC00C537C1 /* EditorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */; };
 		3DE8B4641A4DA4A800C537C1 /* EditorSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4631A4DA4A800C537C1 /* EditorSettingsView.swift */; };
 		3DE8B4661A4DA9D900C537C1 /* EditorDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */; };
+		3DF669581A50A10800F97BC5 /* ObservableSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF669571A50A10800F97BC5 /* ObservableSettings.swift */; };
 		3DFCC1C31A49711400D41481 /* SearchPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFCC1C21A49711400D41481 /* SearchPopup.xib */; };
 		3DFCC1C51A49718700D41481 /* SearchPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFCC1C41A49718700D41481 /* SearchPopupController.swift */; };
 		3DFEF75F1A500FDC0006289A /* SideBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFEF75E1A500FDC0006289A /* SideBarStackView.swift */; };
@@ -128,6 +131,8 @@
 		3DD0AECA1A472A830091BD16 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3DD0AECB1A472A830091BD16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3DD0AECC1A472B720091BD16 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsObserver.swift; sourceTree = "<group>"; };
+		3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsObservable.swift; sourceTree = "<group>"; };
 		3DDFFA651A4721D200971982 /* ArtlessEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtlessEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDFFA691A4721D200971982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DDFFA6A1A4721D200971982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +161,7 @@
 		3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettings.swift; sourceTree = "<group>"; };
 		3DE8B4631A4DA4A800C537C1 /* EditorSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsView.swift; sourceTree = "<group>"; };
 		3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorDefaultSettings.swift; sourceTree = "<group>"; };
+		3DF669571A50A10800F97BC5 /* ObservableSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableSettings.swift; sourceTree = "<group>"; };
 		3DFCC1C21A49711400D41481 /* SearchPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPopup.xib; sourceTree = "<group>"; };
 		3DFCC1C41A49718700D41481 /* SearchPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopupController.swift; sourceTree = "<group>"; };
 		3DFEF75E1A500FDC0006289A /* SideBarStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarStackView.swift; sourceTree = "<group>"; };
@@ -341,8 +347,11 @@
 				3DE4A3311A50554E00D0CA73 /* Tools */,
 				3DE4A3271A501EA500D0CA73 /* Mode */,
 				3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */,
+				3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */,
+				3DF669571A50A10800F97BC5 /* ObservableSettings.swift */,
 				3D8A8B661A505C4800FDFB7E /* EditorFileSettings.swift */,
 				3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */,
+				3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */,
 				3DE8B4561A4D7F8500C537C1 /* EditorSettingsView.xib */,
 				3DE8B4631A4DA4A800C537C1 /* EditorSettingsView.swift */,
 				3DE8B45A1A4D83BF00C537C1 /* EditorSettingsViewController.swift */,
@@ -504,6 +513,7 @@
 				3D458A3E1A4995A100FB72A7 /* RecentFileData.swift in Sources */,
 				3D29A4B61A4F12A400D1EB55 /* SettingsModeViewController.swift in Sources */,
 				3D458A401A4995D000FB72A7 /* FileData.swift in Sources */,
+				3DF669581A50A10800F97BC5 /* ObservableSettings.swift in Sources */,
 				3DDFFA6D1A4721D200971982 /* Document.swift in Sources */,
 				3DE4A32D1A501FC900D0CA73 /* DefaultSettingsViewController.swift in Sources */,
 				3DE4A3351A50557F00D0CA73 /* ExternalToolsViewController.swift in Sources */,
@@ -518,8 +528,10 @@
 				3DE8B4641A4DA4A800C537C1 /* EditorSettingsView.swift in Sources */,
 				3DFCC1C51A49718700D41481 /* SearchPopupController.swift in Sources */,
 				3DE8B4621A4D90AC00C537C1 /* EditorSettings.swift in Sources */,
+				3DD95A021A509B290068B31A /* EditorSettingsObservable.swift in Sources */,
 				3D96A3051A4C2CFF00AA2762 /* SearchPopup.swift in Sources */,
 				3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */,
+				3DD959FE1A50959C0068B31A /* EditorSettingsObserver.swift in Sources */,
 				3D6A3EE51A4ACC82002507B9 /* Outliner.swift in Sources */,
 				3DE8B4601A4D8CED00C537C1 /* EditorSessionSettings.swift in Sources */,
 				3DE8B45B1A4D83BF00C537C1 /* EditorSettingsViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EditorDefaultSettings: EditorSettings {
+class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
     
     let THEME = "Theme"
     let KEY_BINDINGS = "KeyBindings"
@@ -21,14 +21,20 @@ class EditorDefaultSettings: EditorSettings {
     let INDENT_GUIDES = "IndentGuides"
     let TAB_SIZE = "TabSize"
     
-    var mode: ACEMode? = nil
+    var mode: ACEMode?{
+        didSet(value) {
+            notifySubscribers(self)
+        }
+    }
     
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
 
     init(mode: ACEMode? = nil) {
+        super.init()
+        
         setMode(mode)
     }
-    
+   
     func setTheme(index: Int) {
         userDefaults.setInteger(index, forKey: getKey(THEME))
     }
@@ -126,6 +132,8 @@ class EditorDefaultSettings: EditorSettings {
         if (mode != nil) {
             loadDefaultSettings()
         }
+        
+        notifySubscribers(self)
     }
     
     func loadDefaultSettings() {

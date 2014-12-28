@@ -25,7 +25,7 @@ class SettingsModeViewController: NSViewController {
     
     @IBAction func resetToDefaults(sender: AnyObject) {
         settings.resetToDefaults()
-        controller?.loadSettings(settings)
+        controller?.updateSettings(settings)
     }
     
     override func viewDidLoad() {
@@ -52,6 +52,6 @@ class SettingsModeViewController: NSViewController {
             deleteButton.enabled = false
         }
         
-        controller?.loadSettings(settings)
+        controller?.updateSettings(settings)
     }
 }

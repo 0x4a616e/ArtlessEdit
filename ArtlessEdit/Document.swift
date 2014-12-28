@@ -93,11 +93,13 @@ class Document: NSDocument {
         
         aceView.borderType = NSBorderType.NoBorder
         
-        let defaultSettings = EditorDefaultSettings()
-        let sessionSettings = EditorSessionSettings(aceView: aceView)
+        let mode = getMode()
         
-        let fileSettings = EditorFileSettings(aceView: aceView, defaultSettings: defaultSettings, sessionSettings: sessionSettings)
-        fileSettings.setMode(getMode())
+        let defaultSettings = EditorDefaultSettings.getEditorDefaultSettings(mode)
+        let sessionSettings = EditorSessionSettings(aceView: aceView, defaults: defaultSettings)
+        
+        let fileSettings = EditorFileSettings(aceView: aceView, defaultSettings: defaultSettings)
+        fileSettings.setMode(mode)
         
         editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", handler: sessionSettings)
         fileSettingsController = FileSettingsViewController(nibName: "FileSettings", settings: fileSettings)
@@ -108,9 +110,6 @@ class Document: NSDocument {
         if (ACEThemeNames.isDarkTheme(UInt(defaultSettings.getTheme()))) {
             visualEffectView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
         }
-        
-        // TODO: Find something more elegant...
-        fileSettings.setUpdateMethod(editorSettingsController?.loadSettings)
         
         aceView.setString(fileContent)
         fileContent = ""
