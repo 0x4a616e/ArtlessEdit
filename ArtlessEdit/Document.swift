@@ -13,10 +13,13 @@ class Document: NSDocument {
     @IBOutlet weak var aceView: ACEView!
     @IBOutlet var goToPanel: NSWindow!
     @IBOutlet weak var editorSettings: NSScrollView!
+    @IBOutlet weak var visualEffectView: NSVisualEffectView!
     
     lazy var outlineController = OutlineController(windowNibName: "Outline")
     
     var editorSettingsController: EditorSettingsViewController? = nil
+    var fileSettingsController: FileSettingsViewController? = nil
+    
     var mode: ACEMode = ACEModeASCIIDoc
     let encoding = NSUTF8StringEncoding
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
@@ -69,11 +72,9 @@ class Document: NSDocument {
     
     func getModeIndex() -> UInt? {
         if let path = fileURL?.path {
-            //TODO Allow user to map files by extension
-
-            switch(path.pathExtension.lowercaseString) {
-            case "java": return UInt(ACEModeJava);
-            default: println(path.pathExtension)
+            
+            if let mapping = FileMapping().getMode(path.pathExtension.lowercaseString) {
+                return UInt(mapping)
             }
             
             if let fileType = NSWorkspace.sharedWorkspace().typeOfFile(path, error: nil) {
@@ -90,21 +91,41 @@ class Document: NSDocument {
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         
+        
+        aceView.borderType = NSBorderType.NoBorder
+        
         let defaultSettings = EditorDefaultSettings()
+        let sessionSettings = EditorSessionSettings(aceView: aceView)
+        let fileSettings = EditorFileSettings(aceView: aceView)
+        
         if let modeIndex = getModeIndex() {
             mode = ACEMode(modeIndex)
-            aceView.setMode(modeIndex)
+            fileSettings.setMode(mode)
             defaultSettings.setMode(mode)
         }
         
-        aceView.borderType = NSBorderType.NoBorder
+        sessionSettings.loadDefaults(defaultSettings)
+        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", bundle: nil, handler: sessionSettings)
+        
+        fileSettingsController = FileSettingsViewController(nibName: "FileSettings", bundle: nil, settings: fileSettings)
+        
+        let stackView = SideBarStackView()
+        if let view = fileSettingsController?.view {
+            stackView.addView(view, inGravity: NSStackViewGravity.Top)
+        }
+        
+        if let view = editorSettingsController?.view {
+            stackView.addView(view, inGravity: NSStackViewGravity.Center)
+        }
+        
+        editorSettings.documentView = stackView
+        
+        if (ACEThemeNames.isDarkTheme(UInt(defaultSettings.getTheme()))) {
+            visualEffectView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+        }
+        
         aceView.setString(fileContent)
         fileContent = ""
-        
-        let settings = EditorSessionSettings(aceView: aceView)
-        settings.loadDefaults(defaultSettings)
-        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", bundle: nil, handler: settings)
-        editorSettings.documentView = editorSettingsController?.view
     }
     
     override class func autosavesInPlace() -> Bool {

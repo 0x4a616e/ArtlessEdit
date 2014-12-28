@@ -9,6 +9,7 @@
                 <outlet property="aceView" destination="CZA-ix-feA" id="JZa-NP-VWp"/>
                 <outlet property="editorSettings" destination="idk-XH-0fw" id="iHG-7j-7BH"/>
                 <outlet property="goToPanel" destination="o05-gc-GiI" id="jS1-1f-LJR"/>
+                <outlet property="visualEffectView" destination="j1q-Ka-wTf" id="mqB-Xr-BQa"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
@@ -27,17 +28,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <subviews>
                             <customView identifier="Sidebar" id="j1q-Ka-wTf" customClass="NSVisualEffectView">
-                                <rect key="frame" x="0.0" y="0.0" width="166" height="400"/>
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="idk-XH-0fw">
+                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="idk-XH-0fw">
                                         <rect key="frame" x="0.0" y="0.0" width="166" height="400"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="kd3-ON-fIq">
                                             <rect key="frame" x="1" y="1" width="181" height="94"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <view translatesAutoresizingMaskIntoConstraints="NO" id="j4C-8s-udo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="166" height="376"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="166.5" height="376"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -58,14 +59,14 @@
                                     </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="idk-XH-0fw" secondAttribute="trailing" id="1aF-pt-fdG"/>
+                                    <constraint firstAttribute="trailing" secondItem="idk-XH-0fw" secondAttribute="trailing" constant="3.5" id="1aF-pt-fdG"/>
                                     <constraint firstItem="idk-XH-0fw" firstAttribute="top" secondItem="j1q-Ka-wTf" secondAttribute="top" id="OHe-3y-Rfv"/>
                                     <constraint firstItem="idk-XH-0fw" firstAttribute="leading" secondItem="j1q-Ka-wTf" secondAttribute="leading" id="jxT-r6-ZDT"/>
                                     <constraint firstAttribute="bottom" secondItem="idk-XH-0fw" secondAttribute="bottom" id="mlW-WW-sTt"/>
                                 </constraints>
                             </customView>
                             <customView fixedFrame="YES" id="CZA-ix-feA" customClass="ACEView">
-                                <rect key="frame" x="167" y="0.0" width="433" height="400"/>
+                                <rect key="frame" x="171" y="0.0" width="429" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </customView>
                         </subviews>
@@ -89,7 +90,7 @@
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
                 <outlet property="initialFirstResponder" destination="CZA-ix-feA" id="Ja4-84-dWr"/>
             </connections>
-            <point key="canvasLocation" x="127" y="280"/>
+            <point key="canvasLocation" x="73" y="270"/>
         </window>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="o05-gc-GiI">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>

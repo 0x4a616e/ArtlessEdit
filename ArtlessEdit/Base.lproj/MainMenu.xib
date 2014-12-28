@@ -13,8 +13,8 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ArtlessEdit" customModuleProvider="target">
             <connections>
-                <outlet property="editorSettings" destination="jxQ-gK-nLQ" id="Lmq-6G-gox"/>
                 <outlet property="mode" destination="MZC-Ut-43Z" id="PqB-YR-Eb9"/>
+                <outlet property="settingsWindow" destination="9QM-1G-dDs" id="bKS-hY-K2S"/>
             </connections>
         </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
@@ -545,53 +545,33 @@
             <view key="contentView" id="o8x-Nq-xIW">
                 <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="8jT-ih-Xkw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
-                        <subviews>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="jxQ-gK-nLQ">
-                                <rect key="frame" x="0.0" y="0.0" width="167" height="400"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="p8a-Qa-hNg">
-                                    <rect key="frame" x="1" y="1" width="181" height="94"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="njE-Ds-dpX">
-                                            <rect key="frame" x="0.0" y="-10" width="203" height="410"/>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="njE-Ds-dpX" firstAttribute="top" secondItem="p8a-Qa-hNg" secondAttribute="top" id="15o-fd-xuF"/>
-                                        <constraint firstAttribute="bottom" secondItem="njE-Ds-dpX" secondAttribute="bottom" constant="-10" id="6lJ-F6-lA4"/>
-                                        <constraint firstAttribute="trailing" secondItem="njE-Ds-dpX" secondAttribute="trailing" constant="-36" id="khX-Yh-OiH"/>
-                                        <constraint firstItem="njE-Ds-dpX" firstAttribute="leading" secondItem="p8a-Qa-hNg" secondAttribute="leading" id="lCX-LV-axw"/>
-                                    </constraints>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ZIC-Ng-iOB">
-                                    <rect key="frame" x="1" y="79" width="181" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="drY-iw-gVY">
-                                    <rect key="frame" x="166" y="1" width="16" height="94"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jxQ-gK-nLQ" secondAttribute="trailing" constant="433" id="3tv-7l-Hn7"/>
-                            <constraint firstAttribute="bottom" secondItem="jxQ-gK-nLQ" secondAttribute="bottom" id="XZz-jT-L47"/>
-                            <constraint firstItem="jxQ-gK-nLQ" firstAttribute="top" secondItem="8jT-ih-Xkw" secondAttribute="top" id="b4D-ef-aTj"/>
-                            <constraint firstItem="jxQ-gK-nLQ" firstAttribute="leading" secondItem="8jT-ih-Xkw" secondAttribute="leading" id="eZv-6w-le6"/>
-                        </constraints>
-                    </visualEffectView>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="8jT-ih-Xkw" secondAttribute="trailing" id="DQp-mz-R1a"/>
-                    <constraint firstAttribute="bottom" secondItem="8jT-ih-Xkw" secondAttribute="bottom" id="LQP-lJ-c5U"/>
-                    <constraint firstItem="8jT-ih-Xkw" firstAttribute="leading" secondItem="o8x-Nq-xIW" secondAttribute="leading" id="bah-I5-ZJr"/>
-                    <constraint firstItem="8jT-ih-Xkw" firstAttribute="top" secondItem="o8x-Nq-xIW" secondAttribute="top" id="fRI-4H-JWB"/>
-                </constraints>
             </view>
-            <point key="canvasLocation" x="451" y="45"/>
+            <toolbar key="toolbar" implicitIdentifier="8B84FC7C-B964-4C94-9AF4-3C2273B5355D" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="Sts-dv-0pR">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="61o-U6-VSD"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="1g8-G7-Ddc"/>
+                    <toolbarItem implicitItemIdentifier="F0D484E5-52F1-4670-95C8-41C6FB1D686B" label="General" paletteLabel="General" tag="-1" image="NSApplicationIcon" id="Tgi-mb-KIq">
+                        <connections>
+                            <action selector="showDefaultSettings:" target="Voe-Tx-rLC" id="zvl-3E-3su"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="6744F7B3-B771-4B30-ADC1-B6A76234E48C" label="External Tools" paletteLabel="External Tools" tag="-1" image="NSActionTemplate" id="Yy6-lZ-hcb">
+                        <connections>
+                            <action selector="showExternalTools:" target="Voe-Tx-rLC" id="kpv-fj-x9S"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="Tgi-mb-KIq"/>
+                    <toolbarItem reference="Yy6-lZ-hcb"/>
+                    <toolbarItem reference="1g8-G7-Ddc"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="625" y="-6"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+    </resources>
 </document>

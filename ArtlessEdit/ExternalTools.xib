@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ExternalToolsController" customModule="ArtlessEdit" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="AOH-hG-c7N"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IrI-9k-veR">
+                    <rect key="frame" x="18" y="363" width="296" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Exubertant ctags: (http://ctags.sourceforge.net)" id="WEz-Uv-lYl">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MiO-nD-VaX">
+                    <rect key="frame" x="20" y="333" width="497" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="FxI-V6-j8J">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WxJ-iX-PEd">
+                    <rect key="frame" x="519" y="327" width="67" height="32"/>
+                    <buttonCell key="cell" type="push" title="Find" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ulm-Jl-kIA">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="WxJ-iX-PEd" firstAttribute="top" secondItem="MiO-nD-VaX" secondAttribute="top" id="01I-1N-kto"/>
+                <constraint firstItem="IrI-9k-veR" firstAttribute="leading" secondItem="MiO-nD-VaX" secondAttribute="leading" id="C08-Cb-etx"/>
+                <constraint firstAttribute="trailing" secondItem="WxJ-iX-PEd" secondAttribute="trailing" constant="20" symbolic="YES" id="CXh-Tb-JiP"/>
+                <constraint firstItem="IrI-9k-veR" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" symbolic="YES" id="lAG-nl-5QJ"/>
+                <constraint firstItem="IrI-9k-veR" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" symbolic="YES" id="ssW-68-McZ"/>
+                <constraint firstItem="MiO-nD-VaX" firstAttribute="top" secondItem="IrI-9k-veR" secondAttribute="bottom" constant="8" symbolic="YES" id="vNC-dD-74H"/>
+                <constraint firstItem="WxJ-iX-PEd" firstAttribute="leading" secondItem="MiO-nD-VaX" secondAttribute="trailing" constant="8" symbolic="YES" id="yeN-WX-Pnd"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

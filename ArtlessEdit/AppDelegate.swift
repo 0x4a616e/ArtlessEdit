@@ -12,35 +12,30 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var mode: NSMenuItem!
-    @IBOutlet weak var editorSettings: NSScrollView!
+    @IBOutlet weak var settingsWindow: NSWindow!
     
-    var editorSettingsController: EditorSettingsViewController? = nil
-    var defaultSettingsController: DefaultSettingsViewController? = nil
-    
-    lazy var quickOpenController: SearchPopupController = SearchPopupController(windowNibName: "SearchPopup")
+    lazy var quickOpenController = SearchPopupController(windowNibName: "SearchPopup")
+    lazy var defaultSettingsController = DefaultSettingsViewController(nibName: "DefaultSettings", bundle: nil)
+    lazy var externalToolsController = DefaultSettingsViewController(nibName: "ExternalTools", bundle: nil)
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         createSubMenu(ACEModeNames.humanModeNames(), targetMenu: mode, selector: Selector("setModeName:"))
         
-        let stackView = NSStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 0
-        stackView.orientation = NSUserInterfaceLayoutOrientation.Vertical;
-        
-        let settings = EditorDefaultSettings()
-        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", bundle: nil, handler: settings)
-        if let settingsView = editorSettingsController?.view {
-            stackView.addView(settingsView, inGravity: NSStackViewGravity.Center)
-        }
-        
-        defaultSettingsController = DefaultSettingsViewController(nibName: "DefaultSettingsView", bundle: nil, settings: settings, controller: editorSettingsController)
-        if let settingsView = defaultSettingsController?.view {
-            stackView.addView(settingsView, inGravity: NSStackViewGravity.Top)
-        }
-
-        editorSettings.documentView = stackView
+        showDefaultSettings(self)
     }
     
+    @IBAction func showDefaultSettings(sender: AnyObject) {
+        if let view = defaultSettingsController?.view {
+            settingsWindow.contentView = view
+        }
+    }
+    
+    @IBAction func showExternalTools(sender: AnyObject) {
+        if let view = externalToolsController?.view {
+            settingsWindow.contentView = view
+        }
+    }
+
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
