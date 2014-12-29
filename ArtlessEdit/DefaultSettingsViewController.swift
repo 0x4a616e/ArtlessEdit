@@ -10,7 +10,7 @@ import Foundation
 
 class DefaultSettingsViewController: NSViewController {
     var editorSettingsController: EditorSettingsViewController? = nil
-    var settingsModeController: SettingsModeViewController? = nil
+    var settingsModeController: ModeSettingsViewController? = nil
     
     @IBOutlet weak var editorSettings: NSScrollView!
     
@@ -18,12 +18,12 @@ class DefaultSettingsViewController: NSViewController {
         let stackView = SideBarStackView()
         
         let settings = EditorDefaultSettings()
-        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", handler: settings)
+        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettings", handler: settings)
         if let settingsView = editorSettingsController?.view {
             stackView.addView(settingsView, inGravity: NSStackViewGravity.Center)
         }
         
-        settingsModeController = SettingsModeViewController(nibName: "SettingsModeView", bundle: nil, settings: settings, controller: editorSettingsController)
+        settingsModeController = ModeSettingsViewController(nibName: "ModeSettings", bundle: nil, settings: settings, controller: editorSettingsController)
         if let settingsView = settingsModeController?.view {
             stackView.addView(settingsView, inGravity: NSStackViewGravity.Top)
         }

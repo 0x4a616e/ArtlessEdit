@@ -14,6 +14,7 @@ class Document: NSDocument {
     @IBOutlet var goToPanel: NSWindow!
     @IBOutlet weak var editorSettings: NSScrollView!
     @IBOutlet weak var visualEffectView: NSVisualEffectView!
+    @IBOutlet weak var splitView: NSSplitView!
     
     lazy var outlineController = OutlineController(windowNibName: "Outline")
     
@@ -38,7 +39,16 @@ class Document: NSDocument {
     func showGotoSheet(sender: AnyObject) {
         windowForSheet?.beginSheet(goToPanel, completionHandler: nil)
     }
-
+    
+    func toggleSideBar(sender: AnyObject) {
+        setSidebarVisibility(splitView.isSubviewCollapsed(visualEffectView))
+    }
+    
+    func setSidebarVisibility(visible: Bool) {
+        visualEffectView.hidden = !visible
+        splitView.adjustSubviews()
+    }
+    
     @IBAction func goToLine(sender: AnyObject) {
         if let textField = sender as? NSTextField {
             aceView.gotoLine(textField.integerValue, column: 0, animated: false)
@@ -101,10 +111,11 @@ class Document: NSDocument {
         let fileSettings = EditorFileSettings(aceView: aceView, defaultSettings: defaultSettings)
         fileSettings.setMode(mode)
         
-        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettingsView", handler: sessionSettings)
+        editorSettingsController = EditorSettingsViewController(nibName: "EditorSettings", handler: sessionSettings)
         fileSettingsController = FileSettingsViewController(nibName: "FileSettings", settings: fileSettings)
         
         loadSettingsSideBar(fileSettings, sessionSettings: sessionSettings)
+        setSidebarVisibility(defaultSettings.getShowSidebar())
         
         // TODO: Move to view controller
         if (ACEThemeNames.isDarkTheme(UInt(defaultSettings.getTheme()))) {
@@ -156,11 +167,5 @@ class Document: NSDocument {
         
         return true
     }
-    
-    override func printOperationWithSettings(printSettings: [NSObject : AnyObject], error outError: NSErrorPointer) -> NSPrintOperation? {
-        return NSPrintOperation(view: aceView.webView.mainFrame.frameView)
-    }
-    
-    
 }
 

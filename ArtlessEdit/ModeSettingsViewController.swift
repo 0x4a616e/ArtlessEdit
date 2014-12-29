@@ -8,13 +8,14 @@
 
 import Foundation
 
-class SettingsModeViewController: NSViewController {
+class ModeSettingsViewController: NSViewController {
 
     let settings: EditorDefaultSettings
     let controller: EditorSettingsViewController?;
     
     @IBOutlet weak var syntaxBox: NSComboBox!
     @IBOutlet weak var deleteButton: NSButton!
+    @IBOutlet weak var showSidebarButton: NSButton!
     
     init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, settings: EditorDefaultSettings, controller: EditorSettingsViewController?) {
         self.settings = settings
@@ -36,6 +37,8 @@ class SettingsModeViewController: NSViewController {
         syntaxBox.selectItemAtIndex(0)
         
         deleteButton.enabled = false
+        
+        showSidebarButton.state = (settings.getShowSidebar()) ? NSOnState : NSOffState
     }
 
     required init?(coder: NSCoder) {
@@ -53,5 +56,8 @@ class SettingsModeViewController: NSViewController {
         }
         
         controller?.updateSettings(settings)
+    }
+    @IBAction func setShowSidebar(sender: NSButton) {
+        settings.setShowSidebar(sender.state == NSOnState)
     }
 }

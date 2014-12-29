@@ -20,6 +20,7 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
     let SOFT_TABS = "SoftTabs"
     let INDENT_GUIDES = "IndentGuides"
     let TAB_SIZE = "TabSize"
+    let SHOW_SIDEBAR = "ShowSidebar"
     
     var mode: ACEMode?{
         didSet(value) {
@@ -31,6 +32,12 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
 
     init(mode: ACEMode? = nil) {
         super.init()
+        
+        if (mode == nil) {
+            userDefaults.registerDefaults([
+                getKey(SHOW_SIDEBAR): true
+            ])
+        }
         
         setMode(mode)
     }
@@ -127,6 +134,14 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         return key
     }
     
+    func getShowSidebar() -> Bool {
+        return userDefaults.boolForKey(getKey(SHOW_SIDEBAR))
+    }
+    
+    func setShowSidebar(val: Bool) {
+        userDefaults.setBool(val, forKey: getKey(SHOW_SIDEBAR))
+    }
+    
     func setMode(mode: ACEMode?) {
         self.mode = mode
         if (mode != nil) {
@@ -151,7 +166,8 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
             getKey(ACTIVE_LINE): defaults.getHighlightActiveLine(),
             getKey(SOFT_TABS): defaults.getUseSoftTabs(),
             getKey(TAB_SIZE): defaults.getTabSize(),
-            getKey(INDENT_GUIDES): defaults.getDisplayIndentGuides()
+            getKey(INDENT_GUIDES): defaults.getDisplayIndentGuides(),
+            getKey(SHOW_SIDEBAR): defaults.getShowSidebar()
         ])
     }
     
@@ -169,6 +185,7 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         userDefaults.removeObjectForKey(getKey(SOFT_TABS))
         userDefaults.removeObjectForKey(getKey(TAB_SIZE))
         userDefaults.removeObjectForKey(getKey(INDENT_GUIDES))
+        userDefaults.removeObjectForKey(getKey(SHOW_SIDEBAR))
     }
     
     class func hasModeSettings(forMode: ACEMode) -> Bool {

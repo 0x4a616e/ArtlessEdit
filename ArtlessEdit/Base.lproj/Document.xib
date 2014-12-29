@@ -9,6 +9,7 @@
                 <outlet property="aceView" destination="CZA-ix-feA" id="JZa-NP-VWp"/>
                 <outlet property="editorSettings" destination="idk-XH-0fw" id="iHG-7j-7BH"/>
                 <outlet property="goToPanel" destination="o05-gc-GiI" id="jS1-1f-LJR"/>
+                <outlet property="splitView" destination="uf6-OK-s5L" id="SSb-RD-do6"/>
                 <outlet property="visualEffectView" destination="j1q-Ka-wTf" id="mqB-Xr-BQa"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
@@ -52,7 +53,7 @@
                                             <rect key="frame" x="1" y="79" width="181" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jeP-z6-WJz">
+                                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="jeP-z6-WJz">
                                             <rect key="frame" x="166" y="1" width="16" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -141,11 +142,5 @@ Gw
             <point key="canvasLocation" x="126.5" y="-124"/>
         </window>
         <customObject id="KxQ-p1-ZqK" customClass="SplitViewDelegate" customModule="ArtlessEdit" customModuleProvider="target"/>
-        <customObject id="W4V-6S-YXU" customClass="SplitViewController" customModule="ArtlessEdit" customModuleProvider="target">
-            <connections>
-                <outlet property="sideBar" destination="j1q-Ka-wTf" id="WUu-Ru-YyN"/>
-                <outlet property="view" destination="uf6-OK-s5L" id="meG-yX-YK7"/>
-            </connections>
-        </customObject>
     </objects>
 </document>

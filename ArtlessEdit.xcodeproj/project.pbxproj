@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3D29A4B01A4EBE7C00D1EB55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D29A4AF1A4EBE7C00D1EB55 /* Images.xcassets */; };
-		3D29A4B61A4F12A400D1EB55 /* SettingsModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29A4B51A4F12A400D1EB55 /* SettingsModeViewController.swift */; };
-		3D29A4B81A4F212D00D1EB55 /* SettingsModeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D29A4B71A4F212D00D1EB55 /* SettingsModeView.xib */; };
+		3D29A4B61A4F12A400D1EB55 /* ModeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29A4B51A4F12A400D1EB55 /* ModeSettingsViewController.swift */; };
+		3D29A4B81A4F212D00D1EB55 /* ModeSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D29A4B71A4F212D00D1EB55 /* ModeSettings.xib */; };
+		3D2D60611A515B30005B995F /* EditorFileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D60601A515B30005B995F /* EditorFileSettings.swift */; };
 		3D31008F1A48344E0073ED36 /* ACEView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DDFFA911A47221600971982 /* ACEView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D458A371A4977EB00FB72A7 /* SearchPopupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */; };
 		3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D458A3A1A497D1B00FB72A7 /* OpenFileData.swift */; };
@@ -20,7 +21,6 @@
 		3D6A3EE51A4ACC82002507B9 /* Outliner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE41A4ACC82002507B9 /* Outliner.swift */; };
 		3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE61A4ACD0D002507B9 /* OutlinerFactory.swift */; };
 		3D6A3EE91A4ACE5C002507B9 /* CtagsOutliner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE81A4ACE5C002507B9 /* CtagsOutliner.swift */; };
-		3D8A8B671A505C4800FDFB7E /* EditorFileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A8B661A505C4800FDFB7E /* EditorFileSettings.swift */; };
 		3D96A2FD1A4C29AB00AA2762 /* icon_class.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A2FC1A4C29AB00AA2762 /* icon_class.png */; };
 		3D96A3011A4C2ABC00AA2762 /* icon_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */; };
 		3D96A3031A4C2C4100AA2762 /* icon_method.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A3021A4C2C4100AA2762 /* icon_method.png */; };
@@ -44,9 +44,7 @@
 		3DE4A3371A50573500D0CA73 /* FileSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE4A3361A50573500D0CA73 /* FileSettings.xib */; };
 		3DE4A3391A50576100D0CA73 /* FileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4A3381A50576100D0CA73 /* FileSettingsViewController.swift */; };
 		3DE8B44F1A4D6D0E00C537C1 /* SplitViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B44E1A4D6D0E00C537C1 /* SplitViewDelegate.swift */; };
-		3DE8B4531A4D702800C537C1 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4521A4D702800C537C1 /* SideBar.swift */; };
-		3DE8B4551A4D70D100C537C1 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4541A4D70D100C537C1 /* SplitViewController.swift */; };
-		3DE8B4571A4D7F8500C537C1 /* EditorSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE8B4561A4D7F8500C537C1 /* EditorSettingsView.xib */; };
+		3DE8B4571A4D7F8500C537C1 /* EditorSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE8B4561A4D7F8500C537C1 /* EditorSettings.xib */; };
 		3DE8B45B1A4D83BF00C537C1 /* EditorSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B45A1A4D83BF00C537C1 /* EditorSettingsViewController.swift */; };
 		3DE8B4601A4D8CED00C537C1 /* EditorSessionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */; };
 		3DE8B4621A4D90AC00C537C1 /* EditorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */; };
@@ -111,8 +109,9 @@
 
 /* Begin PBXFileReference section */
 		3D29A4AF1A4EBE7C00D1EB55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3D29A4B51A4F12A400D1EB55 /* SettingsModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModeViewController.swift; sourceTree = "<group>"; };
-		3D29A4B71A4F212D00D1EB55 /* SettingsModeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsModeView.xib; sourceTree = "<group>"; };
+		3D29A4B51A4F12A400D1EB55 /* ModeSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeSettingsViewController.swift; sourceTree = "<group>"; };
+		3D29A4B71A4F212D00D1EB55 /* ModeSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModeSettings.xib; sourceTree = "<group>"; };
+		3D2D60601A515B30005B995F /* EditorFileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorFileSettings.swift; sourceTree = "<group>"; };
 		3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopupData.swift; sourceTree = "<group>"; };
 		3D458A3A1A497D1B00FB72A7 /* OpenFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFileData.swift; sourceTree = "<group>"; };
 		3D458A3D1A4995A100FB72A7 /* RecentFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentFileData.swift; sourceTree = "<group>"; };
@@ -121,7 +120,6 @@
 		3D6A3EE41A4ACC82002507B9 /* Outliner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outliner.swift; sourceTree = "<group>"; };
 		3D6A3EE61A4ACD0D002507B9 /* OutlinerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinerFactory.swift; sourceTree = "<group>"; };
 		3D6A3EE81A4ACE5C002507B9 /* CtagsOutliner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CtagsOutliner.swift; sourceTree = "<group>"; };
-		3D8A8B661A505C4800FDFB7E /* EditorFileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorFileSettings.swift; sourceTree = "<group>"; };
 		3D96A2FC1A4C29AB00AA2762 /* icon_class.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_class.png; sourceTree = "<group>"; };
 		3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_unknown.png; sourceTree = "<group>"; };
 		3D96A3021A4C2C4100AA2762 /* icon_method.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_method.png; sourceTree = "<group>"; };
@@ -153,9 +151,7 @@
 		3DE4A3361A50573500D0CA73 /* FileSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileSettings.xib; sourceTree = "<group>"; };
 		3DE4A3381A50576100D0CA73 /* FileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSettingsViewController.swift; sourceTree = "<group>"; };
 		3DE8B44E1A4D6D0E00C537C1 /* SplitViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewDelegate.swift; sourceTree = "<group>"; };
-		3DE8B4521A4D702800C537C1 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
-		3DE8B4541A4D70D100C537C1 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
-		3DE8B4561A4D7F8500C537C1 /* EditorSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditorSettingsView.xib; sourceTree = "<group>"; };
+		3DE8B4561A4D7F8500C537C1 /* EditorSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditorSettings.xib; sourceTree = "<group>"; };
 		3DE8B45A1A4D83BF00C537C1 /* EditorSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsViewController.swift; sourceTree = "<group>"; };
 		3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSessionSettings.swift; sourceTree = "<group>"; };
 		3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettings.swift; sourceTree = "<group>"; };
@@ -254,9 +250,7 @@
 				3DDFFA6A1A4721D200971982 /* AppDelegate.swift */,
 				3DDFFA6C1A4721D200971982 /* Document.swift */,
 				3DE8B44E1A4D6D0E00C537C1 /* SplitViewDelegate.swift */,
-				3DE8B4541A4D70D100C537C1 /* SplitViewController.swift */,
 				3DFEF75E1A500FDC0006289A /* SideBarStackView.swift */,
-				3DE8B4521A4D702800C537C1 /* SideBar.swift */,
 				3D458A3C1A4982BA00FB72A7 /* SearchPopup */,
 				3DDFFA6E1A4721D200971982 /* Document.xib */,
 				3DE8B45C1A4D8BFD00C537C1 /* Settings */,
@@ -313,8 +307,8 @@
 		3DE4A3271A501EA500D0CA73 /* Mode */ = {
 			isa = PBXGroup;
 			children = (
-				3D29A4B51A4F12A400D1EB55 /* SettingsModeViewController.swift */,
-				3D29A4B71A4F212D00D1EB55 /* SettingsModeView.xib */,
+				3D29A4B71A4F212D00D1EB55 /* ModeSettings.xib */,
+				3D29A4B51A4F12A400D1EB55 /* ModeSettingsViewController.swift */,
 				3DE4A3361A50573500D0CA73 /* FileSettings.xib */,
 				3DE4A3381A50576100D0CA73 /* FileSettingsViewController.swift */,
 			);
@@ -349,10 +343,10 @@
 				3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */,
 				3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */,
 				3DF669571A50A10800F97BC5 /* ObservableSettings.swift */,
-				3D8A8B661A505C4800FDFB7E /* EditorFileSettings.swift */,
+				3D2D60601A515B30005B995F /* EditorFileSettings.swift */,
 				3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */,
 				3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */,
-				3DE8B4561A4D7F8500C537C1 /* EditorSettingsView.xib */,
+				3DE8B4561A4D7F8500C537C1 /* EditorSettings.xib */,
 				3DE8B4631A4DA4A800C537C1 /* EditorSettingsView.swift */,
 				3DE8B45A1A4D83BF00C537C1 /* EditorSettingsViewController.swift */,
 				3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */,
@@ -477,7 +471,7 @@
 				3D96A3031A4C2C4100AA2762 /* icon_method.png in Resources */,
 				3DBD49931A4ABB6C00C2B1C9 /* Outline.xib in Resources */,
 				3DDFFA701A4721D200971982 /* Document.xib in Resources */,
-				3D29A4B81A4F212D00D1EB55 /* SettingsModeView.xib in Resources */,
+				3D29A4B81A4F212D00D1EB55 /* ModeSettings.xib in Resources */,
 				3D29A4B01A4EBE7C00D1EB55 /* Images.xcassets in Resources */,
 				3DE4A32B1A501F3800D0CA73 /* DefaultSettings.xib in Resources */,
 				3D96A2FD1A4C29AB00AA2762 /* icon_class.png in Resources */,
@@ -485,7 +479,7 @@
 				3D96A3011A4C2ABC00AA2762 /* icon_unknown.png in Resources */,
 				3DFCC1C31A49711400D41481 /* SearchPopup.xib in Resources */,
 				3DDFFA751A4721D300971982 /* MainMenu.xib in Resources */,
-				3DE8B4571A4D7F8500C537C1 /* EditorSettingsView.xib in Resources */,
+				3DE8B4571A4D7F8500C537C1 /* EditorSettings.xib in Resources */,
 				3DD0AECD1A472B720091BD16 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +505,8 @@
 				3DE4A32F1A504D0200D0CA73 /* FileMapping.swift in Sources */,
 				3DBD49971A4ABB7800C2B1C9 /* OutlineController.swift in Sources */,
 				3D458A3E1A4995A100FB72A7 /* RecentFileData.swift in Sources */,
-				3D29A4B61A4F12A400D1EB55 /* SettingsModeViewController.swift in Sources */,
+				3D29A4B61A4F12A400D1EB55 /* ModeSettingsViewController.swift in Sources */,
+				3D2D60611A515B30005B995F /* EditorFileSettings.swift in Sources */,
 				3D458A401A4995D000FB72A7 /* FileData.swift in Sources */,
 				3DF669581A50A10800F97BC5 /* ObservableSettings.swift in Sources */,
 				3DDFFA6D1A4721D200971982 /* Document.swift in Sources */,
@@ -519,11 +514,9 @@
 				3DE4A3351A50557F00D0CA73 /* ExternalToolsViewController.swift in Sources */,
 				3D6A3EE91A4ACE5C002507B9 /* CtagsOutliner.swift in Sources */,
 				3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */,
-				3D8A8B671A505C4800FDFB7E /* EditorFileSettings.swift in Sources */,
 				3DFEF75F1A500FDC0006289A /* SideBarStackView.swift in Sources */,
 				3DE8B4661A4DA9D900C537C1 /* EditorDefaultSettings.swift in Sources */,
 				3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */,
-				3DE8B4531A4D702800C537C1 /* SideBar.swift in Sources */,
 				3DE4A3391A50576100D0CA73 /* FileSettingsViewController.swift in Sources */,
 				3DE8B4641A4DA4A800C537C1 /* EditorSettingsView.swift in Sources */,
 				3DFCC1C51A49718700D41481 /* SearchPopupController.swift in Sources */,
@@ -535,7 +528,6 @@
 				3D6A3EE51A4ACC82002507B9 /* Outliner.swift in Sources */,
 				3DE8B4601A4D8CED00C537C1 /* EditorSessionSettings.swift in Sources */,
 				3DE8B45B1A4D83BF00C537C1 /* EditorSettingsViewController.swift in Sources */,
-				3DE8B4551A4D70D100C537C1 /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
