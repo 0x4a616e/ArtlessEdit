@@ -13,7 +13,6 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ArtlessEdit" customModuleProvider="target">
             <connections>
-                <outlet property="mode" destination="MZC-Ut-43Z" id="PqB-YR-Eb9"/>
                 <outlet property="settingsWindow" destination="9QM-1G-dDs" id="bKS-hY-K2S"/>
             </connections>
         </customObject>
@@ -358,16 +357,6 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Format" id="GEO-Iw-cKr">
                         <items>
-                            <menuItem title="Syntax" id="MZC-Ut-43Z">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Syntax" id="U9n-TE-hJl">
-                                    <items>
-                                        <menuItem title="Item" id="rjD-k3-2d2">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
                             <menuItem title="Outline" keyEquivalent="i" id="tio-G5-TMS">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
