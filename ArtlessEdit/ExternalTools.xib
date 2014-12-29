@@ -4,8 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ExternalToolsController" customModule="ArtlessEdit" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="ExternalToolsViewController" customModule="ArtlessEdit">
             <connections>
+                <outlet property="ctagsPathField" destination="MiO-nD-VaX" id="RqY-cR-TIB"/>
                 <outlet property="view" destination="c22-O7-iKe" id="AOH-hG-c7N"/>
             </connections>
         </customObject>
@@ -30,6 +31,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="setCtagsPath:" target="-2" id="1Ad-vT-rBC"/>
+                    </connections>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WxJ-iX-PEd">
                     <rect key="frame" x="519" y="327" width="67" height="32"/>
@@ -37,6 +41,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="chooseCtagsPath:" target="-2" id="36X-WK-yHA"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>

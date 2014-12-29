@@ -21,49 +21,54 @@ class CtagsOutliner: Outliner {
     
     func getOutline(fn: ([OutlineInfo]) -> Void) {
         if let path = file.path {
-            let ctagsPath = "/usr/local/bin/ctags"
+            if let ctagsPath = ExternalToolsSettings.defaultSettings().getCtagsPath() {
             
-            if !NSFileManager.defaultManager().isExecutableFileAtPath(ctagsPath) {
-                println("Cannot find ctags at " + ctagsPath)
-                return
+                if !NSFileManager.defaultManager().isExecutableFileAtPath(ctagsPath) {
+                    println("Cannot find ctags at " + ctagsPath)
+                    return
+                }
+                
+                getOutline(ctagsPath, path: path, fn: fn)
             }
-            
-            let pipe = NSPipe()
-            let task = startCtags(ctagsPath, filePath: path, pipe: pipe)
+        }
+    }
+    
+    private func getOutline(ctagsPath: String, path: String, fn: ([OutlineInfo]) -> Void) {
+        let pipe = NSPipe()
+        let task = startCtags(ctagsPath, filePath: path, pipe: pipe)
         
-            let handle = pipe.fileHandleForReading
-            let bufferSize = 4096
-            
-            if let delimiter = "\n".dataUsingEncoding(NSUTF8StringEncoding) {
-                if let buffer = NSMutableData(capacity: bufferSize) {
-                    var newData = handle.availableData
+        let handle = pipe.fileHandleForReading
+        let bufferSize = 4096
+        
+        if let delimiter = "\n".dataUsingEncoding(NSUTF8StringEncoding) {
+            if let buffer = NSMutableData(capacity: bufferSize) {
+                var newData = handle.availableData
+                
+                while newData.length > 0 {
+                    buffer.appendData(newData.subdataWithRange(NSMakeRange(0, min(newData.length, bufferSize))))
                     
-                    while newData.length > 0 {
-                        buffer.appendData(newData.subdataWithRange(NSMakeRange(0, min(newData.length, bufferSize))))
-                        
-                        var outlines: [OutlineInfo] = []
-                        var lastLocation = 0
-                        var range = buffer.rangeOfData(delimiter, options: nil, range: NSMakeRange(0, buffer.length))
-                        
-                        while range.location != NSNotFound {
-                            if let line = NSString(data: buffer.subdataWithRange(NSMakeRange(lastLocation, range.location - lastLocation)), encoding: NSUTF8StringEncoding) {
-                                
-                                if let info = parseLine(line) {
-                                    outlines.append(info)
-                                }
-                            }
+                    var outlines: [OutlineInfo] = []
+                    var lastLocation = 0
+                    var range = buffer.rangeOfData(delimiter, options: nil, range: NSMakeRange(0, buffer.length))
+                    
+                    while range.location != NSNotFound {
+                        if let line = NSString(data: buffer.subdataWithRange(NSMakeRange(lastLocation, range.location - lastLocation)), encoding: NSUTF8StringEncoding) {
                             
-                            lastLocation = range.location + 1
-                            range = buffer.rangeOfData(delimiter, options: nil, range: NSMakeRange(lastLocation, buffer.length - lastLocation))
+                            if let info = parseLine(line) {
+                                outlines.append(info)
+                            }
                         }
                         
-                        if (outlines.count > 0) {
-                            fn(outlines)
-                        }
-                        
-                        buffer.replaceBytesInRange(NSMakeRange(0, lastLocation), withBytes: nil, length: 0)
-                        newData = handle.availableData
+                        lastLocation = range.location + 1
+                        range = buffer.rangeOfData(delimiter, options: nil, range: NSMakeRange(lastLocation, buffer.length - lastLocation))
                     }
+                    
+                    if (outlines.count > 0) {
+                        fn(outlines)
+                    }
+                    
+                    buffer.replaceBytesInRange(NSMakeRange(0, lastLocation), withBytes: nil, length: 0)
+                    newData = handle.availableData
                 }
             }
         }

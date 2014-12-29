@@ -29,6 +29,8 @@ class SearchPopupController: NSWindowController, NSTableViewDataSource, NSTableV
         } else {
             super.showWindow(sender)
         }
+        
+        tableView.selectRowIndexes(NSIndexSet(), byExtendingSelection: false)
     }
     
     @IBAction func clickRow(sender: AnyObject) {

@@ -15,8 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var settingsWindow: NSWindow!
     
     lazy var quickOpenController = SearchPopupController(windowNibName: "SearchPopup")
+    
     lazy var defaultSettingsController = DefaultSettingsViewController(nibName: "DefaultSettings", bundle: nil)
-    lazy var externalToolsController = DefaultSettingsViewController(nibName: "ExternalTools", bundle: nil)
+    lazy var externalToolsController = ExternalToolsViewController(nibName: "ExternalTools", bundle: nil)
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         createSubMenu(ACEModeNames.humanModeNames(), targetMenu: mode, selector: Selector("setModeName:"))

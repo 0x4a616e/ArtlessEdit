@@ -11,6 +11,7 @@
 		3D29A4B61A4F12A400D1EB55 /* ModeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29A4B51A4F12A400D1EB55 /* ModeSettingsViewController.swift */; };
 		3D29A4B81A4F212D00D1EB55 /* ModeSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D29A4B71A4F212D00D1EB55 /* ModeSettings.xib */; };
 		3D2D60611A515B30005B995F /* EditorFileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D60601A515B30005B995F /* EditorFileSettings.swift */; };
+		3D2D60631A516148005B995F /* ExternalToolsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D60621A516148005B995F /* ExternalToolsSettings.swift */; };
 		3D31008F1A48344E0073ED36 /* ACEView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DDFFA911A47221600971982 /* ACEView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D458A371A4977EB00FB72A7 /* SearchPopupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */; };
 		3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D458A3A1A497D1B00FB72A7 /* OpenFileData.swift */; };
@@ -112,6 +113,8 @@
 		3D29A4B51A4F12A400D1EB55 /* ModeSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeSettingsViewController.swift; sourceTree = "<group>"; };
 		3D29A4B71A4F212D00D1EB55 /* ModeSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModeSettings.xib; sourceTree = "<group>"; };
 		3D2D60601A515B30005B995F /* EditorFileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorFileSettings.swift; sourceTree = "<group>"; };
+		3D2D60621A516148005B995F /* ExternalToolsSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalToolsSettings.swift; sourceTree = "<group>"; };
+		3D2D60641A5169FF005B995F /* ArtlessEdit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArtlessEdit.entitlements; sourceTree = "<group>"; };
 		3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopupData.swift; sourceTree = "<group>"; };
 		3D458A3A1A497D1B00FB72A7 /* OpenFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFileData.swift; sourceTree = "<group>"; };
 		3D458A3D1A4995A100FB72A7 /* RecentFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentFileData.swift; sourceTree = "<group>"; };
@@ -246,6 +249,7 @@
 		3DDFFA671A4721D200971982 /* ArtlessEdit */ = {
 			isa = PBXGroup;
 			children = (
+				3D2D60641A5169FF005B995F /* ArtlessEdit.entitlements */,
 				3DD0AEC71A4728190091BD16 /* controls */,
 				3DDFFA6A1A4721D200971982 /* AppDelegate.swift */,
 				3DDFFA6C1A4721D200971982 /* Document.swift */,
@@ -318,27 +322,20 @@
 		3DE4A3301A50554600D0CA73 /* Default */ = {
 			isa = PBXGroup;
 			children = (
+				3DE4A3321A50556600D0CA73 /* ExternalTools.xib */,
+				3DE4A3341A50557F00D0CA73 /* ExternalToolsViewController.swift */,
+				3D2D60621A516148005B995F /* ExternalToolsSettings.swift */,
 				3DE4A3281A501EC500D0CA73 /* FileModeDataSource.swift */,
-				3DE4A32E1A504D0200D0CA73 /* FileMapping.swift */,
 				3DE4A32A1A501F3800D0CA73 /* DefaultSettings.xib */,
+				3DE4A32E1A504D0200D0CA73 /* FileMapping.swift */,
 				3DE4A32C1A501FC900D0CA73 /* DefaultSettingsViewController.swift */,
 			);
 			name = Default;
 			sourceTree = "<group>";
 		};
-		3DE4A3311A50554E00D0CA73 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				3DE4A3321A50556600D0CA73 /* ExternalTools.xib */,
-				3DE4A3341A50557F00D0CA73 /* ExternalToolsViewController.swift */,
-			);
-			name = Tools;
-			sourceTree = "<group>";
-		};
 		3DE8B45C1A4D8BFD00C537C1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				3DE4A3311A50554E00D0CA73 /* Tools */,
 				3DE4A3271A501EA500D0CA73 /* Mode */,
 				3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */,
 				3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */,
@@ -406,6 +403,11 @@
 				TargetAttributes = {
 					3DDFFA641A4721D200971982 = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					3DDFFA791A4721D300971982 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -518,6 +520,7 @@
 				3DE8B4661A4DA9D900C537C1 /* EditorDefaultSettings.swift in Sources */,
 				3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */,
 				3DE4A3391A50576100D0CA73 /* FileSettingsViewController.swift in Sources */,
+				3D2D60631A516148005B995F /* ExternalToolsSettings.swift in Sources */,
 				3DE8B4641A4DA4A800C537C1 /* EditorSettingsView.swift in Sources */,
 				3DFCC1C51A49718700D41481 /* SearchPopupController.swift in Sources */,
 				3DE8B4621A4D90AC00C537C1 /* EditorSettings.swift in Sources */,
@@ -655,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ArtlessEdit/ArtlessEdit.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ArtlessEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -667,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ArtlessEdit/ArtlessEdit.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ArtlessEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
