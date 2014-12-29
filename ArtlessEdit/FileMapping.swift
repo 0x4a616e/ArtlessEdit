@@ -12,7 +12,16 @@ class FileMapping {
     private let fileModeSettings = "fileModeSettings"
     private let userDefaults = NSUserDefaults.standardUserDefaults()
     
-    private var mappings: [String:Int] = [:]
+    // Mappings are loaded as defaults and overwritten by modifications
+    private var mappings: [String:Int] = [
+        "cpp": ACEModeCPP,
+        "h": ACEModeCPP,
+        "html": ACEModeHTML,
+        "java":ACEModeJava,
+        "js": ACEModeJavaScript,
+        "py": ACEModePython,
+        "xml": ACEModeXML
+    ]
     
     init() {
         if let data = userDefaults.objectForKey(fileModeSettings) as? [String: Int] {
