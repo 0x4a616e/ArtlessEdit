@@ -61,18 +61,12 @@ class Document: NSDocument {
         windowForSheet?.endSheet(goToPanel)
     }
     
-    func setModeName(menuItem: NSMenuItem) {
-        var modeNames:NSArray = ACEModeNames.humanModeNames()
-        var index = modeNames.indexOfObject(menuItem.title)
-        aceView.setMode(UInt(index))
-    }
-    
-    func getModeForType(type: String) -> ACEMode? {
+    func getModeForType(type: String) -> String? {
         var index: UInt = 0
         
         for modeName in ACEModeNames.modeNames() as [String] {
             if modeName.lowercaseString == type.lowercaseString {
-                return ACEMode(index)
+                return modeName
             }
             index += 1
         }
@@ -80,7 +74,7 @@ class Document: NSDocument {
         return nil
     }
     
-    func getMode() -> ACEMode? {
+    func getMode() -> String? {
         if let path = fileURL?.path {
             
             if let mapping = FileMapping().getMode(path.pathExtension.lowercaseString) {
@@ -118,7 +112,7 @@ class Document: NSDocument {
         setSidebarVisibility(defaultSettings.getShowSidebar())
         
         // TODO: Move to view controller
-        if (ACEThemeNames.isDarkTheme(UInt(defaultSettings.getTheme()))) {
+        if (ACEThemeNames.isDarkTheme(defaultSettings.getTheme())) {
             visualEffectView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
         }
         

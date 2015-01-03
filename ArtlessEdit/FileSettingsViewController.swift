@@ -28,13 +28,13 @@ class FileSettingsViewController: NSViewController {
     
     override func viewDidLoad() {
         modeBox.addItemsWithObjectValues(ACEModeNames.humanModeNames())
-        modeBox.selectItemAtIndex(settings.getMode())
+        modeBox.selectItemAtIndex(ACEModeNames.getIndexByName(settings.getMode()))
         
         encodingBox.selectItemAtIndex(0)
         lineEndingBox.selectItemAtIndex(0)
     }
     
     @IBAction func changeMode(sender: NSComboBox) {
-        settings.setMode(sender.indexOfSelectedItem)
+        settings.setMode(ACEModeNames.getNameByIndex(sender.indexOfSelectedItem))
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 class EditorFileSettings {
-    private var mode: Int? = nil;
+    private var mode: String? = nil;
     
     private let defaultSettings: EditorDefaultSettings
 
@@ -20,18 +20,18 @@ class EditorFileSettings {
         self.aceView = aceView
     }
     
-    func setMode(mode: ACEMode?) {
+    func setMode(mode: String?) {
         self.mode = mode
         
-        if let modeIndex = mode {
-            aceView.setMode(UInt(modeIndex))
+        if mode != nil {
+            aceView.setMode(mode!)
         }
         
         defaultSettings.setMode(mode)
     }
     
-    func getMode() -> Int {
-        return mode ?? 0
+    func getMode() -> String {
+        return mode ?? "asciidoc"
     }
     
 }

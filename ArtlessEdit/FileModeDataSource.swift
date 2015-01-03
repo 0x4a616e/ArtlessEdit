@@ -11,7 +11,7 @@ import Foundation
 class FileModeDataSource: NSObject, NSTableViewDataSource, NSTableViewDelegate, NSComboBoxCellDataSource {
 
     private let defaultString = ""
-    private let defaultFileMode = 0
+    private let defaultFileMode = "asciidoc"
     private let mappings = FileMapping()
     
     @IBOutlet weak var tableView: NSTableView!
@@ -26,12 +26,12 @@ class FileModeDataSource: NSObject, NSTableViewDataSource, NSTableViewDelegate, 
     
     func getModeSelectorBox(row: Int) -> String {
         if row < mappings.count() {
-            if let modeIndex = mappings.getMode(mappings.getFiles()[row]) {
-                return ACEModeNames.humanModeNames()[modeIndex] as String
+            if let mode = mappings.getMode(mappings.getFiles()[row]) {
+                return ACEModeNames.humanNameForMode(mode)
             }
         }
         
-        return ACEModeNames.humanModeNames()[defaultFileMode] as String
+        return ACEModeNames.humanNameForMode(defaultFileMode) as String
     }
     
     func tableView(tableView: NSTableView, setObjectValue object: AnyObject?, forTableColumn tableColumn: NSTableColumn?, row: Int) {
@@ -48,9 +48,7 @@ class FileModeDataSource: NSObject, NSTableViewDataSource, NSTableViewDelegate, 
             }
         } else if (tableColumn?.identifier == "FileModeColumn") {
             if let newFileMode = object as? String {
-                if let index = find(ACEModeNames.humanModeNames() as [String], newFileMode) {
-                     mappings.setMode(fileEnding, mode: index)
-                }
+                mappings.setMode(fileEnding, mode: ACEModeNames.nameByHumanName(newFileMode))
             }
         }
 

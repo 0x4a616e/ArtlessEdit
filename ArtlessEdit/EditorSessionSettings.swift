@@ -12,7 +12,7 @@ class EditorSessionSettings: EditorSettingsObservable, EditorSettings, EditorSet
     
     let aceView: ACEView
     
-    var theme = 0
+    var theme = ""
     var bindings = ACEKeyboardHandler.Ace
     
     var codeFolding = false
@@ -76,12 +76,12 @@ class EditorSessionSettings: EditorSettingsObservable, EditorSettings, EditorSet
         notifySubscribers(self)
     }
     
-    func setTheme(index: Int) {
-        theme = index
-        aceView.setTheme(UInt(index))
+    func setTheme(name: String) {
+        theme = name
+        aceView.setTheme(name)
     }
     
-    func getTheme() -> ACETheme {
+    func getTheme() -> String {
         return theme
     }
     

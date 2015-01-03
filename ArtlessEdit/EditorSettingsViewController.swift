@@ -44,9 +44,14 @@ class EditorSettingsViewController: NSViewController, EditorSettingsObserver {
     }
     
     func updateSettings(settings: EditorSettings) {
+        themeBox.removeAllItems()
         themeBox.addItemsWithObjectValues(ACEThemeNames.humanThemeNames())
-        themeBox.selectItemAtIndex(settings.getTheme())
+        let index = ACEThemeNames.getIndexByName(settings.getTheme())
+        if (index > 0) {
+            themeBox.selectItemAtIndex(index)
+        }
         
+        bindingsBox.removeAllItems()
         bindingsBox.addItemsWithObjectValues(ACEKeyboardHandlerNames.humanKeyboardHandlerNames())
         bindingsBox.selectItemAtIndex(Int(settings.getKeyBindings().rawValue))
         
@@ -65,7 +70,7 @@ class EditorSettingsViewController: NSViewController, EditorSettingsObserver {
     }
     
     @IBAction func setTheme(sender: NSComboBox) {
-        handler.setTheme(sender.indexOfSelectedItem)
+        handler.setTheme(ACEThemeNames.getNameByIndex(sender.indexOfSelectedItem))
     }
     
     @IBAction func setKeyBindings(sender: NSComboBox) {

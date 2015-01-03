@@ -22,7 +22,7 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
     let TAB_SIZE = "TabSize"
     let SHOW_SIDEBAR = "ShowSidebar"
     
-    var mode: ACEMode?{
+    var mode: String?{
         didSet(value) {
             notifySubscribers(self)
         }
@@ -30,11 +30,12 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
     
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
 
-    init(mode: ACEMode? = nil) {
+    init(mode: String? = nil) {
         super.init()
         
         if (mode == nil) {
             userDefaults.registerDefaults([
+                getKey(THEME): "clouds",
                 getKey(SHOW_SIDEBAR): true
             ])
         }
@@ -42,12 +43,12 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         setMode(mode)
     }
    
-    func setTheme(index: Int) {
-        userDefaults.setInteger(index, forKey: getKey(THEME))
+    func setTheme(name: String) {
+        userDefaults.setObject(name, forKey: getKey(THEME))
     }
     
-    func getTheme() -> ACETheme {
-        return userDefaults.integerForKey(getKey(THEME))
+    func getTheme() -> String {
+        return userDefaults.objectForKey(getKey(THEME)) as? String ?? "clouds"
     }
 
     func setKeyBindings(bindings: ACEKeyboardHandler) {
@@ -128,7 +129,7 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
     
     func getKey(key: String) -> String {
         if (mode != nil) {
-            return ACEModeNames.humanNameForMode(UInt(mode!)) + "_" + key
+            return mode! + "_" + key
         }
         
         return key
@@ -142,7 +143,7 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         userDefaults.setBool(val, forKey: getKey(SHOW_SIDEBAR))
     }
     
-    func setMode(mode: ACEMode?) {
+    func setMode(mode: NSString?) {
         self.mode = mode
         if (mode != nil) {
             loadDefaultSettings()
@@ -188,16 +189,16 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         userDefaults.removeObjectForKey(getKey(SHOW_SIDEBAR))
     }
     
-    class func hasModeSettings(forMode: ACEMode) -> Bool {
+    class func hasModeSettings(forMode: String) -> Bool {
         let userDetails = NSUserDefaults.standardUserDefaults()
         return userDetails.boolForKey(getModeSettingsKey(forMode)) == true
     }
     
-    class func getModeSettingsKey(forMode: ACEMode?) -> String {
-        return ACEModeNames.humanNameForMode(UInt(forMode!)) + "_settings"
+    class func getModeSettingsKey(forMode: String!) -> String {
+        return forMode + "_settings"
     }
     
-    class func getEditorDefaultSettings(forMode: ACEMode?) -> EditorDefaultSettings {
+    class func getEditorDefaultSettings(forMode: String?) -> EditorDefaultSettings {
         if (forMode != nil && hasModeSettings(forMode!)) {
             return EditorDefaultSettings(mode: forMode)
         } else {

@@ -9,8 +9,8 @@
 import Foundation
 
 protocol EditorSettings {
-    func setTheme(index: Int)
-    func getTheme() -> ACETheme
+    func setTheme(name: String)
+    func getTheme() -> String
     
     func setKeyBindings(bindings: ACEKeyboardHandler)
     func getKeyBindings() -> ACEKeyboardHandler

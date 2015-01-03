@@ -48,7 +48,7 @@ class ModeSettingsViewController: NSViewController {
     @IBAction func setSyntax(sender: NSComboBox) {
         if sender.indexOfSelectedItem > 0 {
             let mode = sender.indexOfSelectedItem - 1
-            settings.setMode(mode)
+            settings.setMode(ACEModeNames.modeNames()[mode] as? NSString)
             deleteButton.enabled = true
         } else {
             settings.setMode(nil)
