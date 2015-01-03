@@ -22,17 +22,13 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
     let TAB_SIZE = "TabSize"
     let SHOW_SIDEBAR = "ShowSidebar"
     
-    var mode: String?{
-        didSet(value) {
-            notifySubscribers(self)
-        }
-    }
+    var mode: String?
     
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
 
     init(mode: String? = nil) {
         super.init()
-        
+                
         if (mode == nil) {
             userDefaults.registerDefaults([
                 getKey(THEME): "clouds",
@@ -189,20 +185,7 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         userDefaults.removeObjectForKey(getKey(SHOW_SIDEBAR))
     }
     
-    class func hasModeSettings(forMode: String) -> Bool {
-        let userDetails = NSUserDefaults.standardUserDefaults()
-        return userDetails.boolForKey(getModeSettingsKey(forMode)) == true
-    }
-    
-    class func getModeSettingsKey(forMode: String!) -> String {
-        return forMode + "_settings"
-    }
-    
     class func getEditorDefaultSettings(forMode: String?) -> EditorDefaultSettings {
-        if (forMode != nil && hasModeSettings(forMode!)) {
-            return EditorDefaultSettings(mode: forMode)
-        } else {
-            return EditorDefaultSettings()
-        }
+        return EditorDefaultSettings(mode: forMode)
     }
 }

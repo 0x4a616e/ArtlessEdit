@@ -375,8 +375,7 @@
                                     <action selector="showGotoSheet:" target="-1" id="XYo-mq-qfV"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Toggle Sidebar" id="ZoX-LU-j4B">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Toggle Sidebar" keyEquivalent="t" id="ZoX-LU-j4B">
                                 <connections>
                                     <action selector="toggleSideBar:" target="-1" id="vtq-g0-9Vk"/>
                                 </connections>
@@ -527,7 +526,7 @@
             <point key="canvasLocation" x="381" y="714"/>
         </window>
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="9QM-1G-dDs">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
             <rect key="contentRect" x="131" y="158" width="600" height="400"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="600" height="400"/>
