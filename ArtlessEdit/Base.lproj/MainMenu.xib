@@ -220,6 +220,11 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Advanced Find" keyEquivalent="F" id="aCu-yn-vpO">
+                                <connections>
+                                    <action selector="showAdvancesSearch:" target="Voe-Tx-rLC" id="2JW-d2-Btg"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Spelling and Grammar" id="Dv1-io-Yv7">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Spelling" id="3IN-sU-3Bg">
@@ -357,8 +362,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Format" id="GEO-Iw-cKr">
                         <items>
-                            <menuItem title="Outline" keyEquivalent="i" id="tio-G5-TMS">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                            <menuItem title="Outline" keyEquivalent="I" id="tio-G5-TMS">
                                 <connections>
                                     <action selector="outline:" target="-1" id="Kig-0W-HvY"/>
                                 </connections>
@@ -555,7 +559,7 @@
                     <toolbarItem reference="1g8-G7-Ddc"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="625" y="-6"/>
+            <point key="canvasLocation" x="611" y="152"/>
         </window>
     </objects>
     <resources>

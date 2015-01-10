@@ -12,6 +12,8 @@
 		3D29A4B81A4F212D00D1EB55 /* ModeSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D29A4B71A4F212D00D1EB55 /* ModeSettings.xib */; };
 		3D2D60611A515B30005B995F /* EditorFileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D60601A515B30005B995F /* EditorFileSettings.swift */; };
 		3D2D60631A516148005B995F /* ExternalToolsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D60621A516148005B995F /* ExternalToolsSettings.swift */; };
+		3D2ED5D01A61531F00F2F139 /* SearchHistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2ED5CF1A61531F00F2F139 /* SearchHistoryDataSource.swift */; };
+		3D2ED5D21A61541A00F2F139 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2ED5D11A61541A00F2F139 /* SearchHistory.swift */; };
 		3D31008F1A48344E0073ED36 /* ACEView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DDFFA911A47221600971982 /* ACEView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D458A371A4977EB00FB72A7 /* SearchPopupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */; };
 		3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D458A3A1A497D1B00FB72A7 /* OpenFileData.swift */; };
@@ -26,11 +28,17 @@
 		3D96A3011A4C2ABC00AA2762 /* icon_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */; };
 		3D96A3031A4C2C4100AA2762 /* icon_method.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A3021A4C2C4100AA2762 /* icon_method.png */; };
 		3D96A3051A4C2CFF00AA2762 /* SearchPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D96A3041A4C2CFF00AA2762 /* SearchPopup.swift */; };
+		3DA6D2811A59569B0025C0C7 /* SearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6D2801A59569B0025C0C7 /* SearchResultsDataSource.swift */; };
+		3DA6D2851A5960490025C0C7 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6D2841A5960490025C0C7 /* SearchResult.swift */; };
 		3DBD49931A4ABB6C00C2B1C9 /* Outline.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DBD49921A4ABB6C00C2B1C9 /* Outline.xib */; };
 		3DBD49971A4ABB7800C2B1C9 /* OutlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD49961A4ABB7800C2B1C9 /* OutlineController.swift */; };
+		3DC364A11A5DA1CF00AEDE1B /* ModeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC364A01A5DA1CF00AEDE1B /* ModeDataSource.swift */; };
 		3DD0AECD1A472B720091BD16 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD0AECC1A472B720091BD16 /* Credits.rtf */; };
 		3DD959FE1A50959C0068B31A /* EditorSettingsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */; };
 		3DD95A021A509B290068B31A /* EditorSettingsObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */; };
+		3DDC49981A594B6B004E5C9F /* AdvancedSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDC49971A594B6B004E5C9F /* AdvancedSearch.xib */; };
+		3DDC499A1A594B8E004E5C9F /* AdvancedSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC49991A594B8E004E5C9F /* AdvancedSearchController.swift */; };
+		3DDC499C1A594DD8004E5C9F /* OpenFilesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC499B1A594DD8004E5C9F /* OpenFilesDataSource.swift */; };
 		3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6A1A4721D200971982 /* AppDelegate.swift */; };
 		3DDFFA6D1A4721D200971982 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6C1A4721D200971982 /* Document.swift */; };
 		3DDFFA701A4721D200971982 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFFA6E1A4721D200971982 /* Document.xib */; };
@@ -115,6 +123,8 @@
 		3D2D60601A515B30005B995F /* EditorFileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorFileSettings.swift; sourceTree = "<group>"; };
 		3D2D60621A516148005B995F /* ExternalToolsSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalToolsSettings.swift; sourceTree = "<group>"; };
 		3D2D60641A5169FF005B995F /* ArtlessEdit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArtlessEdit.entitlements; sourceTree = "<group>"; };
+		3D2ED5CF1A61531F00F2F139 /* SearchHistoryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryDataSource.swift; sourceTree = "<group>"; };
+		3D2ED5D11A61541A00F2F139 /* SearchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopupData.swift; sourceTree = "<group>"; };
 		3D458A3A1A497D1B00FB72A7 /* OpenFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFileData.swift; sourceTree = "<group>"; };
 		3D458A3D1A4995A100FB72A7 /* RecentFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentFileData.swift; sourceTree = "<group>"; };
@@ -127,13 +137,19 @@
 		3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_unknown.png; sourceTree = "<group>"; };
 		3D96A3021A4C2C4100AA2762 /* icon_method.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_method.png; sourceTree = "<group>"; };
 		3D96A3041A4C2CFF00AA2762 /* SearchPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopup.swift; sourceTree = "<group>"; };
+		3DA6D2801A59569B0025C0C7 /* SearchResultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsDataSource.swift; sourceTree = "<group>"; };
+		3DA6D2841A5960490025C0C7 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		3DBD49921A4ABB6C00C2B1C9 /* Outline.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Outline.xib; sourceTree = "<group>"; };
 		3DBD49961A4ABB7800C2B1C9 /* OutlineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineController.swift; sourceTree = "<group>"; };
+		3DC364A01A5DA1CF00AEDE1B /* ModeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeDataSource.swift; sourceTree = "<group>"; };
 		3DD0AECA1A472A830091BD16 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3DD0AECB1A472A830091BD16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3DD0AECC1A472B720091BD16 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsObserver.swift; sourceTree = "<group>"; };
 		3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsObservable.swift; sourceTree = "<group>"; };
+		3DDC49971A594B6B004E5C9F /* AdvancedSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvancedSearch.xib; sourceTree = "<group>"; };
+		3DDC49991A594B8E004E5C9F /* AdvancedSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedSearchController.swift; sourceTree = "<group>"; };
+		3DDC499B1A594DD8004E5C9F /* OpenFilesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFilesDataSource.swift; sourceTree = "<group>"; };
 		3DDFFA651A4721D200971982 /* ArtlessEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtlessEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDFFA691A4721D200971982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DDFFA6A1A4721D200971982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +241,14 @@
 			name = Wikifiles;
 			sourceTree = "<group>";
 		};
+		3DC3649D1A5DA1B800AEDE1B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3DC364A01A5DA1CF00AEDE1B /* ModeDataSource.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		3DD0AEC71A4728190091BD16 /* controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +258,20 @@
 				3D458A3D1A4995A100FB72A7 /* RecentFileData.swift */,
 			);
 			name = controls;
+			sourceTree = "<group>";
+		};
+		3DDC49941A594B57004E5C9F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3DDC49971A594B6B004E5C9F /* AdvancedSearch.xib */,
+				3D2ED5CF1A61531F00F2F139 /* SearchHistoryDataSource.swift */,
+				3DDC49991A594B8E004E5C9F /* AdvancedSearchController.swift */,
+				3DDC499B1A594DD8004E5C9F /* OpenFilesDataSource.swift */,
+				3DA6D2801A59569B0025C0C7 /* SearchResultsDataSource.swift */,
+				3DA6D2841A5960490025C0C7 /* SearchResult.swift */,
+				3D2ED5D11A61541A00F2F139 /* SearchHistory.swift */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		3DDFFA5C1A4721D200971982 = {
@@ -259,6 +297,8 @@
 		3DDFFA671A4721D200971982 /* ArtlessEdit */ = {
 			isa = PBXGroup;
 			children = (
+				3DC3649D1A5DA1B800AEDE1B /* Data */,
+				3DDC49941A594B57004E5C9F /* Search */,
 				3D2D60641A5169FF005B995F /* ArtlessEdit.entitlements */,
 				3DD0AEC71A4728190091BD16 /* controls */,
 				3DDFFA6A1A4721D200971982 /* AppDelegate.swift */,
@@ -415,7 +455,7 @@
 						CreatedOnToolsVersion = 6.1.1;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -484,6 +524,7 @@
 				3DBD49931A4ABB6C00C2B1C9 /* Outline.xib in Resources */,
 				3DDFFA701A4721D200971982 /* Document.xib in Resources */,
 				3D29A4B81A4F212D00D1EB55 /* ModeSettings.xib in Resources */,
+				3DDC49981A594B6B004E5C9F /* AdvancedSearch.xib in Resources */,
 				3D29A4B01A4EBE7C00D1EB55 /* Images.xcassets in Resources */,
 				3DE4A32B1A501F3800D0CA73 /* DefaultSettings.xib in Resources */,
 				3D96A2FD1A4C29AB00AA2762 /* icon_class.png in Resources */,
@@ -515,9 +556,11 @@
 				3D6646341A4722C000D8908E /* PasteHistory.swift in Sources */,
 				3DE4A3291A501EC500D0CA73 /* FileModeDataSource.swift in Sources */,
 				3DE4A32F1A504D0200D0CA73 /* FileMapping.swift in Sources */,
+				3DA6D2811A59569B0025C0C7 /* SearchResultsDataSource.swift in Sources */,
 				3DBD49971A4ABB7800C2B1C9 /* OutlineController.swift in Sources */,
 				3D458A3E1A4995A100FB72A7 /* RecentFileData.swift in Sources */,
 				3D29A4B61A4F12A400D1EB55 /* ModeSettingsViewController.swift in Sources */,
+				3DDC499A1A594B8E004E5C9F /* AdvancedSearchController.swift in Sources */,
 				3D2D60611A515B30005B995F /* EditorFileSettings.swift in Sources */,
 				3D458A401A4995D000FB72A7 /* FileData.swift in Sources */,
 				3DF669581A50A10800F97BC5 /* ObservableSettings.swift in Sources */,
@@ -525,15 +568,20 @@
 				3DE4A32D1A501FC900D0CA73 /* DefaultSettingsViewController.swift in Sources */,
 				3DE4A3351A50557F00D0CA73 /* ExternalToolsViewController.swift in Sources */,
 				3D6A3EE91A4ACE5C002507B9 /* CtagsOutliner.swift in Sources */,
+				3DDC499C1A594DD8004E5C9F /* OpenFilesDataSource.swift in Sources */,
 				3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */,
 				3DFEF75F1A500FDC0006289A /* SideBarStackView.swift in Sources */,
+				3D2ED5D21A61541A00F2F139 /* SearchHistory.swift in Sources */,
 				3DE8B4661A4DA9D900C537C1 /* EditorDefaultSettings.swift in Sources */,
 				3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */,
+				3DA6D2851A5960490025C0C7 /* SearchResult.swift in Sources */,
 				3DE4A3391A50576100D0CA73 /* FileSettingsViewController.swift in Sources */,
 				3D2D60631A516148005B995F /* ExternalToolsSettings.swift in Sources */,
 				3DE8B4641A4DA4A800C537C1 /* EditorSettingsView.swift in Sources */,
 				3DFCC1C51A49718700D41481 /* SearchPopupController.swift in Sources */,
+				3DC364A11A5DA1CF00AEDE1B /* ModeDataSource.swift in Sources */,
 				3DE8B4621A4D90AC00C537C1 /* EditorSettings.swift in Sources */,
+				3D2ED5D01A61531F00F2F139 /* SearchHistoryDataSource.swift in Sources */,
 				3DD95A021A509B290068B31A /* EditorSettingsObservable.swift in Sources */,
 				3D96A3051A4C2CFF00AA2762 /* SearchPopup.swift in Sources */,
 				3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */,
@@ -668,7 +716,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ArtlessEdit/ArtlessEdit.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ArtlessEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -681,7 +728,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ArtlessEdit/ArtlessEdit.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ArtlessEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

@@ -11,6 +11,7 @@
 
 #import "ACEView/ACEView.h"
 #import "ACEView/ACEToken.h"
+#import "ACEView/ACESearchItem.h"
 #import "ACEView/ACEModeNames.h"
 #import "ACEView/ACEThemeNames.h"
 #import "ACEView/ACEKeyboardHandlers.h"

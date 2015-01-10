@@ -15,11 +15,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     lazy var quickOpenController = SearchPopupController(windowNibName: "SearchPopup")
     
+    lazy var advancedSearchController = AdvancedSearchController(windowNibName: "AdvancedSearch")
     lazy var defaultSettingsController = DefaultSettingsViewController(nibName: "DefaultSettings", bundle: nil)
     lazy var externalToolsController = ExternalToolsViewController(nibName: "ExternalTools", bundle: nil)
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         showDefaultSettings(self)
+    }
+    
+    @IBAction func showAdvancesSearch(sender: AnyObject) {
+        advancedSearchController.showWindow(sender)
     }
     
     @IBAction func showDefaultSettings(sender: AnyObject) {

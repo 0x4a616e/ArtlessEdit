@@ -133,6 +133,24 @@ class Document: NSDocument {
         editorSettings.documentView = stackView
     }
     
+    func findAll(needle: String, options: [String:AnyObject]) -> [ACESearchItem] {
+        var fullOptions = options
+        fullOptions["needle"] = needle
+        
+        if let results = aceView.findAll(fullOptions) as? [ACESearchItem] {
+            return results
+        }
+        
+        return []
+    }
+    
+    func replaceAll(needle: String, replacement:String, options: [String:AnyObject]) {
+        var fullOptions = options
+        fullOptions["needle"] = needle
+        
+        aceView.replaceAll(replacement, options: fullOptions)
+    }
+    
     override class func autosavesInPlace() -> Bool {
         return true
     }

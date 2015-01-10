@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FileModeDataSource: NSObject, NSTableViewDataSource, NSTableViewDelegate, NSComboBoxCellDataSource {
+class FileModeDataSource: NSObject, NSTableViewDataSource, NSTableViewDelegate {
 
     private let defaultString = ""
     private let defaultFileMode = "asciidoc"
@@ -68,14 +68,6 @@ class FileModeDataSource: NSObject, NSTableViewDataSource, NSTableViewDelegate, 
         }
         
         return view
-    }
-    
-    func numberOfItemsInComboBoxCell(aComboBox: NSComboBox) -> Int {
-        return ACEModeNames.humanModeNames().count
-    }
-    
-    func comboBoxCell(aComboBoxCell: NSComboBoxCell, objectValueForItemAtIndex index: Int) -> AnyObject {
-        return ACEModeNames.humanModeNames()[index]
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {

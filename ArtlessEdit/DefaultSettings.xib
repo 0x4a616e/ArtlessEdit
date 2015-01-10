@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="UhY-9p-V2d" id="LcU-sf-QnA">
-                                <rect key="frame" x="0.0" y="0.0" width="431.5" height="19"/>
+                                <rect key="frame" x="0.0" y="0.0" width="433" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,7 +96,7 @@
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
-                                                <outlet property="dataSource" destination="Xz2-ZG-XOq" id="PA8-ts-aP4"/>
+                                                <outlet property="dataSource" destination="NgX-z6-FG6" id="CH5-wY-71R"/>
                                             </connections>
                                         </comboBoxCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
@@ -144,5 +144,6 @@
                 <outlet property="tableView" destination="LcU-sf-QnA" id="crS-p2-cu5"/>
             </connections>
         </customObject>
+        <customObject id="NgX-z6-FG6" customClass="ModeDataSource" customModule="ArtlessEdit" customModuleProvider="target"/>
     </objects>
 </document>
