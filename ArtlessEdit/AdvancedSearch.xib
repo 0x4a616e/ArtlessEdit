@@ -216,7 +216,7 @@
                                                                     </button>
                                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="uBu-zj-Ebm">
                                                                         <rect key="frame" x="18" y="31" width="97" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Whole Word" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bKV-le-axO">
+                                                                        <buttonCell key="cell" type="check" title="Whole Word" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bKV-le-axO">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
@@ -257,7 +257,7 @@
                                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                                     <tableColumns>
-                                                                                        <tableColumn identifier="HistorySearchColumn" width="135" minWidth="40" maxWidth="1000" id="cVd-2H-Amp">
+                                                                                        <tableColumn identifier="HistorySearchColumn" width="134" minWidth="40" maxWidth="1000" id="cVd-2H-Amp">
                                                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Search">
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -271,7 +271,7 @@
                                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                                             <prototypeCellViews>
                                                                                                 <tableCellView identifier="HistorySearchCell" id="Yve-iX-ERO">
-                                                                                                    <rect key="frame" x="1" y="1" width="135" height="17"/>
+                                                                                                    <rect key="frame" x="1" y="1" width="134" height="17"/>
                                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                                     <subviews>
                                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qHu-w1-whp">
@@ -335,7 +335,7 @@
                                                                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                         </scroller>
-                                                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="9oL-5g-xp9">
+                                                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9oL-5g-xp9">
                                                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                         </scroller>
@@ -396,11 +396,11 @@
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView identifier="SearchResultMatchCell" id="wqT-dB-fvu">
-                                                                                    <rect key="frame" x="1" y="1" width="224" height="17"/>
+                                                                                    <rect key="frame" x="1" y="1" width="223" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Ffk-VH-Nf5">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="223" height="17"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="222.5" height="17"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="fL2-Az-rky">
                                                                                                 <font key="font" metaFont="system"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -433,11 +433,11 @@
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView identifier="SearchResultFileCell" id="9fX-9J-Xfr">
-                                                                                    <rect key="frame" x="228" y="1" width="321" height="17"/>
+                                                                                    <rect key="frame" x="227.5" y="1" width="320" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="plf-G5-rfU">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="228" height="17"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="227.5" height="17"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="tT5-9J-HzR">
                                                                                                 <font key="font" metaFont="system"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

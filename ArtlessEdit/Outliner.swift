@@ -21,7 +21,7 @@ class OutlineInfo {
 }
 
 protocol Outliner {
-    init(view: ACEView, file: NSURL, mode: ACEMode)
+    init(view: ACEView, file: NSURL, mode: String)
     
     func getOutline(fn: ([OutlineInfo]) -> Void)
 }

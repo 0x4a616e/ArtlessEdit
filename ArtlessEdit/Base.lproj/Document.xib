@@ -18,28 +18,29 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
-            <rect key="contentRect" x="133" y="235" width="600" height="400"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <rect key="contentRect" x="133" y="235" width="800" height="494"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="600" height="400"/>
             <view key="contentView" id="gIp-Ho-8D9">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                <rect key="frame" x="0.0" y="0.0" width="800" height="494"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uf6-OK-s5L">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="494"/>
                         <subviews>
                             <customView identifier="Sidebar" id="j1q-Ka-wTf" customClass="NSVisualEffectView">
-                                <rect key="frame" x="0.0" y="0.0" width="169.5" height="400"/>
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="494"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="idk-XH-0fw">
-                                        <rect key="frame" x="0.0" y="0.0" width="170.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170.5" height="494"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="kd3-ON-fIq">
                                             <rect key="frame" x="1" y="1" width="181" height="94"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <view misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4C-8s-udo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="170.5" height="400"/>
+                                                    <rect key="frame" x="0.0" y="400" width="170.5" height="494"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -67,7 +68,7 @@
                                 </constraints>
                             </customView>
                             <customView fixedFrame="YES" id="CZA-ix-feA" customClass="ACEView">
-                                <rect key="frame" x="170.5" y="0.0" width="429.5" height="400"/>
+                                <rect key="frame" x="171" y="0.0" width="629" height="494"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </customView>
                         </subviews>
@@ -91,7 +92,7 @@
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
                 <outlet property="initialFirstResponder" destination="CZA-ix-feA" id="Ja4-84-dWr"/>
             </connections>
-            <point key="canvasLocation" x="73" y="270"/>
+            <point key="canvasLocation" x="168" y="284"/>
         </window>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="o05-gc-GiI">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>

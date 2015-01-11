@@ -14,7 +14,7 @@ class CtagsOutliner: Outliner {
     let view: ACEView
     let file: NSURL
     
-    required init(view: ACEView, file: NSURL, mode: ACEMode) {
+    required init(view: ACEView, file: NSURL, mode: String) {
         self.view = view
         self.file = file
     }

@@ -105,6 +105,19 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
+                            <menuItem title="Show in Finder" id="R4a-O2-4jO">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showInFinder:" target="-1" id="HW3-Vd-v50"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy Path" id="Myl-FI-GwO">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="copyPathToClipboard:" target="-1" id="I4v-S0-VhO"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="7DL-Cd-6cr"/>
                             <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                 <connections>
                                     <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>

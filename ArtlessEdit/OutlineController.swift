@@ -17,7 +17,7 @@ class OutlineController: NSWindowController, NSTableViewDataSource, NSTableViewD
     var searchResult: [OutlineInfo] = []
     var aceView: ACEView? = nil
     
-    func showWindow(sender: AnyObject?, aceView: ACEView, mode: ACEMode, file: NSURL) {
+    func showWindow(sender: AnyObject?, aceView: ACEView, mode: String, file: NSURL) {
         super.showWindow(sender)
         self.aceView = aceView
         
@@ -34,7 +34,7 @@ class OutlineController: NSWindowController, NSTableViewDataSource, NSTableViewD
         tableView.reloadData()
     }
     
-    func asyncLoadData(aceView: ACEView, mode: ACEMode, file: NSURL) {
+    func asyncLoadData(aceView: ACEView, mode: String, file: NSURL) {
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         
         dispatch_async(dispatch_get_global_queue(priority, 0)) {

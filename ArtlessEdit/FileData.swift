@@ -32,8 +32,13 @@ class FileData: SearchPopupData {
         var success = false
         
         var isDir: ObjCBool = false
-        if !fileManager.fileExistsAtPath(data, isDirectory: &isDir) || isDir {
+        if !fileManager.fileExistsAtPath(data, isDirectory: &isDir) {
             panel.close()
+            return;
+        }
+        
+        if isDir {
+            update(data)
             return;
         }
         
@@ -45,14 +50,14 @@ class FileData: SearchPopupData {
     }
     
     func labelValue(row: Int) -> String? {
-        if (row >= 0) {
+        if (row >= 0 && row < suggestions.count) {
             return suggestions[row]
         }
         return nil
     }
     
     func stringValue(row: Int) -> String? {
-        if row >= 0 {
+        if row >= 0 && row < suggestions.count {
             return currentDirectory.stringByAppendingPathComponent(suggestions[row])
         }
         

@@ -9,7 +9,7 @@
 import Foundation
 
 class OutlinerFactory {
-    class func create(view: ACEView, file: NSURL, mode: ACEMode) -> Outliner {
+    class func create(view: ACEView, file: NSURL, mode: String) -> Outliner {
         switch (mode) {
         default: return CtagsOutliner(view: view, file: file, mode: mode)
         }

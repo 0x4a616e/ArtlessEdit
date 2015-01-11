@@ -123,7 +123,6 @@
 		3D29A4B71A4F212D00D1EB55 /* ModeSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModeSettings.xib; sourceTree = "<group>"; };
 		3D2D60601A515B30005B995F /* EditorFileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorFileSettings.swift; sourceTree = "<group>"; };
 		3D2D60621A516148005B995F /* ExternalToolsSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalToolsSettings.swift; sourceTree = "<group>"; };
-		3D2D60641A5169FF005B995F /* ArtlessEdit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArtlessEdit.entitlements; sourceTree = "<group>"; };
 		3D2ED5CF1A61531F00F2F139 /* SearchHistoryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryDataSource.swift; sourceTree = "<group>"; };
 		3D2ED5D11A61541A00F2F139 /* SearchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		3D458A361A4977EB00FB72A7 /* SearchPopupData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopupData.swift; sourceTree = "<group>"; };
@@ -138,6 +137,7 @@
 		3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_unknown.png; sourceTree = "<group>"; };
 		3D96A3021A4C2C4100AA2762 /* icon_method.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_method.png; sourceTree = "<group>"; };
 		3D96A3041A4C2CFF00AA2762 /* SearchPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPopup.swift; sourceTree = "<group>"; };
+		3DA369041A62BE05009D5059 /* ArtlessEdit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArtlessEdit.entitlements; sourceTree = "<group>"; };
 		3DA6D2801A59569B0025C0C7 /* SearchResultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsDataSource.swift; sourceTree = "<group>"; };
 		3DA6D2841A5960490025C0C7 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		3DBD49921A4ABB6C00C2B1C9 /* Outline.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Outline.xib; sourceTree = "<group>"; };
@@ -300,16 +300,16 @@
 		3DDFFA671A4721D200971982 /* ArtlessEdit */ = {
 			isa = PBXGroup;
 			children = (
+				3DA369041A62BE05009D5059 /* ArtlessEdit.entitlements */,
 				3DC3649D1A5DA1B800AEDE1B /* Data */,
 				3DDC49941A594B57004E5C9F /* Search */,
-				3D2D60641A5169FF005B995F /* ArtlessEdit.entitlements */,
 				3DD0AEC71A4728190091BD16 /* controls */,
 				3DDFFA6A1A4721D200971982 /* AppDelegate.swift */,
 				3DDFFA6C1A4721D200971982 /* Document.swift */,
+				3DDFFA6E1A4721D200971982 /* Document.xib */,
 				3DE8B44E1A4D6D0E00C537C1 /* SplitViewDelegate.swift */,
 				3DFEF75E1A500FDC0006289A /* SideBarStackView.swift */,
 				3D458A3C1A4982BA00FB72A7 /* SearchPopup */,
-				3DDFFA6E1A4721D200971982 /* Document.xib */,
 				3DE8B45C1A4D8BFD00C537C1 /* Settings */,
 				3DDFFA731A4721D300971982 /* MainMenu.xib */,
 				3DDFFA681A4721D200971982 /* Supporting Files */,

@@ -13,7 +13,12 @@ class SearchPopupController: NSWindowController, NSTableViewDataSource, NSTableV
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var searchField: NSSearchField!
     
-    var data: SearchPopupData?
+    private var userDefaults = NSUserDefaults.standardUserDefaults()
+    private var history:[String] = []
+    private var maxHistory = 20
+    private var data: SearchPopupData?
+    private var userDefaultsPrefix = "SearchPopup"
+    private var userDefaultsKey: String = ""
     
     func showWindow(sender: AnyObject?, data: SearchPopupData, title: String) {
         if (self.data != nil) {
@@ -30,7 +35,24 @@ class SearchPopupController: NSWindowController, NSTableViewDataSource, NSTableV
             super.showWindow(sender)
         }
         
+        userDefaultsKey = userDefaultsPrefix + title
+        if let data = userDefaults.arrayForKey(userDefaultsKey) as? [String] {
+            history = data
+        }
         tableView.selectRowIndexes(NSIndexSet(), byExtendingSelection: false)
+    }
+    
+    func addHistoryItem(item: String) {
+        history.insert(item, atIndex: 0)
+        if history.count > maxHistory {
+            history.removeLast()
+        }
+        userDefaults.setObject(history, forKey: userDefaultsKey)
+    }
+    
+    func control(control: NSControl, textView: NSTextView, completions words: [AnyObject], forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [AnyObject] {
+        
+        return history
     }
     
     @IBAction func clickRow(sender: AnyObject) {
@@ -71,6 +93,7 @@ class SearchPopupController: NSWindowController, NSTableViewDataSource, NSTableV
             if data?.count() == 1 && tableView.selectedRow == -1 {
                 upadteSearchField(0)
             }
+            addHistoryItem(searchField.stringValue.stringByDeletingLastPathComponent)
             data?.select(searchField.stringValue, panel: self)
             return true;
         }

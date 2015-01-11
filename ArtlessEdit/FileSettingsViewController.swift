@@ -27,7 +27,6 @@ class FileSettingsViewController: NSViewController {
     }
     
     override func viewDidLoad() {
-        modeBox.addItemsWithObjectValues(ACEModeNames.humanModeNames())
         modeBox.selectItemAtIndex(ACEModeNames.getIndexByName(settings.getMode()))
         
         encodingBox.selectItemAtIndex(0)
