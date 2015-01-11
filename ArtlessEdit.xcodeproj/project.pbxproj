@@ -34,6 +34,7 @@
 		3DBD49971A4ABB7800C2B1C9 /* OutlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD49961A4ABB7800C2B1C9 /* OutlineController.swift */; };
 		3DC364A11A5DA1CF00AEDE1B /* ModeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC364A01A5DA1CF00AEDE1B /* ModeDataSource.swift */; };
 		3DD0AECD1A472B720091BD16 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD0AECC1A472B720091BD16 /* Credits.rtf */; };
+		3DD4A7151A62875800B2E221 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A7141A62875800B2E221 /* SearchViewController.swift */; };
 		3DD959FE1A50959C0068B31A /* EditorSettingsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */; };
 		3DD95A021A509B290068B31A /* EditorSettingsObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */; };
 		3DDC49981A594B6B004E5C9F /* AdvancedSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDC49971A594B6B004E5C9F /* AdvancedSearch.xib */; };
@@ -145,6 +146,7 @@
 		3DD0AECA1A472A830091BD16 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3DD0AECB1A472A830091BD16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3DD0AECC1A472B720091BD16 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		3DD4A7141A62875800B2E221 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsObserver.swift; sourceTree = "<group>"; };
 		3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorSettingsObservable.swift; sourceTree = "<group>"; };
 		3DDC49971A594B6B004E5C9F /* AdvancedSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvancedSearch.xib; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				3DDC49971A594B6B004E5C9F /* AdvancedSearch.xib */,
+				3DD4A7141A62875800B2E221 /* SearchViewController.swift */,
 				3D2ED5CF1A61531F00F2F139 /* SearchHistoryDataSource.swift */,
 				3DDC49991A594B8E004E5C9F /* AdvancedSearchController.swift */,
 				3DDC499B1A594DD8004E5C9F /* OpenFilesDataSource.swift */,
@@ -572,6 +575,7 @@
 				3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */,
 				3DFEF75F1A500FDC0006289A /* SideBarStackView.swift in Sources */,
 				3D2ED5D21A61541A00F2F139 /* SearchHistory.swift in Sources */,
+				3DD4A7151A62875800B2E221 /* SearchViewController.swift in Sources */,
 				3DE8B4661A4DA9D900C537C1 /* EditorDefaultSettings.swift in Sources */,
 				3D458A3B1A497D1B00FB72A7 /* OpenFileData.swift in Sources */,
 				3DA6D2851A5960490025C0C7 /* SearchResult.swift in Sources */,

@@ -10,25 +10,29 @@ import Foundation
 
 class SearchHistory: NSObject {
     
-    let key = "searchHistory"
+    let needle = "needle"
+    let options = "options"
+    let replacement = "replacement"
+    
+    let userDefaultsKey = "searchHistory"
     let maxItems = 20
     
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
     
-    var history:[[String]] = [];
+    var history:[[String:AnyObject]] = [];
     
     override init() {
         super.init()
         
-        if let data = userDefaults.arrayForKey(key) as? [[String]] {
+        if let data = userDefaults.arrayForKey(userDefaultsKey) as? [[String:AnyObject]] {
             history = data
         }
     }
     
-    func addItem(needle: String, replacement:String?) {
-        var entry = [needle]
-        if (replacement != nil) {
-            entry.append(replacement!)
+    func addItem(addNeedle: String, addReplacement:String?, addOptions: [String:Bool]) {
+        var entry:[String:AnyObject] = [needle: addNeedle, options : addOptions]
+        if (addReplacement != nil) {
+            entry[replacement] = addReplacement
         }
         
         history.insert(entry, atIndex: 0)
@@ -36,10 +40,13 @@ class SearchHistory: NSObject {
             history.removeLast()
         }
         
-        userDefaults.setObject(history, forKey: key)
+        userDefaults.setObject(history, forKey: userDefaultsKey)
     }
     
-    func getItem(index: Int) -> [String] {
+    func getItem(index: Int) -> [String:AnyObject]? {
+        if (index < 0 || index >= history.count) {
+            return nil
+        }
         return history[index]
     }
     

@@ -16,40 +16,14 @@ class SearchResultsDataSource: NSObject, NSTableViewDataSource, NSTableViewDeleg
     
     @IBOutlet weak var resultsTable: NSTableView!
     @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var searchField: NSSearchField!
-    @IBOutlet weak var replaceField: NSTextField!
-    
-    @IBOutlet weak var caseSensitiveCheckbox: NSButton!
-    @IBOutlet weak var regexCheckbox: NSButton!
-    @IBOutlet weak var wholeWordCheckbox: NSButton!
     
     var results: [SearchResult] = []
     
-    func getSearchOptions() -> [String:Bool] {
-        var options: [String:Bool] = [:]
-        
-        if regexCheckbox.state == NSOnState {
-            options["regExp"] = true
-        }
-        
-        if caseSensitiveCheckbox.state == NSOnState {
-            options["caseSensitive"] = true
-        }
-        
-        if wholeWordCheckbox.state == NSOnState {
-            options["wholeWord"] = true
-        }
-
-        return options
-    }
-    
-    @IBAction func search(sender: AnyObject) {
+    func search(needle: String, options:[String: Bool]) {
         results.removeAll(keepCapacity: false)
         
         for document in getSelectedDocuments() {
-            println(document.displayName)
-            
-            let documentResults = document.findAll(searchField.stringValue, options: getSearchOptions())
+            let documentResults = document.findAll(needle, options: options)
             for documentResult in documentResults {
                 var result = SearchResult()
                 result.document = document
@@ -59,17 +33,16 @@ class SearchResultsDataSource: NSObject, NSTableViewDataSource, NSTableViewDeleg
             }
         }
         
-        searchHistory.addItem(searchField.stringValue, replacement: nil)
+        searchHistory.addItem(needle, replacement: nil, options: options)
         resultsTable.reloadData()
     }
     
-    @IBAction func replace(sender: AnyObject) {
+    func replace(needle: String, replacement: String, options:[String:Bool]) {
         for document in getSelectedDocuments() {
-            println(document.displayName)
-            document.replaceAll(searchField.stringValue, replacement: replaceField.stringValue, options: getSearchOptions())
+            document.replaceAll(needle, replacement: replacement, options: options)
         }
         
-        searchHistory.addItem(searchField.stringValue, replacement: replaceField.stringValue)
+        searchHistory.addItem(needle, replacement: replacement, options:options)
         results.removeAll(keepCapacity: false)
         resultsTable.reloadData()
     }
@@ -84,7 +57,9 @@ class SearchResultsDataSource: NSObject, NSTableViewDataSource, NSTableViewDeleg
     func getSelectedDocuments() -> [Document] {
         var documents:[Document] = []
         tableView.selectedRowIndexes.enumerateIndexesUsingBlock { (index, selected) -> Void in
-            documents.append(self.documentController.documents[index] as Document)
+            if (index < self.documentController.documents.count && index >= 0) {
+                documents.append(self.documentController.documents[index] as Document)
+            }
         }
         
         return documents
