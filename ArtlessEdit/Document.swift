@@ -10,6 +10,7 @@ import Cocoa
 
 class Document: NSDocument {
     
+    @IBOutlet var documentWindow: NSWindow!
     @IBOutlet weak var aceView: ACEView!
     @IBOutlet var goToPanel: NSWindow!
     @IBOutlet weak var editorSettings: NSScrollView!
@@ -116,6 +117,21 @@ class Document: NSDocument {
         aceView.borderType = NSBorderType.NoBorder
         aceView.setString(fileContent)
         fileContent = ""
+        
+        if let url = fileURL {
+            addGitAccessory(url)
+        }
+    }
+    
+    func addGitAccessory(url: NSURL) {
+        let repoFinder = GitRepositoryFinder()
+        if let repo = repoFinder.getRepository(url, error: NSErrorPointer()) {
+            if let viewController = GitTitleBarAccessoryController(nibName: "GitTitlebarView", repo: repo){
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.documentWindow.addTitlebarAccessoryViewController(viewController)
+                }
+            }
+        }
     }
     
     func loadSettingsSideBar(fileSettings: EditorFileSettings, sessionSettings: EditorSessionSettings) {

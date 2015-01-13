@@ -24,6 +24,11 @@
 		3D6A3EE51A4ACC82002507B9 /* Outliner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE41A4ACC82002507B9 /* Outliner.swift */; };
 		3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE61A4ACD0D002507B9 /* OutlinerFactory.swift */; };
 		3D6A3EE91A4ACE5C002507B9 /* CtagsOutliner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A3EE81A4ACE5C002507B9 /* CtagsOutliner.swift */; };
+		3D7D66DD1A644BD6002344BE /* GitTitlebarAccessoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7D66DC1A644BD6002344BE /* GitTitlebarAccessoryController.swift */; };
+		3D7D66E21A644C3C002344BE /* GitTitlebarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7D66E11A644C3C002344BE /* GitTitlebarView.xib */; };
+		3D7D67031A6452BE002344BE /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7D66FE1A6452A1002344BE /* ObjectiveGit.framework */; };
+		3D7D67061A645393002344BE /* ObjectiveGit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D7D66FE1A6452A1002344BE /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D95822E1A6502BF00EE4851 /* GitRepositoryFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95822D1A6502BF00EE4851 /* GitRepositoryFinder.swift */; };
 		3D96A2FD1A4C29AB00AA2762 /* icon_class.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A2FC1A4C29AB00AA2762 /* icon_class.png */; };
 		3D96A3011A4C2ABC00AA2762 /* icon_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */; };
 		3D96A3031A4C2C4100AA2762 /* icon_method.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D96A3021A4C2C4100AA2762 /* icon_method.png */; };
@@ -74,6 +79,34 @@
 			remoteGlobalIDString = 7C8A728B15EA0769007E5EB8;
 			remoteInfo = ACEView;
 		};
+		3D7D66FD1A6452A1002344BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D7D66F31A6452A0002344BE /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = "ObjectiveGit-Mac";
+		};
+		3D7D66FF1A6452A1002344BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D7D66F31A6452A0002344BE /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F05A6B16011E5400B7AD1D;
+			remoteInfo = "ObjectiveGit-MacTests";
+		};
+		3D7D67011A6452A1002344BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D7D66F31A6452A0002344BE /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D01B6ED319F82E2000D411BC;
+			remoteInfo = "ObjectiveGit-iOS";
+		};
+		3D7D67041A6452E5002344BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D7D66F31A6452A0002344BE /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = "ObjectiveGit-Mac";
+		};
 		3DDFFA7B1A4721D300971982 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3DDFFA5D1A4721D200971982 /* Project object */;
@@ -111,6 +144,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3D7D67061A645393002344BE /* ObjectiveGit.framework in CopyFiles */,
 				3D31008F1A48344E0073ED36 /* ACEView.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -133,6 +167,10 @@
 		3D6A3EE41A4ACC82002507B9 /* Outliner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outliner.swift; sourceTree = "<group>"; };
 		3D6A3EE61A4ACD0D002507B9 /* OutlinerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinerFactory.swift; sourceTree = "<group>"; };
 		3D6A3EE81A4ACE5C002507B9 /* CtagsOutliner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CtagsOutliner.swift; sourceTree = "<group>"; };
+		3D7D66DC1A644BD6002344BE /* GitTitlebarAccessoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitTitlebarAccessoryController.swift; sourceTree = "<group>"; };
+		3D7D66E11A644C3C002344BE /* GitTitlebarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitTitlebarView.xib; sourceTree = "<group>"; };
+		3D7D66F31A6452A0002344BE /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "../objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = "<group>"; };
+		3D95822D1A6502BF00EE4851 /* GitRepositoryFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitRepositoryFinder.swift; sourceTree = "<group>"; };
 		3D96A2FC1A4C29AB00AA2762 /* icon_class.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_class.png; sourceTree = "<group>"; };
 		3D96A3001A4C2ABC00AA2762 /* icon_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_unknown.png; sourceTree = "<group>"; };
 		3D96A3021A4C2C4100AA2762 /* icon_method.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_method.png; sourceTree = "<group>"; };
@@ -190,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7D67031A6452BE002344BE /* ObjectiveGit.framework in Frameworks */,
 				3D6646351A4722EA00D8908E /* ACEView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,9 +257,9 @@
 		3D6A3EDF1A4ACC11002507B9 /* Outline */ = {
 			isa = PBXGroup;
 			children = (
+				3D6A3EEA1A4ACE75002507B9 /* Outliner */,
 				3DBD49921A4ABB6C00C2B1C9 /* Outline.xib */,
 				3DBD49961A4ABB7800C2B1C9 /* OutlineController.swift */,
-				3D6A3EEA1A4ACE75002507B9 /* Outliner */,
 				3D6A3EE41A4ACC82002507B9 /* Outliner.swift */,
 				3D6A3EE61A4ACD0D002507B9 /* OutlinerFactory.swift */,
 			);
@@ -233,6 +272,34 @@
 				3D6A3EE81A4ACE5C002507B9 /* CtagsOutliner.swift */,
 			);
 			name = Outliner;
+			sourceTree = "<group>";
+		};
+		3D7D66E01A644BDC002344BE /* TitlebarAdOns */ = {
+			isa = PBXGroup;
+			children = (
+				3D9582371A6502C600EE4851 /* Git */,
+			);
+			name = TitlebarAdOns;
+			sourceTree = "<group>";
+		};
+		3D7D66F41A6452A0002344BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D7D66FE1A6452A1002344BE /* ObjectiveGit.framework */,
+				3D7D67001A6452A1002344BE /* ObjectiveGit-MacTests.xctest */,
+				3D7D67021A6452A1002344BE /* ObjectiveGit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D9582371A6502C600EE4851 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				3D7D66DC1A644BD6002344BE /* GitTitlebarAccessoryController.swift */,
+				3D95822D1A6502BF00EE4851 /* GitRepositoryFinder.swift */,
+				3D7D66E11A644C3C002344BE /* GitTitlebarView.xib */,
+			);
+			name = Git;
 			sourceTree = "<group>";
 		};
 		3DA815011A517EFF0000EB9D /* Wikifiles */ = {
@@ -280,6 +347,7 @@
 		3DDFFA5C1A4721D200971982 = {
 			isa = PBXGroup;
 			children = (
+				3D7D66F31A6452A0002344BE /* ObjectiveGitFramework.xcodeproj */,
 				3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */,
 				3DDFFA671A4721D200971982 /* ArtlessEdit */,
 				3DDFFA7D1A4721D300971982 /* ArtlessEditTests */,
@@ -301,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA369041A62BE05009D5059 /* ArtlessEdit.entitlements */,
+				3DDFFA731A4721D300971982 /* MainMenu.xib */,
 				3DC3649D1A5DA1B800AEDE1B /* Data */,
 				3DDC49941A594B57004E5C9F /* Search */,
 				3DD0AEC71A4728190091BD16 /* controls */,
@@ -311,9 +380,9 @@
 				3DFEF75E1A500FDC0006289A /* SideBarStackView.swift */,
 				3D458A3C1A4982BA00FB72A7 /* SearchPopup */,
 				3DE8B45C1A4D8BFD00C537C1 /* Settings */,
-				3DDFFA731A4721D300971982 /* MainMenu.xib */,
 				3DDFFA681A4721D200971982 /* Supporting Files */,
 				3D6A3EDF1A4ACC11002507B9 /* Outline */,
+				3D7D66E01A644BDC002344BE /* TitlebarAdOns */,
 			);
 			path = ArtlessEdit;
 			sourceTree = "<group>";
@@ -361,20 +430,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3DE4A3271A501EA500D0CA73 /* Mode */ = {
+		3DE4A3271A501EA500D0CA73 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */,
+				3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */,
+				3DF669571A50A10800F97BC5 /* ObservableSettings.swift */,
+				3D2D60601A515B30005B995F /* EditorFileSettings.swift */,
+				3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */,
+				3DE4A3361A50573500D0CA73 /* FileSettings.xib */,
+				3DE4A3381A50576100D0CA73 /* FileSettingsViewController.swift */,
+			);
+			name = Document;
+			sourceTree = "<group>";
+		};
+		3DE4A3301A50554600D0CA73 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				3D29A4B71A4F212D00D1EB55 /* ModeSettings.xib */,
 				3D29A4B51A4F12A400D1EB55 /* ModeSettingsViewController.swift */,
-				3DE4A3361A50573500D0CA73 /* FileSettings.xib */,
-				3DE4A3381A50576100D0CA73 /* FileSettingsViewController.swift */,
-			);
-			name = Mode;
-			sourceTree = "<group>";
-		};
-		3DE4A3301A50554600D0CA73 /* Default */ = {
-			isa = PBXGroup;
-			children = (
 				3DE4A3321A50556600D0CA73 /* ExternalTools.xib */,
 				3DE4A3341A50557F00D0CA73 /* ExternalToolsViewController.swift */,
 				3D2D60621A516148005B995F /* ExternalToolsSettings.swift */,
@@ -383,24 +457,19 @@
 				3DE4A32E1A504D0200D0CA73 /* FileMapping.swift */,
 				3DE4A32C1A501FC900D0CA73 /* DefaultSettingsViewController.swift */,
 			);
-			name = Default;
+			name = App;
 			sourceTree = "<group>";
 		};
 		3DE8B45C1A4D8BFD00C537C1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				3DE4A3271A501EA500D0CA73 /* Mode */,
-				3DE8B45F1A4D8CED00C537C1 /* EditorSessionSettings.swift */,
-				3DD95A011A509B290068B31A /* EditorSettingsObservable.swift */,
-				3DF669571A50A10800F97BC5 /* ObservableSettings.swift */,
-				3D2D60601A515B30005B995F /* EditorFileSettings.swift */,
-				3DE8B4651A4DA9D900C537C1 /* EditorDefaultSettings.swift */,
+				3DE4A3301A50554600D0CA73 /* App */,
+				3DE4A3271A501EA500D0CA73 /* Document */,
 				3DD959FD1A50959C0068B31A /* EditorSettingsObserver.swift */,
 				3DE8B4561A4D7F8500C537C1 /* EditorSettings.xib */,
 				3DE8B4631A4DA4A800C537C1 /* EditorSettingsView.swift */,
 				3DE8B45A1A4D83BF00C537C1 /* EditorSettingsViewController.swift */,
 				3DE8B4611A4D90AC00C537C1 /* EditorSettings.swift */,
-				3DE4A3301A50554600D0CA73 /* Default */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -420,6 +489,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3D7D67051A6452E5002344BE /* PBXTargetDependency */,
 				3D72FC6F1A480F6800CC99C6 /* PBXTargetDependency */,
 			);
 			name = ArtlessEdit;
@@ -484,6 +554,10 @@
 					ProductGroup = 3DDFFA8B1A47221600971982 /* Products */;
 					ProjectRef = 3DDFFA8A1A47221600971982 /* ACEView.xcodeproj */;
 				},
+				{
+					ProductGroup = 3D7D66F41A6452A0002344BE /* Products */;
+					ProjectRef = 3D7D66F31A6452A0002344BE /* ObjectiveGitFramework.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -494,6 +568,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		3D7D66FE1A6452A1002344BE /* ObjectiveGit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ObjectiveGit.framework;
+			remoteRef = 3D7D66FD1A6452A1002344BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D7D67001A6452A1002344BE /* ObjectiveGit-MacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ObjectiveGit-MacTests.xctest";
+			remoteRef = 3D7D66FF1A6452A1002344BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D7D67021A6452A1002344BE /* ObjectiveGit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ObjectiveGit.framework;
+			remoteRef = 3D7D67011A6452A1002344BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		3DDFFA911A47221600971982 /* ACEView.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -532,6 +627,7 @@
 				3DE4A32B1A501F3800D0CA73 /* DefaultSettings.xib in Resources */,
 				3D96A2FD1A4C29AB00AA2762 /* icon_class.png in Resources */,
 				3DE4A3371A50573500D0CA73 /* FileSettings.xib in Resources */,
+				3D7D66E21A644C3C002344BE /* GitTitlebarView.xib in Resources */,
 				3D96A3011A4C2ABC00AA2762 /* icon_unknown.png in Resources */,
 				3DFCC1C31A49711400D41481 /* SearchPopup.xib in Resources */,
 				3DDFFA751A4721D300971982 /* MainMenu.xib in Resources */,
@@ -572,6 +668,7 @@
 				3DE4A3351A50557F00D0CA73 /* ExternalToolsViewController.swift in Sources */,
 				3D6A3EE91A4ACE5C002507B9 /* CtagsOutliner.swift in Sources */,
 				3DDC499C1A594DD8004E5C9F /* OpenFilesDataSource.swift in Sources */,
+				3D95822E1A6502BF00EE4851 /* GitRepositoryFinder.swift in Sources */,
 				3D6A3EE71A4ACD0D002507B9 /* OutlinerFactory.swift in Sources */,
 				3DFEF75F1A500FDC0006289A /* SideBarStackView.swift in Sources */,
 				3D2ED5D21A61541A00F2F139 /* SearchHistory.swift in Sources */,
@@ -588,6 +685,7 @@
 				3D2ED5D01A61531F00F2F139 /* SearchHistoryDataSource.swift in Sources */,
 				3DD95A021A509B290068B31A /* EditorSettingsObservable.swift in Sources */,
 				3D96A3051A4C2CFF00AA2762 /* SearchPopup.swift in Sources */,
+				3D7D66DD1A644BD6002344BE /* GitTitlebarAccessoryController.swift in Sources */,
 				3DDFFA6B1A4721D200971982 /* AppDelegate.swift in Sources */,
 				3DD959FE1A50959C0068B31A /* EditorSettingsObserver.swift in Sources */,
 				3D6A3EE51A4ACC82002507B9 /* Outliner.swift in Sources */,
@@ -611,6 +709,11 @@
 			isa = PBXTargetDependency;
 			name = ACEView;
 			targetProxy = 3D72FC6E1A480F6800CC99C6 /* PBXContainerItemProxy */;
+		};
+		3D7D67051A6452E5002344BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectiveGit-Mac";
+			targetProxy = 3D7D67041A6452E5002344BE /* PBXContainerItemProxy */;
 		};
 		3DDFFA7C1A4721D300971982 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

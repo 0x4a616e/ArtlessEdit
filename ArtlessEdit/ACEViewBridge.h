@@ -17,4 +17,6 @@
 #import "ACEView/ACEKeyboardHandlers.h"
 #import "ACEView/ACEKeyboardHandlerNames.h"
 
+#import "ObjectiveGit/ObjectiveGit.h"
+
 #endif
