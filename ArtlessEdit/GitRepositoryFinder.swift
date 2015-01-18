@@ -32,7 +32,7 @@ class GitRepositoryFinder {
     
     func getRepository(url: NSURL, error: NSErrorPointer) -> GTRepository? {
         var baseUrl = url.URLByDeletingLastPathComponent
-        while baseUrl != nil && !isPossibleRepository(baseUrl!) {
+        while baseUrl != nil && !isRoot(baseUrl) && !isPossibleRepository(baseUrl!) {
             baseUrl = baseUrl?.URLByDeletingLastPathComponent
         }
         
@@ -41,6 +41,10 @@ class GitRepositoryFinder {
         }
         
         return nil;
+    }
+    
+    func isRoot(url: NSURL?) -> Bool {
+        return url?.path?.stringByStandardizingPath == "/"
     }
 
 }

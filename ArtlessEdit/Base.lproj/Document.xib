@@ -91,7 +91,7 @@
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
-                <outlet property="initialFirstResponder" destination="CZA-ix-feA" id="Ja4-84-dWr"/>
+                <outlet property="initialFirstResponder" destination="CZA-ix-feA" id="BRn-zK-5M7"/>
             </connections>
             <point key="canvasLocation" x="168" y="284"/>
         </window>

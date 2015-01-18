@@ -19,14 +19,18 @@
             <subviews>
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="XLv-Lg-qKT">
                     <rect key="frame" x="66" y="3" width="69" height="21"/>
-                    <popUpButtonCell key="cell" type="bevel" title="Branch" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="ev3-pJ-JVV" id="frO-90-ixC">
+                    <popUpButtonCell key="cell" type="bevel" title="Branch" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="frO-90-ixC">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="USq-qM-ssP">
                             <items>
                                 <menuItem title="Branch" state="on" hidden="YES" id="ev3-pJ-JVV"/>
-                                <menuItem title="Item 2" id="se3-eR-BjF"/>
-                                <menuItem title="Item 3" id="pC4-i3-5mV"/>
+                                <menuItem title="Diff" id="pC4-i3-5mV" userLabel="Diff">
+                                    <connections>
+                                        <action selector="showDiff:" target="-2" id="sLE-yh-7Mi"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Revert" id="se3-eR-BjF" userLabel="Revert"/>
                             </items>
                         </menu>
                     </popUpButtonCell>

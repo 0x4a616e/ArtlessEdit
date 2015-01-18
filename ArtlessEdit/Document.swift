@@ -22,7 +22,7 @@ class Document: NSDocument {
     var editorSettingsController: EditorSettingsViewController? = nil
     var fileSettingsController: FileSettingsViewController? = nil
     
-    var mode = "text"
+    var mode: String? = nil
     let encoding = NSUTF8StringEncoding
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
     var fileContent: String = ""
@@ -33,7 +33,7 @@ class Document: NSDocument {
     
     func outline(sender: AnyObject) {
         if (fileURL != nil) {
-            outlineController.showWindow(sender, aceView: aceView, mode: mode, file: fileURL!)
+            outlineController.showWindow(sender, aceView: aceView, mode: mode ?? "text", file: fileURL!)
         }
     }
     
@@ -64,6 +64,7 @@ class Document: NSDocument {
     
     func getMode() -> String? {
         if let path = fileURL?.path {
+            println(path.pathExtension)
             if let mapping = FileMapping().getMode(path.pathExtension.lowercaseString) {
                 return mapping
             }
@@ -89,13 +90,21 @@ class Document: NSDocument {
     }
     
     func webViewFinishedLoading(notification: NSNotification) {
-        let mode = getMode()
+        if (mode == nil) {
+            setMode(getMode())
+        }
+
+        aceView.focus()
+    }
+    
+    func setMode(mode: String?) {
+        self.mode = mode
         
         let defaultSettings = EditorDefaultSettings.getEditorDefaultSettings(mode)
         let sessionSettings = EditorSessionSettings(aceView: aceView, defaults: defaultSettings)
         
         let fileSettings = EditorFileSettings(aceView: aceView, defaultSettings: defaultSettings)
-        fileSettings.setMode(mode)
+        fileSettings.setMode(defaultSettings.getMode())
         
         editorSettingsController = EditorSettingsViewController(nibName: "EditorSettings", handler: sessionSettings)
         fileSettingsController = FileSettingsViewController(nibName: "FileSettings", settings: fileSettings)
@@ -109,6 +118,11 @@ class Document: NSDocument {
         }
     }
     
+    
+    override func presentedItemDidChange() {
+        // Todo: Notify user
+    }
+    
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         
@@ -116,6 +130,7 @@ class Document: NSDocument {
         
         aceView.borderType = NSBorderType.NoBorder
         aceView.setString(fileContent)
+        aceView.setFontSize(11)
         fileContent = ""
         
         if let url = fileURL {
@@ -126,7 +141,7 @@ class Document: NSDocument {
     func addGitAccessory(url: NSURL) {
         let repoFinder = GitRepositoryFinder()
         if let repo = repoFinder.getRepository(url, error: NSErrorPointer()) {
-            if let viewController = GitTitleBarAccessoryController(nibName: "GitTitlebarView", repo: repo){
+            if let viewController = GitTitleBarAccessoryController(nibName: "GitTitlebarView", url: url, repo: repo){
                 dispatch_async(dispatch_get_main_queue()) {
                     self.documentWindow.addTitlebarAccessoryViewController(viewController)
                 }

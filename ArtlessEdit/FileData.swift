@@ -29,8 +29,6 @@ class FileData: SearchPopupData {
     }
     
     func select(data: String, panel: NSWindowController) {
-        var success = false
-        
         var isDir: ObjCBool = false
         if !fileManager.fileExistsAtPath(data, isDirectory: &isDir) {
             panel.close()

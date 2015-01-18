@@ -148,6 +148,10 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         notifySubscribers(self)
     }
     
+    func getMode() -> String? {
+        return mode
+    }
+    
     func loadDefaultSettings() {
         if self.mode == nil {
             return

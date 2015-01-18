@@ -98,8 +98,7 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Quick Open Recent" keyEquivalent="o" id="Wcz-U0-U8q">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                            <menuItem title="Quick Open Recent" keyEquivalent="R" id="Wcz-U0-U8q">
                                 <connections>
                                     <action selector="recentFileOpen:" target="Voe-Tx-rLC" id="tYG-Hz-6bQ"/>
                                 </connections>
@@ -525,11 +524,11 @@
                             </subviews>
                             <nil key="backgroundColor"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" appearanceType="vibrantLight" verticalHuggingPriority="750" horizontal="YES" id="iuS-Yg-Qq5">
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="iuS-Yg-Qq5">
                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" appearanceType="vibrantLight" verticalHuggingPriority="750" horizontal="NO" id="l8C-Bk-FXw">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="l8C-Bk-FXw">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
