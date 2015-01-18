@@ -12,14 +12,21 @@ class GitTitleBarAccessoryController: NSTitlebarAccessoryViewController {
     
     @IBOutlet weak var gitMenu: NSMenu!
     @IBOutlet weak var branchItem: NSMenuItem!
+    @IBOutlet weak var diffItem: NSMenuItem!
+    @IBOutlet weak var revertItem: NSMenuItem!
     
     let repo: GTRepository
+    let document: Document
+    var branch: GTBranch? = nil
+    
     let url: NSURL
     let repoRelativePath: String
     
-    init?(nibName nibNameOrNil: String?, url: NSURL, repo: GTRepository) {
+    init?(nibName nibNameOrNil: String?, document: Document, repo: GTRepository) {
         self.repo = repo
-        self.url = url
+        self.document = document
+        self.url = document.fileURL!
+        
         self.repoRelativePath = GitTitleBarAccessoryController.pathRelativeTo(url.path!, to:repo.fileURL.path!)
 
         super.init(nibName: nibNameOrNil, bundle: nil)
@@ -42,29 +49,68 @@ class GitTitleBarAccessoryController: NSTitlebarAccessoryViewController {
             let patch = delta.generatePatch(error)
             if (error == nil) {
                 let buffer = patch.toBuffer()
-                let diff = NSString(data: buffer, encoding: NSUTF8StringEncoding)
-                
-                if let document:Document = NSDocumentController.sharedDocumentController().openUntitledDocumentAndDisplay(true, error: NSErrorPointer()) as? Document {
-                    
-                    document.aceView.setString(diff)
-                    document.setMode("diff")
+                if let diff = NSString(data: buffer, encoding: NSUTF8StringEncoding) {
+                    if let document:Document = NSDocumentController.sharedDocumentController().openUntitledDocumentAndDisplay(true, error: NSErrorPointer()) as? Document {
+                        
+                        document.setString(diff)
+                        document.setMode("diff")
+                    }
                 }
             }
         }
     }
     
+    @IBAction func revertToIndex(sender: AnyObject) {
+        if let content = getContentFromIndex() {
+            document.setString(content)
+        }
+    }
+    
     override func viewWillAppear() {
         super.viewWillAppear()
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            self.setBranchLabel()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let branch = repo.currentBranchWithError(NSErrorPointer()) {
-            var label = branch.shortName as String
-
-            branchItem.title = label + getStatusLabel() + getAheadBehindLabel(branch)
-            branchItem.toolTip = branch.name
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            self.branch = self.repo.currentBranchWithError(NSErrorPointer())
+        }
+    }
+    
+    func getContentFromIndex() -> String? {
+        if let index = repo.indexWithError(NSErrorPointer()) {
+            if let tree = index.writeTree(NSErrorPointer()) {
+                if let entry = tree.treeEntryByPath(repoRelativePath, error: NSErrorPointer()) {
+                    if let object = entry.GTObject(NSErrorPointer()) {
+                        if let odbObject = object.odbObjectWithError(NSErrorPointer()) {
+                            if let data = odbObject.data() {
+                                return NSString(data: data, encoding: NSUTF8StringEncoding)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        return nil
+    }
+    
+    func setBranchLabel() {
+        if let branchValue = self.branch {
+            var label = branchValue.shortName + getStatusLabel() + getAheadBehindLabel(branchValue)
+            
+            // TODO: Build history from commits
+            //let commit = branchValue.targetCommitAndReturnError(error)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.branchItem.title = label
+                self.branchItem.toolTip = branchValue.name
+            }
         }
     }
     
@@ -74,8 +120,11 @@ class GitTitleBarAccessoryController: NSTitlebarAccessoryViewController {
         
         let status = repo.statusForFile(repoRelativePath, success: &success, error: error)
         if (success && error == nil) {
-            if ((UInt32(status.rawValue) & GIT_STATUS_WT_MODIFIED.value) != 0) {
+            let flags = UInt32(status.rawValue)
+            if ((flags & GIT_STATUS_WT_MODIFIED.value) != 0) {
                 return "*"
+            } else if ((flags & GIT_STATUS_WT_NEW.value) != 0) {
+                return "?"
             }
         }
         

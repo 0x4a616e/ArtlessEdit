@@ -18,20 +18,25 @@ class EditorFileSettings {
     init(aceView: ACEView, defaultSettings: EditorDefaultSettings) {
         self.defaultSettings = defaultSettings
         self.aceView = aceView
+        
+        mode = defaultSettings.mode
+        updateView()
     }
     
     func setMode(mode: String?) {
         self.mode = mode
-        
-        if mode != nil {
-            aceView.setMode(mode!)
-        }
-        
+        updateView()
         defaultSettings.setMode(mode)
     }
     
+    private func updateView() {
+        if mode != nil {
+            aceView.setMode(mode!)
+        }
+    }
+    
     func getMode() -> String {
-        return mode ?? "asciidoc"
+        return mode ?? "text"
     }
     
 }

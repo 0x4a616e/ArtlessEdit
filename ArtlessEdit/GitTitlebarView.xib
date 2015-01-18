@@ -7,7 +7,9 @@
         <customObject id="-2" userLabel="File's Owner" customClass="GitTitleBarAccessoryController" customModule="ArtlessEdit" customModuleProvider="target">
             <connections>
                 <outlet property="branchItem" destination="ev3-pJ-JVV" id="pPJ-jT-8Zj"/>
+                <outlet property="diffItem" destination="pC4-i3-5mV" id="3xS-Ge-mhd"/>
                 <outlet property="gitMenu" destination="USq-qM-ssP" id="3sD-8f-pUW"/>
+                <outlet property="revertItem" destination="se3-eR-BjF" id="Xjm-kB-R0Q"/>
                 <outlet property="view" destination="c22-O7-iKe" id="JnK-CI-GnO"/>
             </connections>
         </customObject>
@@ -17,20 +19,27 @@
             <rect key="frame" x="0.0" y="0.0" width="145" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="XLv-Lg-qKT">
+                <popUpButton misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XLv-Lg-qKT">
                     <rect key="frame" x="66" y="3" width="69" height="21"/>
-                    <popUpButtonCell key="cell" type="bevel" title="Branch" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="frO-90-ixC">
+                    <popUpButtonCell key="cell" type="bevel" title="Git" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="se3-eR-BjF" id="frO-90-ixC">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="USq-qM-ssP">
                             <items>
-                                <menuItem title="Branch" state="on" hidden="YES" id="ev3-pJ-JVV"/>
+                                <menuItem title="Git" state="on" hidden="YES" id="ev3-pJ-JVV">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
                                 <menuItem title="Diff" id="pC4-i3-5mV" userLabel="Diff">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
                                     <connections>
                                         <action selector="showDiff:" target="-2" id="sLE-yh-7Mi"/>
                                     </connections>
                                 </menuItem>
-                                <menuItem title="Revert" id="se3-eR-BjF" userLabel="Revert"/>
+                                <menuItem title="Revert" id="se3-eR-BjF" userLabel="Revert">
+                                    <connections>
+                                        <action selector="revertToIndex:" target="-2" id="C2r-bP-vt4"/>
+                                    </connections>
+                                </menuItem>
                             </items>
                         </menu>
                     </popUpButtonCell>

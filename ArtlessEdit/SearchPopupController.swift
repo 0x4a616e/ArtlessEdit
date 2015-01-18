@@ -29,17 +29,15 @@ class SearchPopupController: NSWindowController, NSTableViewDataSource, NSTableV
         self.data?.load()
         window?.title = title
         
-        if window?.visible == true {
-            tableView.reloadData()
-        } else {
-            super.showWindow(sender)
+        userDefaultsKey = userDefaultsPrefix + title
+        if let searchHistory = userDefaults.arrayForKey(userDefaultsKey) as? [String] {
+            history = searchHistory
         }
         
-        userDefaultsKey = userDefaultsPrefix + title
-        if let data = userDefaults.arrayForKey(userDefaultsKey) as? [String] {
-            history = data
-        }
+        tableView.reloadData()
         tableView.selectRowIndexes(NSIndexSet(), byExtendingSelection: false)
+        
+        super.showWindow(sender)
     }
     
     func addHistoryItem(item: String) {

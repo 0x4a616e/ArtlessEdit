@@ -11,6 +11,7 @@ import Foundation
 class EditorSettingsViewController: NSViewController, EditorSettingsObserver {
     
     @IBOutlet weak var themeBox: NSComboBox!
+    @IBOutlet weak var darkModeBox: NSButton!
     @IBOutlet weak var bindingsBox: NSComboBox!
     @IBOutlet weak var softWrapsButton: NSButton!
     @IBOutlet weak var codeFoldingButton: NSButton!
@@ -20,6 +21,9 @@ class EditorSettingsViewController: NSViewController, EditorSettingsObserver {
     @IBOutlet weak var softTabsButton: NSButton!
     @IBOutlet weak var indentationGuidesButton: NSButton!
     @IBOutlet weak var tabSizeField: NSTextField!
+    @IBOutlet weak var tabSizeStepper: NSStepper!
+    @IBOutlet weak var fontSizeField: NSTextField!
+    @IBOutlet weak var fontSizeStepper: NSStepper!
     
     lazy var userDefaults = NSUserDefaults.standardUserDefaults()
     
@@ -55,7 +59,13 @@ class EditorSettingsViewController: NSViewController, EditorSettingsObserver {
         bindingsBox.addItemsWithObjectValues(ACEKeyboardHandlerNames.humanKeyboardHandlerNames())
         bindingsBox.selectItemAtIndex(Int(settings.getKeyBindings().rawValue))
         
-        tabSizeField.integerValue = settings.getTabSize()
+        tabSizeStepper.integerValue = settings.getTabSize()
+        tabSizeField.integerValue = tabSizeStepper.integerValue
+        
+        fontSizeStepper.integerValue = settings.getFontSize()
+        fontSizeField.integerValue = fontSizeStepper.integerValue
+        
+        darkModeBox.state = toState(settings.getDarkMode())
         softWrapsButton.state = toState(settings.getSoftWrap())
         codeFoldingButton.state = toState(settings.getCodeFolding())
         invisibleCharactersButton.state = toState(settings.getShowInvisibles())
@@ -73,6 +83,16 @@ class EditorSettingsViewController: NSViewController, EditorSettingsObserver {
         handler.setTheme(ACEThemeNames.getNameByIndex(sender.indexOfSelectedItem))
     }
     
+    @IBAction func setDarkMode(sender: NSButton) {
+        handler.setDarkMode(sender.state != NSOffState)
+    }
+    
+    @IBAction func changeFontSize(sender: NSStepper) {
+        fontSizeField.integerValue = sender.integerValue
+        
+        handler.setFontSize(sender.integerValue)
+    }
+    
     @IBAction func setKeyBindings(sender: NSComboBox) {
         if let keyBindings = ACEKeyboardHandler(rawValue: UInt(sender.indexOfSelectedItem)) {
             handler.setKeyBindings(keyBindings)
@@ -81,11 +101,10 @@ class EditorSettingsViewController: NSViewController, EditorSettingsObserver {
         }
     }
     
-    @IBAction func setTabSize(sender: NSTextField) {
-        let size = sender.integerValue
-        if size > 0 {
-            handler.setTabSize(size)
-        }
+    @IBAction func changeTabSize(sender: NSStepper) {
+        tabSizeField.integerValue = sender.integerValue
+
+        handler.setTabSize(sender.integerValue)
     }
     
     @IBAction func setCodeFolding(sender: NSButton) {

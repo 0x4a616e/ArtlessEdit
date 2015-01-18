@@ -10,6 +10,7 @@ import Foundation
 
 class EditorSessionSettings: EditorSettingsObservable, EditorSettings, EditorSettingsObserver {
     
+    let document: Document
     let aceView: ACEView
     
     var theme = ""
@@ -23,11 +24,14 @@ class EditorSessionSettings: EditorSettingsObservable, EditorSettings, EditorSet
     var useSoftTabs = false
     var displayIndentGuides = false
     var tabSize = 0
+    var fontSize = 0
+    var darkMode = false
     
     let defaults: EditorDefaultSettings
     
-    init(aceView: ACEView, defaults: EditorDefaultSettings) {
-        self.aceView = aceView
+    init(document: Document, defaults: EditorDefaultSettings) {
+        self.document = document
+        self.aceView = document.aceView
         self.defaults = defaults
         
         super.init()
@@ -43,6 +47,12 @@ class EditorSessionSettings: EditorSettingsObservable, EditorSettings, EditorSet
     func updateSettings(settings: EditorSettings) {
         theme = settings.getTheme()
         setTheme(theme)
+        
+        fontSize = settings.getFontSize()
+        setFontSize(fontSize)
+        
+        darkMode = settings.getDarkMode()
+        setDarkMode(darkMode)
         
         bindings = settings.getKeyBindings()
         setKeyBindings(bindings)
@@ -83,6 +93,29 @@ class EditorSessionSettings: EditorSettingsObservable, EditorSettings, EditorSet
     
     func getTheme() -> String {
         return theme
+    }
+    
+    func setFontSize(size: Int) {
+        fontSize = size
+        aceView.setFontSize(UInt(size))
+    }
+    
+    func getFontSize() -> Int {
+        return fontSize
+    }
+    
+    func setDarkMode(enabled: Bool) {
+        darkMode = enabled
+
+        if (darkMode) {
+            document.visualEffectView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+        } else {
+            document.visualEffectView.appearance = nil
+        }
+    }
+    
+    func getDarkMode() -> Bool {
+        return darkMode
     }
     
     func setKeyBindings(bindings: ACEKeyboardHandler) {

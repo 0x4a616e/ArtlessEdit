@@ -11,6 +11,8 @@ import Foundation
 class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
     
     let THEME = "Theme"
+    let FONT_SIZE = "FontSize"
+    let DARK_MODE = "DarkMode"
     let KEY_BINDINGS = "KeyBindings"
     let CODE_FOLDING = "CodeFolding"
     let SOFT_WRAP = "SoftWrap"
@@ -32,7 +34,8 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         if (mode == nil) {
             userDefaults.registerDefaults([
                 getKey(THEME): "clouds",
-                getKey(SHOW_SIDEBAR): true
+                getKey(SHOW_SIDEBAR): true,
+                getKey(FONT_SIZE): 11
             ])
         }
         
@@ -45,6 +48,22 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
     
     func getTheme() -> String {
         return userDefaults.objectForKey(getKey(THEME)) as? String ?? "clouds"
+    }
+    
+    func setDarkMode(enabled: Bool) {
+        userDefaults.setBool(enabled, forKey: getKey(DARK_MODE))
+    }
+    
+    func getDarkMode() -> Bool {
+        return userDefaults.boolForKey(getKey(DARK_MODE))
+    }
+    
+    func setFontSize(size: Int) {
+        userDefaults.setInteger(size, forKey: getKey(FONT_SIZE))
+    }
+    
+    func getFontSize() -> Int {
+        return userDefaults.integerForKey(getKey(FONT_SIZE))
     }
 
     func setKeyBindings(bindings: ACEKeyboardHandler) {
@@ -160,6 +179,8 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         let defaults = EditorDefaultSettings()
         userDefaults.registerDefaults([
             getKey(THEME) : defaults.getTheme(),
+            getKey(FONT_SIZE) : defaults.getFontSize(),
+            getKey(DARK_MODE) : defaults.getDarkMode(),
             getKey(CODE_FOLDING): defaults.getCodeFolding(),
             getKey(SOFT_WRAP): defaults.getSoftWrap(),
             getKey(SHOW_INVISIBLES): defaults.getShowInvisibles(),
@@ -178,6 +199,8 @@ class EditorDefaultSettings: EditorSettingsObservable, EditorSettings {
         }
         
         userDefaults.removeObjectForKey(getKey(THEME))
+        userDefaults.removeObjectForKey(getKey(FONT_SIZE))
+        userDefaults.removeObjectForKey(getKey(DARK_MODE))
         userDefaults.removeObjectForKey(getKey(CODE_FOLDING))
         userDefaults.removeObjectForKey(getKey(SOFT_WRAP))
         userDefaults.removeObjectForKey(getKey(SHOW_INVISIBLES))

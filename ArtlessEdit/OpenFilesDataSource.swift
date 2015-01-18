@@ -20,6 +20,8 @@ class OpenFilesDataSource: NSObject, NSTableViewDelegate, NSTableViewDataSource 
         view?.textField?.stringValue = doc.displayName
         if let path = doc.fileURL?.path {
             view?.imageView?.image = workspace.iconForFile(path)
+        } else {
+            view?.imageView?.image = workspace.iconForFileType(NSFileTypeUnknown)
         }
         
         return view

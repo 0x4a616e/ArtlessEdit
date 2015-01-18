@@ -38,4 +38,10 @@ protocol EditorSettings {
     
     func setDisplayIndentGuides(enabled: Bool)
     func getDisplayIndentGuides() -> Bool
+    
+    func setDarkMode(enabled: Bool)
+    func getDarkMode() -> Bool
+    
+    func setFontSize(size: Int)
+    func getFontSize() -> Int
 }

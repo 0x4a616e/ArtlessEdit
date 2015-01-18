@@ -64,7 +64,6 @@ class Document: NSDocument {
     
     func getMode() -> String? {
         if let path = fileURL?.path {
-            println(path.pathExtension)
             if let mapping = FileMapping().getMode(path.pathExtension.lowercaseString) {
                 return mapping
             }
@@ -101,23 +100,19 @@ class Document: NSDocument {
         self.mode = mode
         
         let defaultSettings = EditorDefaultSettings.getEditorDefaultSettings(mode)
-        let sessionSettings = EditorSessionSettings(aceView: aceView, defaults: defaultSettings)
-        
+        let sessionSettings = EditorSessionSettings(document: self, defaults: defaultSettings)        
         let fileSettings = EditorFileSettings(aceView: aceView, defaultSettings: defaultSettings)
-        fileSettings.setMode(defaultSettings.getMode())
         
         editorSettingsController = EditorSettingsViewController(nibName: "EditorSettings", handler: sessionSettings)
         fileSettingsController = FileSettingsViewController(nibName: "FileSettings", settings: fileSettings)
         
         loadSettingsSideBar(fileSettings, sessionSettings: sessionSettings)
         setSidebarVisibility(defaultSettings.getShowSidebar())
-        
-        // TODO: Move to view controller
-        if (ACEThemeNames.isDarkTheme(defaultSettings.getTheme())) {
-            visualEffectView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
-        }
     }
     
+    func setString(string: String) {
+        self.aceView.setString(string)
+    }
     
     override func presentedItemDidChange() {
         // Todo: Notify user
@@ -130,18 +125,19 @@ class Document: NSDocument {
         
         aceView.borderType = NSBorderType.NoBorder
         aceView.setString(fileContent)
-        aceView.setFontSize(11)
         fileContent = ""
         
         if let url = fileURL {
-            addGitAccessory(url)
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                self.addGitAccessory(url)
+            }
         }
     }
     
     func addGitAccessory(url: NSURL) {
         let repoFinder = GitRepositoryFinder()
         if let repo = repoFinder.getRepository(url, error: NSErrorPointer()) {
-            if let viewController = GitTitleBarAccessoryController(nibName: "GitTitlebarView", url: url, repo: repo){
+            if let viewController = GitTitleBarAccessoryController(nibName: "GitTitlebarView", document: self, repo: repo){
                 dispatch_async(dispatch_get_main_queue()) {
                     self.documentWindow.addTitlebarAccessoryViewController(viewController)
                 }
@@ -185,7 +181,6 @@ class Document: NSDocument {
     }
     
     override func revertToContentsOfURL(absoluteURL: NSURL, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
-        
         aceView.setString(NSString(contentsOfURL: absoluteURL, encoding: encoding, error: nil))
         
         return true
