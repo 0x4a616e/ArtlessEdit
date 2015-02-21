@@ -14,10 +14,13 @@ class EditorFileSettings {
     private let defaultSettings: EditorDefaultSettings
 
     private let aceView: ACEView
+    
+    private let document: NSDocument
         
-    init(aceView: ACEView, defaultSettings: EditorDefaultSettings) {
+    init(aceView: ACEView, document: NSDocument, defaultSettings: EditorDefaultSettings) {
         self.defaultSettings = defaultSettings
         self.aceView = aceView
+        self.document = document
         
         mode = defaultSettings.mode
         updateView()
@@ -27,6 +30,19 @@ class EditorFileSettings {
         self.mode = mode
         updateView()
         defaultSettings.setMode(mode)
+    }
+    
+    func setLineEndings(mode: String) {
+        aceView.setNewLineMode(mode.lowercaseString)
+        document.updateChangeCount(NSDocumentChangeType.ChangeDone)
+    }
+    
+    func getLineEndings() -> String {
+        return aceView.getNewLineMode();
+    }
+    
+    func setEncoding(encoding: String) {
+    
     }
     
     private func updateView() {

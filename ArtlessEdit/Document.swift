@@ -101,7 +101,7 @@ class Document: NSDocument {
         
         let defaultSettings = EditorDefaultSettings.getEditorDefaultSettings(mode)
         let sessionSettings = EditorSessionSettings(document: self, defaults: defaultSettings)        
-        let fileSettings = EditorFileSettings(aceView: aceView, defaultSettings: defaultSettings)
+        let fileSettings = EditorFileSettings(aceView: aceView, document: self, defaultSettings: defaultSettings)
         
         editorSettingsController = EditorSettingsViewController(nibName: "EditorSettings", handler: sessionSettings)
         fileSettingsController = FileSettingsViewController(nibName: "FileSettings", settings: fileSettings)

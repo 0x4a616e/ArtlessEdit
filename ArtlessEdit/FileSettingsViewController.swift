@@ -30,7 +30,17 @@ class FileSettingsViewController: NSViewController {
         modeBox.selectItemAtIndex(ACEModeNames.getIndexByName(settings.getMode()))
         
         encodingBox.selectItemAtIndex(0)
-        lineEndingBox.selectItemAtIndex(0)
+        
+        let lineEndings = settings.getLineEndings()
+        let selectedIndex = lineEndingBox.indexOfItemWithObjectValue(lineEndings.capitalizedString)
+        lineEndingBox.selectItemAtIndex((selectedIndex == NSNotFound) ? 0 : selectedIndex)
+    }
+    
+    @IBAction func changeLineEndings(sender: NSComboBox) {
+        settings.setLineEndings(sender.stringValue)
+    }
+    
+    @IBAction func changeEncoding(sender: NSComboBox) {
     }
     
     @IBAction func changeMode(sender: NSComboBox) {
