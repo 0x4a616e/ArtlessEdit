@@ -48,7 +48,7 @@ class GitTitleBarAccessoryController: NSTitlebarAccessoryViewController {
             let delta = GTDiffDelta(diff: diff, deltaIndex: 0)
             let patch = delta.generatePatch(error)
             if (error == nil) {
-                let buffer = patch.toBuffer()
+                let buffer = patch.patchData()
                 if let diff = NSString(data: buffer, encoding: NSUTF8StringEncoding) {
                     if let document:Document = NSDocumentController.sharedDocumentController().openUntitledDocumentAndDisplay(true, error: NSErrorPointer()) as? Document {
                         
@@ -85,7 +85,7 @@ class GitTitleBarAccessoryController: NSTitlebarAccessoryViewController {
     func getContentFromIndex() -> String? {
         if let index = repo.indexWithError(NSErrorPointer()) {
             if let tree = index.writeTree(NSErrorPointer()) {
-                if let entry = tree.treeEntryByPath(repoRelativePath, error: NSErrorPointer()) {
+                if let entry = tree.entryWithPath(repoRelativePath, error: NSErrorPointer()) {
                     if let object = entry.GTObject(NSErrorPointer()) {
                         if let odbObject = object.odbObjectWithError(NSErrorPointer()) {
                             if let data = odbObject.data() {
